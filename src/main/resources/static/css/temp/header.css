@@ -8,6 +8,8 @@ header{ height: 100px; background-color:lightgray; border-bottom: 1px solid rgb(
     border-radius: 213px;
     background-color: #fff;
     text-align: center;
+    text-decoration: none;
+
 }
 .header_right a h4{
     margin-top: 4px;
