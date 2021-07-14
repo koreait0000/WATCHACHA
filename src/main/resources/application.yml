@@ -7,7 +7,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mysql://localhost:3308/watcha
     username: root
-    password: 1234
+    password: koreait
 
   mvc:
     view:
