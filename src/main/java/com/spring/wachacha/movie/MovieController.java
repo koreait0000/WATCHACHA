@@ -1,24 +1,25 @@
 package com.spring.wachacha.movie;
 
 import com.spring.wachacha.movie.model.MovieEntity;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
-@RequiredArgsConstructor
-@RestController
+
+@Controller
 public class MovieController {
 
-    private final MovieService movieService;
+    @Autowired
+    MovieService movieService;
 
     @GetMapping("/movie")
-    public String movieSearch(){
+    public String MovieSearch() {
         return "movie/search";
     }
 
     @GetMapping("/api/vi/movies/{keyword}")
-    public MovieEntity get(@PathVariable String keyword){
-       return movieService.findByKeyword(keyword);
+    public MovieEntity get(@PathVariable String keyword) {
+        return movieService.findByKeyword(keyword);
     }
 }
