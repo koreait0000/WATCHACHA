@@ -4,7 +4,7 @@
 <head>
   <title>Title</title>
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-  <link rel="stylesheet" href="/css/common.css"
+  <link rel="stylesheet" href="/css/common.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Philosopher&display=swap"  rel="stylesheet"/>

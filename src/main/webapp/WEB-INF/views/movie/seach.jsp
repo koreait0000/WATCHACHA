@@ -8,5 +8,5 @@
     </form>
 </div>
 </div>
-<script src="/js/movieSeach.js"></script>
+<script src="/js/movieSearch.js"></script>
 
