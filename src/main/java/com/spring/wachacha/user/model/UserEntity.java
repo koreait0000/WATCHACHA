@@ -4,7 +4,13 @@ import lombok.Data;
 
 @Data
 public class UserEntity {
-    private int i_user;
+    private int iuser;
     private String email;
-    private String upw;
+    private String provider;
+    private String pw;
+    private String nm;
+    private String tel;
+    private String mainProfile;
+    private String regdt;
+
 }

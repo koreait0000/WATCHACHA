@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" href="/css/temp/footer.css">
+<link rel="stylesheet" href="/css/common/footer.css">
 <footer>
     <div class="container">
 

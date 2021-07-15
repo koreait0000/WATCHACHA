@@ -12,7 +12,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired private UserMapper mapper;
 
     @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+
         return null;
     }
 }
