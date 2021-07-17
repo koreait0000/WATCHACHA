@@ -1,0 +1,23 @@
+header{ height: 83px; background-color:lightgray;}
+.header_container{ display: flex; justify-content: space-between; margin: 0 2%; }
+.header_left>img{ width: 140px; margin-top: 10px;}
+.header_right{padding-top: 25px; display: flex}
+.header_right a{
+    height: 40px;
+    width: 106px;
+    padding: 2px 0px;
+    border-radius: 213px;
+    background-color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+.header_right a h4{
+    height: 40px;
+    margin-top: 7px;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: bold;
+    font-size: 14.7px;
+    color: rgb(27, 27, 27);
+}

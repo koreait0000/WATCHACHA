@@ -7,10 +7,27 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mysql://localhost:3308/watcha
     username: root
-    password: 1234
+
+    password: koreait
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username:
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
 
   mvc:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
 
+mybatis: # mybatis
+  mapper-locations: mybatis-mapper/**/*.xml # resources 폴더 아래에 mybatis-mapper 폴더 안에 폴더수 상관없이 xml파일은 전부
+  type-aliases-package: com.spring.wachacha # parameter type 또는 Result Type 에 클래스명만 적으면 이 경로 아래에서 그 클래스(게터세터 있는)를 찾아준다.
