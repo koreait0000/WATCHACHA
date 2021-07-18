@@ -6,7 +6,10 @@
     <div class="header_container">
         <div class="header_left">
             <!-- 왓챠로고 -->
-            <img class="logo" src="/img/왓챠로고/wachacha.png">
+            <a href="/">
+                <img class="logo" src="/img/왓챠로고/wachacha.png">
+            </a>
+
         </div>
         <div class="header_right">
             <a  class="loginBtn" href="#">
