@@ -1,18 +1,17 @@
 package com.spring.wachacha.config.security;
 
-import com.spring.wachacha.user.model.UserDomain;
-import lombok.Getter;
+import com.spring.wachacha.user.model.UserEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 
 public class UserDetailsImpl implements UserDetails {
 
-    @Getter
-    private UserDomain user;
 
-    private UserDetailsImpl(UserDomain user) {this.user = user; }
+    private UserEntity user;
+
+    //생성자호출
+    public UserDetailsImpl(UserEntity user) { this.user = user; }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -20,32 +19,20 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     @Override
-    public String getPassword() {
-        return user.getPw();
-    }
+    public String getPassword() { return user.getPw(); }
 
     @Override
-    public String getUsername() {
-        return user.getEmail();
-    }
+    public String getUsername() { return user.getNm(); }
 
     @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
+    public boolean isAccountNonExpired() { return true; }
 
     @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+    public boolean isAccountNonLocked() { return true; }
 
     @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+    public boolean isCredentialsNonExpired() { return true; }
 
     @Override
-    public boolean isEnabled() {
-        return true;
-    }
+    public boolean isEnabled() { return true; }
 }
