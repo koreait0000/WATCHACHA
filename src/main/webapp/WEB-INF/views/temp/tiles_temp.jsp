@@ -17,7 +17,6 @@
 </header>
 <main>
   <tiles:insertAttribute name="content"></tiles:insertAttribute>
-
 </main>
 <footer>
   <tiles:insertAttribute name="footer"></tiles:insertAttribute>

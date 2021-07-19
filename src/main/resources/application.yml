@@ -22,7 +22,6 @@ spring:
           starttls:
             enable: true
 
-
   mvc:
     view:
       prefix: /WEB-INF/views/
