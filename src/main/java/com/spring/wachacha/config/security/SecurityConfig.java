@@ -1,5 +1,6 @@
 package com.spring.wachacha.config.security;
 
+import com.spring.wachacha.config.oauth.PricipalOauth2UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,17 +15,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity //스프링시큐리티필터가 스프링필터체인게 등록이된다.
+
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private UserDetailsService userDetails;
+    private PricipalOauth2UserService oauth2UserService;
 
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 시큐리티 거치지 않을 곳
         web.ignoring().antMatchers("/favicon.ico", "/resources/**", "error")
-                .antMatchers("/img/**", "/css/**", "/js/**");
+                 .antMatchers("/img/**", "/css/**", "/js/**");
     }
 
     @Override
@@ -39,7 +41,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/loginForm")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/main");
+                .defaultSuccessUrl("/")
+                .and()
+                .oauth2Login()
+                .loginPage("/loginForm")
+                .userInfoEndpoint()
+                .userService(oauth2UserService);
 
     }
 

@@ -10,5 +10,10 @@
             ( #{email}, #{pw}, #{nm}, #{tel}, #{grade}, #{provider} )
     </insert>
 
+    <select id="seluser" resultType="UserEntity">
+
+    </select>
+
+
 
 </mapper>

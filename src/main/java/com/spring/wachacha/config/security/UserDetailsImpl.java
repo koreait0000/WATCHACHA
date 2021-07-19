@@ -3,15 +3,26 @@ package com.spring.wachacha.config.security;
 import com.spring.wachacha.user.model.UserEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import java.util.Collection;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 
-public class UserDetailsImpl implements UserDetails {
+import java.util.Collection;
+import java.util.Map;
+
+public class UserDetailsImpl implements UserDetails, OAuth2User {
 
 
     private UserEntity user;
+    private Map<String, Object> attributes;
+
 
     //생성자호출
     public UserDetailsImpl(UserEntity user) { this.user = user; }
+
+    //오어스로그인할때의 생성자
+    public UserDetailsImpl(UserEntity user, Map<String, Object> attributes) {
+        this.user = user;
+        this.attributes = attributes;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -35,4 +46,16 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public boolean isEnabled() { return true; }
+
+//    OAuth2User의 오버라이딩
+
+    @Override
+    public Map<String, Object> getAttributes() {
+        return attributes;
+    }
+
+    @Override
+    public String getName() {
+        return null;
+    }
 }
