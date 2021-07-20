@@ -1,5 +1,6 @@
 package com.spring.wachacha.config.security;
 
+import com.spring.wachacha.config.oauth.PricipalOauth2UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,43 +15,72 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
-@EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private UserDetailsService userDetails;
+@EnableWebSecurity //스프링시큐리티필터가 스프링필터체인게 등록이된다.
 
-    @Bean
-    public PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private PricipalOauth2UserService oauth2UserService;
+
 
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 시큐리티 거치지 않을 곳
-        web.ignoring().antMatchers("/favicon.ico", "/resources/**", "error")
-                .antMatchers("/img/**", "/css/**", "/js/**");
+        web.ignoring().antMatchers("/favicon.ico", "/resources/**", "/error")
+                 .antMatchers("/img/**", "/css/**", "/js/**");
     }
 
     @Override
-    public void configure(HttpSecurity security) throws Exception{
-        security.csrf().disable();
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+        http.authorizeRequests()
+                .antMatchers("/main/**").authenticated() //로그인한 사람들만
+                .antMatchers("/manager/**").access("hasRole('ROLE_MANAGER')")//매니저권한가진사람만
+                .antMatchers("/user").access("hasRole('ROLE_MANAGER')") //결제한사람만
+                .anyRequest().permitAll()
+                .and()
+                .formLogin()
+                .loginPage("/loginForm")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/main/show")
+                .failureUrl("/loginForm?param=error")
+                .and()
+                .oauth2Login()
+                .loginPage("/loginForm")
+                .defaultSuccessUrl("/main/show")
+                .userInfoEndpoint()
+                .userService(oauth2UserService);
 
-        security.authorizeRequests() // 로그인 없이 갈 수 있는 페이지들
-                .antMatchers("/user/login", "/user/join")
-                .permitAll().anyRequest().authenticated();
-
-        security.formLogin()
-                .loginPage("/user/login") // 로그인 페이지
-                .usernameParameter("email") // 아이디 변수
-                .passwordParameter("upw") // 페스워드 변수
-                .defaultSuccessUrl("/home/hoem"); // 로그인 성공시 갈 곳
-
-        security.logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")) // 로그아웃 요청 페이지
-                .logoutSuccessUrl("/user/login") // 로그아웃 하고 갈 페이지
-                .invalidateHttpSession(true);
     }
 
-    @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetails).passwordEncoder(passwordEncoder());
-    }
+    /*
+        주찬이형방법
+        @Override
+        public void configure(HttpSecurity security) throws Exception{
+            security.csrf().disable();
+
+            security.authorizeRequests() // 로그인 없이 갈 수 있는 페이지들
+                    .antMatchers("/user/login", "/user/join")
+                    .permitAll().anyRequest().authenticated();
+
+
+            security.formLogin()
+                    .loginPage("/user/login") // 로그인 페이지
+                    .usernameParameter("email") // 아이디 변수
+                    .passwordParameter("upw") // 페스워드 변수
+                    .defaultSuccessUrl("/home/hoem"); // 로그인 성공시 갈 곳
+
+
+
+            security.logout()
+                    .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")) // 로그아웃 요청 페이지
+                    .logoutSuccessUrl("/user/login") // 로그아웃 하고 갈 페이지
+                    .invalidateHttpSession(true);
+        }
+        */
+//    @Override
+//    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.userDetailsService(userDetails).passwordEncoder(encodePwd());
+//    }
+
 }

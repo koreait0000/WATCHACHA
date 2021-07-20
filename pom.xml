@@ -87,6 +87,19 @@
             <version>1.1</version>
         </dependency>
 
+        <!--oauth2 라이브러리 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-client</artifactId>
+            <version>2.5.2</version>
+        </dependency>
+
+        <!--시큐리티 라이브러리태그 이게 있어줘야 사용가능능-->
+       <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

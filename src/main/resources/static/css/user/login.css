@@ -1,0 +1,127 @@
+.backgroundImg{
+
+}
+#startPage {
+    background-image: url(/img/큰사진들/배경화면.png);
+
+    min-height: 100vh;
+    background-position: center;
+}
+.big-bg {
+    background-size: cover;
+}
+
+a {text-decoration: none;}
+img {max-width: 100%;}
+
+/* 중간에거 */
+section {
+    height: 700px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: lighter;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section__center {
+    text-align: center;
+    justify-content: center;
+}
+.section__center a {
+    color: #fff;
+    background-color: #f82f62;
+    border-radius: 72px;
+    width: 168px;
+    padding: 8px 10px;
+}
+.section__center h2 {
+    padding: 10px;
+}
+.section__center h4 {
+    padding-bottom: 20px;
+}
+/*modal css*/
+*{margin: 0px;font-family: Noto Sans;}
+
+html, body{ width: 100%; height: 100vh;}
+.bg_black{
+    width: 100%; height: 100vh;
+    background: rgba(0, 0,0, 0.8);
+}
+.far{
+    position: relative;
+    left: 93%;
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-size: 18px;
+    font-weight: 200px;
+}
+.loginModal{
+    width: 300px; height: 300px;
+    position: absolute;
+    /* 유용하게 쓰이는 치트키 중앙정렬*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.modalHeader{ display: flex; justify-content: space-between;}
+.modalHeader h3{
+    margin-top: 7px; margin-left: 7px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 128.7%;
+    color: white;
+}
+.modalHeader p{
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 128.7%;
+    letter-spacing: -0.07em;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 14px;
+    margin-right: 5px;
+}
+
+.loginModal form{
+    margin-top: 48px;
+}
+.loginModal form input{
+    width: 296px;
+    height: 39px;
+    border: white;
+    outline: none;
+}
+.loginModal form .loginBtn{
+    margin-top: 22px;
+    width: 300px;
+    height: 48px;
+    background-color:rgba(248, 47, 98, 0.5);;
+    color: rgba(255, 255, 255, 0.45);
+    border-radius: 50px;
+    font-size: 14.7px;
+}
+form>.upper{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 0.5px solid rgb(43, 43, 43);
+}
+form>.down{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.Another{
+    margin-top: 10px;
+    text-align: center;
+    font-family: Noto Sans;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+
