@@ -37,7 +37,7 @@
 
 
 ### 왓챠<br>
-<p align="center"><img width="70%" src="/documents/벤치마킹2png">
+<p align="center"><img width="70%" src="/documents/벤치마킹2.png">
 </p><br>
 
 - 왓챠플레이 서비스를 이용하는 이유 3가지는 다음과 같다.
