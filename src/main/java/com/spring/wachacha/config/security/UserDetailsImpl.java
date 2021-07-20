@@ -48,7 +48,6 @@ public class UserDetailsImpl implements UserDetails, OAuth2User {
     public boolean isEnabled() { return true; }
 
 //    OAuth2User의 오버라이딩
-
     @Override
     public Map<String, Object> getAttributes() {
         return attributes;
@@ -56,6 +55,7 @@ public class UserDetailsImpl implements UserDetails, OAuth2User {
 
     @Override
     public String getName() {
-        return null;
+        return user.getNm();
     }
+
 }

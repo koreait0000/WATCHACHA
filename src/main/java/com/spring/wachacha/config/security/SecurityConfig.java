@@ -22,10 +22,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private PricipalOauth2UserService oauth2UserService;
 
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 시큐리티 거치지 않을 곳
-        web.ignoring().antMatchers("/favicon.ico", "/resources/**", "error")
+        web.ignoring().antMatchers("/favicon.ico", "/resources/**", "/error")
                  .antMatchers("/img/**", "/css/**", "/js/**");
     }
 
@@ -41,10 +42,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/loginForm")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/main/show")
+                .failureUrl("/loginForm?param=error")
                 .and()
                 .oauth2Login()
                 .loginPage("/loginForm")
+                .defaultSuccessUrl("/main/show")
                 .userInfoEndpoint()
                 .userService(oauth2UserService);
 
@@ -66,6 +69,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .usernameParameter("email") // 아이디 변수
                     .passwordParameter("upw") // 페스워드 변수
                     .defaultSuccessUrl("/home/hoem"); // 로그인 성공시 갈 곳
+
+
 
             security.logout()
                     .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")) // 로그아웃 요청 페이지

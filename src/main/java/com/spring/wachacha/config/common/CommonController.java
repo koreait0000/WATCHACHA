@@ -36,7 +36,7 @@ public class CommonController {
 
     @PostMapping("/join")
     public String join(UserEntity user){
-
+        user.setProvider("local");
         service.join(user);
         return "redirect:/loginForm";
     }

@@ -94,6 +94,11 @@
             <version>2.5.2</version>
         </dependency>
 
+        <!--시큐리티 라이브러리태그 이게 있어줘야 사용가능능-->
+       <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+        </dependency>
 
     </dependencies>
 

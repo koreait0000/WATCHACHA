@@ -10,8 +10,10 @@
             ( #{email}, #{pw}, #{nm}, #{tel}, #{grade}, #{provider} )
     </insert>
 
-    <select id="seluser" resultType="UserEntity">
-
+    <select id="selUser" resultType="UserEntity">
+        SELECT * FROM t_user
+        WHERE email = #{email}
+        AND provider = #{provider}
     </select>
 
 
