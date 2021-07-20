@@ -24,6 +24,11 @@
 
         <!-- 로그인 중인 사용자 -->
         <sec:authorize access="isAuthenticated()">
+            <div>
+                <ul>
+                    <li>홈</li>
+                </ul>
+            </div>
             <div class="header_right">
                 <a  class="loginBtn" href="/logout">
                     로그아웃
