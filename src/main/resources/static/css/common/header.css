@@ -1,4 +1,4 @@
-header{ height: 83px; background-color:lightgray;}
+header{ height: 83px; background: none;}
 .header_container{ display: flex; justify-content: space-between; margin: 0 2%; }
 .header_left>a>img{ width: 140px; margin-top: 10px;}
 .header_right{padding-top: 25px; display: flex}

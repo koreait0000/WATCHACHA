@@ -1,0 +1,38 @@
+.section__1{background-image: url("../img/home/방탄소년단.png"); width: 100%; height: 100vh}
+.section__2{background-image: url("../img/home/승리호.png"); width: 100%; height: 100vh}
+.section__3{background-image: url("../img/home/이태원클라스 배경1.png"); width: 100%; height: 100vh}
+.section__4{background-image: url("../img/home/킹덤.png"); width: 100%; height: 100vh}
+.box{
+    display: flex;
+}
+.inner{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+.inner h2{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35.69px;
+    line-height: 49px;
+    color: #FFFFFF;
+
+}
+.inner h4{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17.7px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.8);
+
+}
+.inner a{
+    color: #fff;
+    background-color: #f82f62;
+    border-radius: 72px;
+    width: 168px;
+    padding: 8px 10px;
+
+}
