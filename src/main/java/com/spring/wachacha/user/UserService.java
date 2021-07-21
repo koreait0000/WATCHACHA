@@ -26,7 +26,7 @@ public class UserService {
         //비밀번호 암호화
         String rawPassword = user.getPw();
         String encPassword = passwordEncoder.encode(rawPassword);
-        user.setGrade("CASHED");
+        user.setGrade("UNCASHED");
         user.setPw(encPassword);
         int result = userDetails.join(user);
         return result;
