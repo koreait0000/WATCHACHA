@@ -11,14 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Philosopher&display=swap"  rel="stylesheet"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
 </head>
 <body>
 
-<header>
+<header style="z-index: 200">
   <tiles:insertAttribute name="header"></tiles:insertAttribute>
 </header>
-<main>
+<main style="z-index: 100">
   <tiles:insertAttribute name="content"></tiles:insertAttribute>
 </main>
 <footer>

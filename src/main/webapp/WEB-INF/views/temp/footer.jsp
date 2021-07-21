@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="/css/common/footer.css">
 <footer>
-    <div class="container">
+    <div class="footer container">
 
         <div class="About">
             <h3>ABOUT US</h3>
@@ -33,9 +33,6 @@
         <div class="Contact_US">
             <h3>CONTACT US</h3>
             <ul>
-                <li><a href="#">Lee Junhyung	Project Leader BackEnd 	dksms78@gmail.com</a></li>
-                <li><a href="#">Ok Chanho 	FrontEnd/UI/UX 		j33515@naver.com</a></li>
-                <li><a href="#">Lee Ju-chan 	Security And BackEnd 	ljc9393@nate.com</a></li>
             </ul>
         </div>
 
