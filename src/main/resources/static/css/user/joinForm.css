@@ -1,0 +1,72 @@
+*{font-family: Noto Sans;}
+.black_background{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+}
+.bg_black{
+    width: 100%; height: 100vh;
+    background-image: url("/img/home/이태원클라스 배경1.png");
+    background-size: cover;
+    background-position: center;
+}
+.far{
+    position: relative;
+    left: 93%;
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-size: 18px;
+    font-weight: 200px;
+}
+.loginModal{
+    width: 300px; height: 514px;
+    position: absolute;
+    /* 유용하게 쓰이는 치트키 중앙정렬*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.modalHeader{ display: flex; justify-content: space-between;}
+.modalHeader h3{
+    margin-top: 7px; margin-left: 7px;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 128.7%;
+    color: white;
+}
+.loginModal form{
+    margin-top: 25px;
+}
+.loginModal form input{
+    width: 296px;
+    height: 66px;
+    border: white;
+    outline: none;
+    background: white;
+}
+.loginModal form .loginBtn{
+    margin-top: 1px;
+    width: 300px;
+    height: 48px;
+    background-color:rgba(248, 47, 98, 0.5);;
+    color: rgba(255, 255, 255, 0.45);
+    border-radius: 50px;
+    font-size: 14.7px;
+}
+.upper{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 0.5px solid rgb(43, 43, 43);
+}
+.down{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.joinForm footer{
+    color: #f82f62;
+}
+form input{
+    padding: 12px;
+}

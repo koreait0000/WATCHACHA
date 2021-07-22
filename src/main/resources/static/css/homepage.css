@@ -1,16 +1,29 @@
-.section__1{background-image: url("../img/home/방탄소년단.png"); width: 100%; height: 100vh}
-.section__2{background-image: url("../img/home/승리호.png"); width: 100%; height: 100vh}
-.section__3{background-image: url("../img/home/이태원클라스 배경1.png"); width: 100%; height: 100vh}
-.section__4{background-image: url("../img/home/킹덤.png"); width: 100%; height: 100vh}
+.section__1{background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("../img/home/방탄소년단.png"); width: 100%; height: 100vh}
+.section__2{background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("../img/home/승리호.png"); width: 100%; height: 100vh}
+.section__3{background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("../img/home/이태원클라스 배경1.png"); width: 100%; height: 100vh}
+.section__4{background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("../img/home/킹덤.png"); width: 100%; height: 100vh}
 .box{
+    height: 100vh;
+    width: 100%;
+    min-width: 872px;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+}
+.inner section{
+    height: 800px;
     display: flex;
 }
 .inner{
     width: 100%;
     text-align: center;
     display: inline-block;
+    position: absolute;
+    margin-top: 343px;
 }
 .inner h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-family: Noto Sans;
     font-style: normal;
     font-weight: bold;
@@ -20,6 +33,8 @@
 
 }
 .inner h4{
+    margin-top: 20px;
+    margin-bottom: 39px;
     font-family: Noto Sans;
     font-style: normal;
     font-weight: bold;
@@ -33,6 +48,20 @@
     background-color: #f82f62;
     border-radius: 72px;
     width: 168px;
-    padding: 8px 10px;
+    margin-top: 100px;
+    padding: 8px 16px;
 
 }
+.inner content{
+    align-items: center;
+}
+.toggle{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100vh;
+}
+.fas{ color: white; font-size: 40px; margin-bottom: 30px; opacity: 0.8}
+.fas:hover{cursor: pointer}
+
