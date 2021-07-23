@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/css/main/mainpage.css">
 <div class="serch_bar">
 </div>
@@ -35,5 +36,8 @@
         </div>
     </div>
 
-
-
+<div>
+    <c:forEach var="i" items="${rankPoster}">
+        <img src="<c:out value="${i}"></c:out>">
+    </c:forEach>
+</div>
