@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class mainController {
 
     @GetMapping("/show")
-    public void show(){ }
+    public void show(){
+        //test
+    }
 
 }
