@@ -4,7 +4,6 @@
 
                 <div class="box section__1" id="1">
                     <div class="inner section">
-
                             <h2>영화,드라마,다큐멘터리를 무제한으로</h2>
                             <h4>매주 5백 여편의 신작이 업데이트 되며,추가요금은 전혀 없어요</h4>
                             <button><a href="#">2주 무료이용시작</a></button>

@@ -12,7 +12,45 @@
     background-size: cover;
     background-position: center;
 }
+
 .web_header{
-    display: flex;
-    align-items: center;
+    border: 1px solid white;
+    width: 528px;
+    height: 473px;
+    margin-top: 118px;
+    margin-left: 40px;
+}
+.movie__section h2,h3,p,h4{font-family: Noto Sans;color: #FFFFFF; margin: 10px}
+.movie__section h2{
+    font-size: 45px;
+}
+.movie__section p{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+}
+.movie__section h3{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+}
+.movie__section button{
+    margin-left: 32px;
+    width: 100px;
+    height: 41px;
+    background-color: D73068;
+    border-radius: 6px;
+    color: #FFFFFF;
+}
+.fas{
+    font-size: 24px;
+}
+
+.movie__section h4{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 99.7%;
+    letter-spacing: -0.04em;
+    color: rgba(255, 255, 255, 0.65);
 }
