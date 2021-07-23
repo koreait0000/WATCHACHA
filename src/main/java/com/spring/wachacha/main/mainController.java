@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/main")
 public class mainController {
 
+
+    @GetMapping("/mainpage")
+    public void mainpage(){ }
+
     @GetMapping("/show")
     public void show(){
 
     }
+
 
 }
