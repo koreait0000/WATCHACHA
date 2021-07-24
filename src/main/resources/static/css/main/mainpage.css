@@ -1,18 +1,143 @@
 .web_wapper{
-    background-color: #878787;
+    background-color: 0C0C10;
     width: 100%;
-    height: 100vh;
+    height: 800%;
 }
-
 .movieInfoSection{
     min-width: 800px;
     width: 100%;
     height: 679px;
-    background-image: url("/img/main/header/미나리.jpg");
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("/img/main/header/미나리1.jpg");
     background-size: cover;
     background-position: center;
 }
 .web_header{
+    margin-top: 118px;
+    margin-left: 40px;
+    width: 528px;
+    height: 473px;
     display: flex;
+}
+
+/*미나리 글 */
+.movie__section h2{
+    font-weight: bold;
+    font-size: 45px;
+    color: #FFFFFF;
+    padding-top: 42.26px;
+    padding-left: 28.68px;
+}
+.movie__section>p:nth-child(2){
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 31px;
+}
+.movie__section>p:nth-child(3){
+    padding-left: 26.36px;
+    font-size: 16px;
+}
+.movie__section>p:nth-child(4){
+    padding-left: 27.36px;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+}
+.movie__section>p:nth-child(5){
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    padding-left: 28px;
+
+}
+
+.movie__section p{
+    color: #FFFFFF;
+    padding-top: 5px;
+}
+/*버튼*/
+.playbutton{
+    margin-left: 32.85px;
+    margin-top: 16px;
+    width: 100.3px;
+    height: 42.78px;
+    background-color: D73068;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+.playbutton i{ font-size: 24px; }
+.playbutton h4{ font-size: 14px; padding-left: 7px; }
+
+
+/****************************************************************************************************************************************************************/
+.search_bar{
+    background: rgba(90, 90, 90, 0.17);
+    width: 55.8%;
+    height: 55px;
+    display: flex;
+    margin: 0 auto;
     align-items: center;
 }
+.search_bar .fas{
+    color: rgba(255, 255, 255, 0.75);
+    padding-left: 14px;
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+.search_bar{
+    font-size: 14px;
+    line-height: 123.7%;
+    letter-spacing: 0.045em;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/*********************************************************************************************************************************************************************/
+.Box__Office__Ranking1{
+    display: flex;
+    color: #FFFFFF;
+    padding-left: 64px;
+    padding-top: 52px;
+    margin-bottom: 9px;
+}
+.Box__Office__Ranking hr{
+    color: #FFFFFF;
+    width: 95%;
+    margin: 0 auto;
+}
+.Box__Office__poster{
+    margin-top: 20px;
+    margin-left: 30px;
+    display: flex;
+    overflow: hidden;
+}
+.Box__Office__poster img{
+    margin: 0 32px;
+    border-radius: 14px;
+    width: 208px;
+    height: auto;
+}
+.Box__Office__poster span{
+    padding-left: 38px;
+}
+
+/***********************************************       팔로워들좋아하는 영화 리스트    ***************************************************************************/
+.follower_fav_movie{
+    margin: 0 auto;
+    padding-left: 50px;
+}
+.personal_movie{
+    display: inline;
+    overflow-y: hidden;
+}
+.personal_movie img{
+    width: 300px;
+    height: 200px;
+    background-color: #878787;
+}
+.personal_movie span{
+    color: #FFFFFF;
+}
+/***********************************************       팔로워들좋아하는 영화 리스트    ***************************************************************************/
