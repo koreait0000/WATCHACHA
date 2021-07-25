@@ -9,8 +9,8 @@
             <div class="search_bar">
                 <i class="fas fa-search"></i>
                 <form class="search_form" action="/" method="get">
-                    <input type="text" name="searchbar"autofocus>
-                    <input type="submit">
+                    <input type="text" name="searchbar"autofocus placeholder="search">
+                    <button></button>
                 </form>
             </div>
 
