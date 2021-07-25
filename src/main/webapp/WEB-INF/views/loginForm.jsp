@@ -8,7 +8,6 @@
                 <h3>로그인</h3>
                 <P>비밀번호를 잊어버리셨나요?</P>
             </div>
-
             <form class="loginform" action="/login" method="post">
                 <input class="upper" type="text" name="username" placeholder="  이메일(example@gamil.com)">
                 <input class="down" type="password" name="password" placeholder="  비밀번호">
