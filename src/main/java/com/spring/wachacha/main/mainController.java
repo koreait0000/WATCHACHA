@@ -12,7 +12,7 @@ public class mainController {
 
     @Autowired
     private MainService mainService;
-
+//test
     @GetMapping("/mainpage")
     public void mainpage(Model model){
         model.addAttribute("rankPoster",mainService.mainpage());
