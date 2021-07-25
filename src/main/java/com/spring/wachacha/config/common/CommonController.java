@@ -39,9 +39,9 @@ public class CommonController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/valid-recaptcha", method = RequestMethod.POST)
+    @PostMapping("/valid-recaptcha")
     public int VerifyRecaptcha(HttpServletRequest request) {
-        VerifyRecaptcha.setSecretKey("시크릿 코드");
+        VerifyRecaptcha.setSecretKey("6Lf-IYQbAAAAADJZj_62RLCH0DULZ3hl3NV9f_EH");
         String gRecaptchaResponse = request.getParameter("recaptcha");
         try {
             if(VerifyRecaptcha.verify(gRecaptchaResponse))

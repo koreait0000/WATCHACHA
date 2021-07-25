@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         // 시큐리티 거치지 않을 곳
         web.ignoring().antMatchers("/favicon.ico", "/resources/**", "/error")
-                 .antMatchers("/img/**", "/css/**", "/js/**");
+                 .antMatchers("/img/**", "/css/**", "/js/**", "/valid-recaptcha");
     }
 
     @Override
@@ -41,6 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/loginForm")
+                .usernameParameter("email")
                 .loginProcessingUrl("/login")
                 .defaultSuccessUrl("/main/mainpage")
                 .failureUrl("/loginForm?param=error")
