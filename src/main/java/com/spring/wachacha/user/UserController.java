@@ -8,16 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 
-
     @GetMapping("/mypage")
     public void mypage(){}
 
 
     @GetMapping("/profileModify")
     public void modifyPage(){}
-
-
-
 
 
 

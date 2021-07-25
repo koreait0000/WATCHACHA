@@ -1,5 +1,6 @@
 package com.spring.wachacha.config.common;
 
+import com.spring.wachacha.config.recaptcha.VerifyRecaptcha;
 import com.spring.wachacha.config.security.UserDetailsImpl;
 import com.spring.wachacha.user.UserService;
 import com.spring.wachacha.user.model.UserEntity;
@@ -8,9 +9,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class CommonController {
@@ -27,11 +28,30 @@ public class CommonController {
 
     //로그인페이지
     @GetMapping("/loginForm")
-    public void loginForm(){ }
+    public void loginForm(){
+
+    }
 
     //회원가입페이지
     @GetMapping("/joinForm")
-    public void joinForm(){ }
+    public void joinForm(){
+
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/valid-recaptcha", method = RequestMethod.POST)
+    public int VerifyRecaptcha(HttpServletRequest request) {
+        VerifyRecaptcha.setSecretKey("시크릿 코드");
+        String gRecaptchaResponse = request.getParameter("recaptcha");
+        try {
+            if(VerifyRecaptcha.verify(gRecaptchaResponse))
+                return 0; // 성공
+            else return 1; // 실패
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1; //에러
+        }
+    }
 
 
     @PostMapping("/join")
