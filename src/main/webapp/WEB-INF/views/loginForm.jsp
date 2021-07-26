@@ -10,11 +10,11 @@
                 <P>비밀번호를 잊어버리셨나요?</P>
             </div>
             <form class="loginform" action="/login" method="post">
-                <input class="upper" type="text" name="username" placeholder="  이메일(example@gamil.com)">
+                <input class="upper" type="text" name="email" placeholder="  이메일(example@gamil.com)">
                 <input class="down" type="password" name="password" placeholder="  비밀번호">
                 <br>
                 <div id="recaptcha" class="g-recaptcha" data-sitekey="6Lf-IYQbAAAAAGNjne1KZ2lqMRe9KC_xw1pOVPlo" data-callback="recaptchaCallback"></div>
-                <input class="loginBtn" type="submit" value="로그인">
+                <button class="loginBtn" onclick="return doLogin();">로그인</button>
             </form>
 
             <h3 class="Another">다른방법으로 로그인하기</h3>
@@ -28,7 +28,7 @@
     </div>
 
 <script>
-    var isRecaptchachecked=false;
+    let isRecaptchachecked=false;
 
     $('.upper').on('keyup', function(k) {
         if (k.keyCode == 13) {
@@ -43,9 +43,13 @@
     });
 
     function doLogin(){
-        let id = $(".upper").val();
-        let password = $(".down").val();
-
+        let id = $(".upper");
+        let password = $(".down");
+        if(id.val().indexOf('@') < 1 || id.val().indexOf('.') < 1){
+            alert('이메일 형식으로 입력해주세요.');
+            id.focus();
+            return false;
+        }
         if(id.val().trim() == ''){
             alert('아이디를 입력하세요.');
             id.focus();
@@ -57,44 +61,55 @@
             return false;
         }
         if(!isRecaptchachecked){
-            alert('리캡차 인증 체크를 해주세요.');
+            alert('인증 체크를 해주세요.');
             $("#recaptcha").focus();
             return false;
         }
-
-        doVaildRecaptcha();
+        let email = $('.upper').val();
+        return doVaildRecaptcha(email);
     }
 
     function recaptchaCallback(){// 리캡챠 체크 박스 클릭시 isRecaptchachecked 값이 true로 변경
-
         isRecaptchachecked = true;
-
     }
 
-
-    function doVaildRecaptcha(){
-        var formData= $(".loginform").serialize();
-        $.ajax({
-            type: 'POST',
-            contentType: "application/x-www-form-urlencoded",
-            url:'/valid-recaptcha',
-            data: formData,
-            dataType: 'text',
-            cache : false,
-            success: function(data){
-                if(data == 'success'){
-                    console.log(data);
-                    console.log('리캡챠 성공!');
-                    $('#loginForm').submit(); //리캡쳐 성공후 로그인 id,pw 체킹 (security 사용)
+    function doVaildRecaptcha(email){
+            let captcha = 1;
+            $.ajax({
+                url: '/valid-recaptcha',
+                type: 'post',
+                data: {
+                    recaptcha: $("#g-recaptcha-response").val()
+                },
+                success: function (data) {
+                    switch (data) {
+                        case 0:
+                            console.log("자동 가입 방지 봇 통과");
+                            alert('ㅁㄴㅇ');
+                            captcha = 0;
+                            $.ajax({
+                                url: '/login',
+                                type: 'post',
+                                data: {
+                                    email
+                                },
+                                success: () =>{
+                                    location.href='/main/mainpage.jsp';
+                                }
+                            });
+                            break;
+                        case 1:
+                            alert("자동 가입 방지 봇을 확인 한뒤 진행 해 주세요.");
+                            break;
+                        default:
+                            alert("자동 가입 방지 봇을 실행 하던 중 오류가 발생 했습니다. [Error bot Code : " + Number(data) + "]");
+                            break;
+                    }
                 }
-                else{
-                    alert('인증되지 않은 주소입니다.');
-                }
-            },
-            error:function(xhr,status,error){
-                console.log(error);
+            });
+            if (captcha != 0) {
+                return false;
             }
-        });
     }
 </script>
 
