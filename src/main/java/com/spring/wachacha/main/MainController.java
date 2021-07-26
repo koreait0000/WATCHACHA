@@ -4,23 +4,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/main")
-public class mainController {
+public class MainController {
 
     @Autowired
     private MainService mainService;
 
     @GetMapping("/mainpage")
     public void mainpage(Model model){
-        model.addAttribute("rankPoster",mainService.mainpage());
+        model.addAttribute("map",mainService.mainpage());
     }
 
     @GetMapping("/show")
     public void show(){
+    }
 
+    @GetMapping("/searchResult")
+    public String searchResult(String searchbar){
+        mainService.searchResult(searchbar);
+        return "main/searchResult";
     }
 
 

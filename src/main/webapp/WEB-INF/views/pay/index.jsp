@@ -5,12 +5,12 @@
   <meta charset="utf-8"/>
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/pay/index.css" />
 </head>
 <body>
+  <div class="payHeader"></div>
 <section>
-  <h1>구매하기</h1>
-  <img src="/images/toss-tee.png" style="max-width: 100%" />
+  <img src="https://www.misope.co.kr/data/goods/19/10/44//2387/2387_detail_090.png" style="max-width: 100%" />
   <h3>토스 티셔츠</h3>
   <span>19,000 원</span>
   <p>----------------------</p>
@@ -19,6 +19,7 @@
   <p>----------------------</p>
   <button id="payment-button">결제하기</button>
 </section>
+
 <script src="https://js.tosspayments.com/v1"></script>
 <script>
   var tossPayments = TossPayments("test_ck_JQbgMGZzorzzXdypGB7rl5E1em4d");
