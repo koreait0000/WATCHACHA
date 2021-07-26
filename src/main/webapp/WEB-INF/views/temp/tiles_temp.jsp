@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<header style="z-index: 100">
+<header style="z-index: 1">
   <tiles:insertAttribute name="header"></tiles:insertAttribute>
 </header>
 
