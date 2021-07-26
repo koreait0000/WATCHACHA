@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/css/common/header.css">
 <script defer src="/js/common/common.js"></script>
 
-<header>
+
     <!-- 로그인하지 않은 모든 사용자(로그인 중인 사용자에게는 보이지 않음) -->
     <sec:authorize access="isAnonymous()">
         <div class="header_container">
@@ -28,7 +28,4 @@
         </div>
     </sec:authorize>
 
-
-
-</header>
 

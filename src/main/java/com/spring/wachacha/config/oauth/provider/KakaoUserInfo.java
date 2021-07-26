@@ -1,12 +1,15 @@
 package com.spring.wachacha.config.oauth.provider;
 
-import java.util.Map;
+import lombok.Data;
+import org.json.simple.JSONObject;
 
-public class NaverUserInfo implements OAuth2UserInfo{
+import java.util.Map;
+@Data
+public class KakaoUserInfo implements OAuth2UserInfo{
 
     private Map<String, Object> attributes;
 
-    public NaverUserInfo(Map<String, Object> attributes) { this.attributes = attributes; }
+    public KakaoUserInfo(Map<String, Object> attributes) { this.attributes = attributes; }
 
     @Override
     public String getProviderId() {
@@ -15,7 +18,7 @@ public class NaverUserInfo implements OAuth2UserInfo{
 
     @Override
     public String getProvider() {
-        return "naver";
+        return "kakao";
     }
 
     @Override
