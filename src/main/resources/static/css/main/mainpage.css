@@ -67,6 +67,9 @@
     color: #FFFFFF;
     border-radius: 10px;
 }
+#recaptcha{
+    border-radius: 30px;
+}
 .playbutton i{ font-size: 24px; }
 .playbutton h4{ font-size: 14px; padding-left: 7px; }
 
@@ -81,6 +84,7 @@
     display: flex;
     margin: 0 auto;
     align-items: center;
+    z-index: 2;
 }
 .search_bar>form:hover{
     cursor: pointer;
