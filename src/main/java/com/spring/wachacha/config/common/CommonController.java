@@ -9,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,15 +29,16 @@ public class CommonController {
 
     //로그인페이지
     @GetMapping("/loginForm")
-    public void loginForm(){
+    public void loginForm(Model model){
+        model.addAttribute("loginForm","loginForm");
 
     }
 
     //회원가입페이지
     @GetMapping("/joinForm")
     public void joinForm(){
-
     }
+
 
     @ResponseBody
     @PostMapping("/valid-recaptcha")
