@@ -5,9 +5,9 @@
 
     <insert id="join">
         INSERT INTO t_user
-            ( email, pw, nm, tel, grade, provider )
+            ( email, pw, nm, tel, grade, provider, authCd )
         VALUES
-            ( #{email}, #{pw}, #{nm}, #{tel}, #{grade}, #{provider} )
+            ( #{email}, #{pw}, #{nm}, #{tel}, #{grade}, #{provider}, #{authCd} )
     </insert>
 
     <select id="selUser" resultType="UserEntity">
@@ -17,7 +17,7 @@
     </select>
 
     <update id="updateAuth">
-        update t_user set auth = null where email = #{email}
+        update t_user set authCd = null where email = #{email}
     </update>
 
 </mapper>

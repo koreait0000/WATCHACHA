@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <link rel="stylesheet" href="/css/user/loginForm.css">
 <script src='https://www.google.com/recaptcha/api.js'></script>
     <div class="black_background">
@@ -9,6 +11,8 @@
                 <h3>로그인</h3>
                 <P>비밀번호를 잊어버리셨나요?</P>
             </div>
+            <c:if test="${auth eq 0 }"><span>이메일 인증을 해주세요.</span></c:if>
+            <c:if test="${auth eq 1 }"><span>이메일 인증이 완료되었습니다.</span></c:if>
             <form class="loginform" action="/login" method="post">
                 <input class="upper" type="text" name="email" placeholder="  이메일(example@gamil.com)">
                 <input class="down" type="password" name="password" placeholder="  비밀번호">
@@ -85,7 +89,6 @@
                     switch (data) {
                         case 0:
                             console.log("자동 가입 방지 봇 통과");
-                            alert('ㅁㄴㅇ');
                             captcha = 0;
                             $.ajax({
                                 url: '/login',
@@ -94,7 +97,7 @@
                                     email
                                 },
                                 success: () =>{
-                                    location.href='/main/mainpage.jsp';
+                                    location.href='/main/mainpage';
                                 }
                             });
                             break;

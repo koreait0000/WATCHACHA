@@ -14,5 +14,6 @@ public class UserEntity {
     private String grade;
     private String mainProfile;
     private String regdt;
+    private String authCd;
 
 }
