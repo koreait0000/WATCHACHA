@@ -1,5 +1,6 @@
 package com.spring.wachacha.main;
 
+import com.spring.wachacha.main.model.TestModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,8 +26,8 @@ public class MainController {
     }
 
     @GetMapping("/searchResult")
-    public String searchResult(String searchbar){
-        mainService.searchResult(searchbar);
+    public String searchResult(String searchbar,Model model){
+        model.addAttribute("test",mainService.searchResult(searchbar));
         return "main/searchResult";
     }
 
