@@ -1,9 +1,13 @@
 package com.spring.wachacha.main;
 
+import com.spring.wachacha.main.model.TestModel;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -55,8 +59,8 @@ public class MainService {
         return map;
     }
 
-    public void searchResult(String searchbar) {
-
+    public TestModel searchResult(String searchbar) {
+        TestModel testModel = new TestModel();
         String clientId = "kKpU7wItpaTp7lBzqcNo"; //애플리케이션 클라이언트 아이디값"
         String clientSecret = "isV9qCZKQW"; //애플리케이션 클라이언트 시크릿값"
 
@@ -76,8 +80,36 @@ public class MainService {
         requestHeaders.put("X-Naver-Client-Secret", clientSecret);
         String responseBody = get(apiURL,requestHeaders);
 
-        System.out.println(responseBody);
 
+        JSONParser jParser = new JSONParser();
+        try {
+            JSONObject jsonObject = (JSONObject) jParser.parse(responseBody);
+            TestModel t = new TestModel();
+            t.setList((List<JSONObject>) jsonObject.get("items"));
+            JSONObject jsonObject1 = t.getList().get(0);
+            String link = (String) jsonObject1.get("link");
+            Document doc = Jsoup.connect(link).get();
+            String poster = doc.select("div.mv_info_area").select("img").attr("src");
+            String name = doc.select("h3.h_movie").select("a").text();
+            testModel.setName(name);
+            testModel.setPoster(poster);
+            System.out.println(link);
+            Elements el = doc.select("ul.thumb_link_mv").select("li");
+//            System.out.println(el);
+            List<Map<String, Object>> relevant = new ArrayList<>();
+            for (Element e:el) {
+                Map<String, Object> map = new HashMap<>();
+                String relevantLink = e.select("a").select("img").attr("src").trim();
+                String relevantName = e.select("a").select("img").attr("alt");
+                map.put("relevantLink", relevantLink);
+                map.put("relevantName", relevantName);
+                relevant.add(map);
+            }
+            testModel.setRelevant(relevant);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return testModel;
     }
 
     private static String get(String apiUrl, Map<String, String> requestHeaders){
