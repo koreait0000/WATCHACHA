@@ -18,15 +18,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override //loginPost
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-
         return new UserDetailsImpl(loadUserByUsernameAndProvider(email, "local"));
-
     }
 
-    public UserEntity loadUserByUsernameAndProvider(String id, String provider) throws UsernameNotFoundException {
+    public UserEntity loadUserByUsernameAndProvider(String email, String provider) throws UsernameNotFoundException {
+        System.out.println("loadUserbyusername 실행됨");
         UserEntity param = new UserEntity();
         param.setProvider(provider);
-        param.setEmail(id);
+        param.setEmail(email);
+        System.out.println(param);
         UserEntity result = mapper.selUser(param);
         if(result == null) {
             result = new UserEntity();
