@@ -13,7 +13,7 @@ public class MainController {
 
     @Autowired
     private MainService mainService;
-//test
+//testasd
     @GetMapping("/mainpage")
     public void mainpage(Model model){
         model.addAttribute("map",mainService.mainpage());
