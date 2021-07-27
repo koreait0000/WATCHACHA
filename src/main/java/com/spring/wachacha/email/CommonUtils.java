@@ -1,4 +1,4 @@
-package com.spring.wachacha.utils;
+package com.spring.wachacha.email;
 
 import org.springframework.stereotype.Component;
 

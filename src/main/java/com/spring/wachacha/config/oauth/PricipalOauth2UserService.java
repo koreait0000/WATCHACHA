@@ -54,11 +54,11 @@ public class PricipalOauth2UserService extends DefaultOAuth2UserService {
 
             LinkedHashMap propertiesData = (LinkedHashMap) oAuth2User.getAttributes().get("properties");
 
-            mod.remove("properties");
-
-            LinkedHashMap kakaoAccountData = (LinkedHashMap) mod.get("kakao_account");
-            mod.putAll(kakaoAccountData);
-            mod.remove("kakao_account");
+//            mod.remove("properties");
+//
+//            LinkedHashMap kakaoAccountData = (LinkedHashMap) mod.get("kakao_account");
+//            mod.putAll(kakaoAccountData);
+//            mod.remove("kakao_account");
 
 
 
