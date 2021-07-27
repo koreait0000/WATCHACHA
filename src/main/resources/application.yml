@@ -8,19 +8,21 @@ spring:
     url: jdbc:mysql://localhost:3306/watchacha
     username: root
     password: koreait
-
   mail:
     host: smtp.gmail.com
     port: 587
-    username:
-    password:
+    username: johyeonmin841@gmail.com
+    password: zpjvoilqpcorlnmu
     properties:
       mail:
         smtp:
-          auth: true
           starttls:
             enable: true
-
+            required: true
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
 
   mvc:
     view:

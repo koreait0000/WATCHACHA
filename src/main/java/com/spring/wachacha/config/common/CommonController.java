@@ -29,13 +29,13 @@ public class CommonController {
 
     //로그인페이지
     @GetMapping("/loginForm")
-    public void loginForm(@AuthenticationPrincipal UserDetailsImpl userDetails){
+    public void loginForm(@AuthenticationPrincipal UserDetailsImpl userDetails, Model model, String auth){
         if(userDetails != null){
             return;
         }
         model.addAttribute("loginForm","loginForm");
+        model.addAttribute("auth",auth);
     }
-
     //회원가입페이지
     @GetMapping("/joinForm")
 
@@ -65,12 +65,12 @@ public class CommonController {
     public String join(UserEntity user){
         user.setProvider("local");
         service.join(user);
-        return "redirect:/loginForm";
+        return "redirect:/loginForm?auth=0";
     }
 
     @GetMapping("/auth")
     public String auth (UserEntity userEntity){
         service.auth(userEntity);
-        return "redirect:/login?auth=1";
+        return "redirect:/loginForm?auth=1";
     }
 }

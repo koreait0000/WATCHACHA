@@ -40,6 +40,7 @@ public class UserService {
         String encPassword = passwordEncoder.encode(rawPassword);
         user.setGrade("UNCASHED");
         user.setPw(encPassword);
+        user.setAuthCd(authCd);
         int result = userDetails.join(user);
 
         String subject = "[WATCHACHA] 이메일 인증번호가 도착하였습니다.";
