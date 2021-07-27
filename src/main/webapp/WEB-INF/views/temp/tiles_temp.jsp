@@ -24,7 +24,7 @@
   <tiles:insertAttribute name="header"></tiles:insertAttribute>
 </header>
 
-<main style="z-index: 1">
+<main style="z-index: 3">
   <tiles:insertAttribute name="content"></tiles:insertAttribute>
 </main>
 <footer>
