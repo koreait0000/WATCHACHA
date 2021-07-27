@@ -5,6 +5,7 @@ CREATE TABLE t_user(
     pw VARCHAR(100),
     nm VARCHAR(50) NOT NULL,
     grade VARCHAR(50) DEFAULT NULL,
+    auth varchar(10),
     tel CHAR(13) COMMENT '연락처',
     mainProfile VARCHAR(50),
     regdt DATETIME DEFAULT NOW()

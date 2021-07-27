@@ -29,14 +29,20 @@ public class CommonController {
 
     //로그인페이지
     @GetMapping("/loginForm")
-    public void loginForm(Model model){
+    public void loginForm(@AuthenticationPrincipal UserDetailsImpl userDetails){
+        if(userDetails != null){
+            return;
+        }
         model.addAttribute("loginForm","loginForm");
-
     }
 
     //회원가입페이지
     @GetMapping("/joinForm")
-    public void joinForm(){
+
+    public void joinForm(@AuthenticationPrincipal UserDetailsImpl userDetails){
+        if(userDetails != null){
+            return;
+        }
     }
 
 
@@ -55,7 +61,6 @@ public class CommonController {
         }
     }
 
-
     @PostMapping("/join")
     public String join(UserEntity user){
         user.setProvider("local");
@@ -63,31 +68,9 @@ public class CommonController {
         return "redirect:/loginForm";
     }
 
-    @GetMapping("/test/login")
-    @ResponseBody
-    public String testLogin(Authentication authentication
-            , @AuthenticationPrincipal UserDetailsImpl userDetails){ //DI의존성 주입
-        System.out.println("/test/login==============================");
-        UserDetailsImpl pricipalDetails = (UserDetailsImpl)authentication.getPrincipal();
-
-        System.out.println("authentication : "+ pricipalDetails.getAttributes());
-        return "세션정보확인하기";
+    @GetMapping("/auth")
+    public String auth (UserEntity userEntity){
+        service.auth(userEntity);
+        return "redirect:/login?auth=1";
     }
-
-    @GetMapping("/test/oauth/login")
-    @ResponseBody
-    public String testLogin(Authentication authentication
-            ,@AuthenticationPrincipal OAuth2User oAuth){ //DI의존성 주입
-        System.out.println("/test/oauth/login==============================");
-
-        OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
-        System.out.println("authentication : " +oAuth2User.getAttributes());
-        System.out.println("oauth2User :" + oAuth.getAttributes());
-        return "oauth정보확인하기";
-    }
-
-
-
-
-
 }
