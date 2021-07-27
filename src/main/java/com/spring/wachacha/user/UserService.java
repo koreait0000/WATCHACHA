@@ -47,7 +47,7 @@ public class UserService {
                         "<a href=\"http://localhost:8090/auth?email=%s&authCd=%s\">링크를 클릭하여 이메일 인증</a>"
                 , user.getEmail(), authCd);
         emailService.sendMimeMessage(user.getEmail(), subject, txt);
-
+//test
         return result;
 
     }
