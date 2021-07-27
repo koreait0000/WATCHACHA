@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/css/common/header.css">
 <script defer src="/js/common/common.js"></script>
 
@@ -10,9 +11,19 @@
             <div class="header_left">
                 <a href="/"><img class="logo" src="/img/왓챠로고/wachacha.png"></a>
             </div>
-            <div class="header_right">
-                <a  class="loginBtn" href="/loginForm">로그인</a>
-            </div>
+
+            <c:choose>
+                <c:when test="${empty loginForm}">
+                    <div class="header_right">
+                        <a  class="loginBtn" href="/loginForm">로그인</a>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <div class="header_right">
+                        <a  class="loginBtn" href="/joinForm">회원가입</a>
+                    </div>
+                </c:otherwise>
+            </c:choose>
         </div>
     </sec:authorize>
 
