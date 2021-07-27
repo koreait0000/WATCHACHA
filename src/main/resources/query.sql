@@ -6,6 +6,7 @@ CREATE TABLE t_user(
     nm VARCHAR(50) NOT NULL,
     grade VARCHAR(50) DEFAULT NULL,
     authCd CHAR(5) COMMENT '회원가입 인증코드, null이면 인증받은 상태, 값이 있으면 인증해야 되는 상태',
+    auth varchar(10),
     tel CHAR(13) COMMENT '연락처',
     mainProfile VARCHAR(50),
     regdt DATETIME DEFAULT NOW()

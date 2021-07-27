@@ -16,6 +16,8 @@
         AND provider = #{provider}
     </select>
 
-
+    <update id="updateAuth">
+        update t_user set auth = null where email = #{email}
+    </update>
 
 </mapper>

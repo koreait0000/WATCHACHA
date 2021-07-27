@@ -50,6 +50,7 @@ public class PricipalOauth2UserService extends DefaultOAuth2UserService {
             System.out.println("email: " + userInfo.getEmail());
         }else if (userRequest.getClientRegistration().getRegistrationId().equals("kakao")){
         System.out.println("카카오로그인 요청");
+
         userInfo = new KakaoUserInfo((Map<String, Object>) oAuth2User.getAttributes().get("kakao_account"));
     }
         else {
