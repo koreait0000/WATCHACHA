@@ -51,14 +51,14 @@ public class PricipalOauth2UserService extends DefaultOAuth2UserService {
         }else if (userRequest.getClientRegistration().getRegistrationId().equals("kakao")){
         System.out.println("카카오로그인 요청");
         userInfo = new KakaoUserInfo((Map<String, Object>) oAuth2User.getAttributes().get("properties"));
-
-            LinkedHashMap propertiesData = (LinkedHashMap) oAuth2User.getAttributes().get("properties");
-
-            mod.remove("properties");
-
-            LinkedHashMap kakaoAccountData = (LinkedHashMap) mod.get("kakao_account");
-            mod.putAll(kakaoAccountData);
-            mod.remove("kakao_account");
+//
+//            LinkedHashMap propertiesData = (LinkedHashMap) oAuth2User.getAttributes().get("properties");
+//
+//            mod.remove("properties");
+//
+//            LinkedHashMap kakaoAccountData = (LinkedHashMap) mod.get("kakao_account");
+//            mod.putAll(kakaoAccountData);
+//            mod.remove("kakao_account");
 
 
 
