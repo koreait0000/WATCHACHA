@@ -21,6 +21,7 @@ public class MainController {
 
     @GetMapping("/show")
     public void show(){
+
     }
 
     @GetMapping("/searchResult")
