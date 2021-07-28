@@ -31,6 +31,14 @@ public class UserService {
 
     //UserDetailsServiceImpl userDetails = new UserDetailsServiceImpl();
 
+    public String lossPw(UserEntity user){
+        String authCd = commonUtils.getRandomDigit(6);
+        System.out.println(authCd);
+        String subject = "[WATCHACHA] 이메일 인증번호가 도착하였습니다.";
+        String txt = String.format("<div>인증 번호는 %s입니다.</div>", authCd);
+        emailService.sendMimeMessage(user.getEmail(), subject, txt);
+        return authCd;
+    }
 
     public int join(UserEntity user) {
         //비밀번호 암호화
