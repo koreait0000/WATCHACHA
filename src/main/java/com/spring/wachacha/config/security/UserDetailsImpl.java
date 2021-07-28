@@ -1,6 +1,7 @@
 package com.spring.wachacha.config.security;
 
 import com.spring.wachacha.user.model.UserEntity;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -8,6 +9,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import java.util.Collection;
 import java.util.Map;
 
+@Data
 public class UserDetailsImpl implements UserDetails, OAuth2User {
 
 

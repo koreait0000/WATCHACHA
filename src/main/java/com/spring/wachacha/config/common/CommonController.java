@@ -13,6 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class CommonController {
@@ -31,6 +33,7 @@ public class CommonController {
     @GetMapping("/loginForm")
     public void loginForm(@AuthenticationPrincipal UserDetailsImpl userDetails, Model model, String auth){
         if(userDetails != null){
+            System.out.println(userDetails.getUser());
             return;
         }
         model.addAttribute("loginForm","loginForm");
@@ -68,9 +71,18 @@ public class CommonController {
         return "redirect:/loginForm?auth=0";
     }
 
+    @ResponseBody
+    @GetMapping("/lossPw")
+    public Map<String, Object> lossPw(UserEntity user){
+        Map<String, Object> map = new HashMap<>();
+        map.put("auth",service.lossPw(user));
+        return map;
+    }
+
     @GetMapping("/auth")
     public String auth (UserEntity userEntity){
         service.auth(userEntity);
         return "redirect:/loginForm?auth=1";
     }
+
 }

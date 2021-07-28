@@ -96,3 +96,7 @@ form input{
     display: flex;
     justify-content: center;
 }
+
+p {
+    cursor: pointer;
+}

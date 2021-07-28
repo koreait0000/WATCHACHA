@@ -26,7 +26,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         UserEntity param = new UserEntity();
         param.setProvider(provider);
         param.setEmail(email);
-        System.out.println(param);
         UserEntity result = mapper.selUser(param);
         if(result == null) {
             result = new UserEntity();
