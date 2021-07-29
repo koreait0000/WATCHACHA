@@ -26,11 +26,12 @@
 
 <main style="z-index: 3">
   <tiles:insertAttribute name="content"></tiles:insertAttribute>
+  <div class="margin100"></div>
 </main>
+
 <footer>
   <tiles:insertAttribute name="footer"></tiles:insertAttribute>
 </footer>
-
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
