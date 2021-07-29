@@ -6,8 +6,8 @@
 <div class="web_wapper">
     <div class="movieInfoSection">
         <br>
-
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
             <div class="saerch">
                 <div class="search_bar">
                     <i class="fas fa-search"></i>
@@ -17,6 +17,7 @@
                     </form>
                 </div>
             </div>
+
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -24,24 +25,24 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/img/main/mainpage/1.jpg" class="d-block w-200" alt="...">
+                    <div class="movie_info_section">
+                        <img src="/img/main/mainpage/라라랜드.jpg" class="d-block w-100" alt="...">
+                        <div class="movie_info_section1">
+                            <h4>새로운 컨텐츠 조현민 바보바보 개 재밌네 쿠르 삥뽕</h4>
+                            <span>안녕하세요</span>
+                        </div>
+                    </div>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="/img/main/mainpage/슬기로운생활.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="/img/main/mainpage/라라랜드.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
                     </div>
                 </div>
             </div>
@@ -54,39 +55,6 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-
-
-<%--        <div class="search_bar">--%>
-<%--            <i class="fas fa-search"></i>--%>
-<%--            <form class="search_form" action="searchResult" method="get">--%>
-<%--                <input type="text" name="searchbar"autofocus placeholder="search">--%>
-<%--                <button></button>--%>
-<%--            </form>--%>
-<%--        </div>--%>
-
-<%--        <div class="web_header">--%>
-<%--            <div class="movie__section">--%>
-<%--                <h2>미나리</h2>--%>
-<%--                <p>Minari  2021  Drama</p>--%>
-<%--                <p>최근 한달간 시청률 상위 5%작품</p>--%>
-<%--                <p>--%>
-<%--                    “미나리는 어디서든 잘 자라” 낯선 미국, 아칸소로 떠나온 한국가족들에게 뭔가 해내는--%>
-<%--                    걸 보여주고 싶은 아빠 ‘제이콥’ 은 자신만의 농장을 가꾸기 시작하고 엄마 ‘모니카’도--%>
-<%--                    다시 일자리를 찾는다. 아직 어린아이들을 위해 모니카의 엄마 순자가 함께 살기로 하고--%>
-<%--                    가방 가득 고춧가루, 멸치, 한약 그리 고 미나리를 담은 할머니가 도착한다.--%>
-<%--                </p>--%>
-<%--                <P>--%>
-<%--                    감독 정이삭<br>--%>
-<%--                    출연 윤여정,스티브연,한예리<br>--%>
-<%--                    드라마 | 미국 | 2021년<br>--%>
-<%--                </P>--%>
-
-<%--                <button class="playbutton">--%>
-<%--                    <i class="fas fa-play-circle"></i>--%>
-<%--                    <h4>재생</h4>--%>
-<%--                </button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
     </div><%--End movieInfoSection--%>
 
 

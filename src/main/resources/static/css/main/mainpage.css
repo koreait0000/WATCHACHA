@@ -2,89 +2,29 @@
     background-color: 0C0C10;
     width: 100%;
     height: 800%;
+    min-width: 800px;
 }
 .movieInfoSection{
     min-width: 800px;
     width: 100%;
-    height: 679px;
-    /*background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("/img/main/mainpage/1.jpg");*/
-    background-size: cover;
-    background-position: center;
 }
 #carouselExampleCaptions{
     position: relative;
     top: -23px;
 }
-
-.carousel-inner img{
+.movie_info_section1{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 118px;
+    left: 40px;
+}
+.carousel-item img{
     width: 100%;
-    height: 679px;
+    height: 100vh;
     background-size: cover;
     background-position: center;
 }
-.web_header{
-    margin-top: 80px;
-    margin-left: 40px;
-    width: 528px;
-    height: 473px;
-    display: flex;
-}
-
-/*미나리 글 */
-.movie__section h2{
-    font-weight: bold;
-    font-size: 45px;
-    color: #FFFFFF;
-    padding-top: 42.26px;
-    padding-left: 28.68px;
-}
-.movie__section>p:nth-child(2){
-    font-size: 14px;
-    font-weight: bold;
-    padding-left: 31px;
-}
-.movie__section>p:nth-child(3){
-    padding-left: 26.36px;
-    font-size: 16px;
-}
-.movie__section>p:nth-child(4){
-    padding-left: 27.36px;
-    font-weight: bold;
-    font-size: 14px;
-    color: rgba(255,255,255,0.7);
-}
-.movie__section>p:nth-child(5){
-    font-weight: bold;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.65);
-    padding-left: 28px;
-
-}
-
-.movie__section p{
-    color: #FFFFFF;
-    padding-top: 5px;
-}
-/*버튼*/
-.playbutton{
-    margin-left: 32.85px;
-    margin-top: 16px;
-    width: 100.3px;
-    height: 42.78px;
-    background-color: D73068;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFFFFF;
-    border-radius: 10px;
-}
-#recaptcha{
-    border-radius: 30px;
-}
-.playbutton i{ font-size: 24px; }
-.playbutton h4{ font-size: 14px; padding-left: 7px; }
-
-
 /****************************************************************************************************************************************************************/
 .saerch{
     display: flex;
