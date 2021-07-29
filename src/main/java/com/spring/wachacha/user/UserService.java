@@ -40,6 +40,20 @@ public class UserService {
         return authCd;
     }
 
+    public int selUser(UserEntity user){
+        if(userMapper.selUser(user) == null){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
+
+    public int editPw(UserEntity user){
+        String hashPw = passwordEncoder.encode(user.getPw());
+        user.setPw(hashPw);
+        return userMapper.editPw(user);
+    }
+
     public int join(UserEntity user) {
         //비밀번호 암호화
         String authCd = commonUtils.getRandomDigit(6);

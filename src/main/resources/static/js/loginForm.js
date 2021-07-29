@@ -7,28 +7,98 @@ let email = document.querySelector('.email');
 let getPw = document.querySelector('#getPw');
 let authCd = document.querySelector('.authCd');
 let btnGetPw = document.querySelector('#btnGetPw');
-
+let emailDiv = document.querySelector('#emailDiv');
 lossPw.addEventListener('click', () =>{
     modal.classList.remove('hidden'); //모달 on
 
     sendMail.addEventListener('click', ()=>{
-        sendMail.classList.add('hidden');
-        authCheck.classList.remove('hidden');
-        getPw.classList.remove('hidden');
-        fetch('/lossPw?email='+email.value)
-            .then(res => res.json())
+        fetch('/editPw',{
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email.value
+            })
+        })
+            .then(res=>res.json())
             .then(myJson => {
-                btnGetPw.addEventListener('click',()=>{
-                    if(myJson.auth == authCd.value){
-                        email.readOnly = 'true';
-                        authCheck.classList.add('hidden');
-                        // getPw.classList.add('hidden');
-                        let pwElem = document.createElement('input');
-                        sendMail.append(pwElem);
-                        btnGetPw.innerHTML='비밀번호 변경';
-                    }
-                });
+                let spanElem = document.createElement('span');
+                switch (myJson){
+                    case 0:
+                        spanElem.classList.add('spanElem');
+                        spanElem.innerHTML='<br>존재하지 않는 이메일입니다.';
+                        emailDiv.append(spanElem);
+                        break;
+                    case 1:
+                        if(document.querySelector('.spanElem')){
+                            emailDiv.removeChild(document.querySelector('.spanElem'));
+                        }
+                        sendMail.classList.add('hidden');
+                        authCheck.classList.remove('hidden');
+                        getPw.classList.remove('hidden');
+                        fetch('/lossPw?email='+email.value)
+                            .then(res => res.json())
+                            .then(myJson => {
+                                btnGetPw.addEventListener('click',()=>{
+                                    if(myJson.auth == authCd.value){
+                                        email.readOnly = 'true';
+                                        authCd.classList.add('hidden');
+                                        getPw.classList.add('hidden');
+                                        let divElem = document.createElement('div');
+                                        let divElem2 = document.createElement('div');
+                                        let pwElem2 = document.createElement('input');
+                                        let pwElem = document.createElement('input');
+                                        let btnElem = document.createElement('button');
+                                        authCheck.classList.add('hidden');
+                                        pwElem2.setAttribute('type','text');
+                                        pwElem2.setAttribute('name','editPw2');
+                                        pwElem2.setAttribute('placeholder','비밀번호 확인');
+                                        pwElem.setAttribute('type','text');
+                                        pwElem.setAttribute('name','editPw');
+                                        pwElem.setAttribute('placeholder','비밀번호');
+                                        btnElem.setAttribute('type','button');
+                                        btnElem.setAttribute('id','editPwBtn');
+                                        btnElem.innerText='비밀번호 변경';
+
+                                        divElem.append(pwElem);
+                                        divElem2.append(pwElem2);
+                                        emailDiv.append(divElem);
+                                        emailDiv.append(divElem2);
+                                        emailDiv.append(btnElem);
+                                        btnElem.addEventListener('click',()=>{
+                                            if(pwElem.value === pwElem2.value){
+                                                let data = {
+                                                    email : email.value,
+                                                    pw : pwElem.value
+                                                }
+                                                fetch('/editPw',{
+                                                    method: 'post',
+                                                    headers: {
+                                                        'Content-Type': 'application/json'
+                                                    },
+                                                    body: JSON.stringify(data)
+                                                }).then(res => res.json())
+                                                    .then(myJson => {
+                                                        if(myJson == 1){
+                                                            alert('비밀번호가 변경되었습니다.');
+                                                            modal.classList.add('hidden');
+                                                        }else{
+                                                            alert('비밀번호 변경에 실패하였습니다.');
+                                                        }
+                                                    })
+                                            }else{
+                                                alert('비밀번호를 확인해주세요.');
+                                            }
+                                        });
+                                    }else{
+                                        alert('인증번호를 확인해주세요.');
+                                    }
+                                });
+                            });
+                }
             });
+
     });
 });
 

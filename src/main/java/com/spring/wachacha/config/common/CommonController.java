@@ -79,6 +79,15 @@ public class CommonController {
         return map;
     }
 
+    @ResponseBody
+    @PostMapping("/editPw")
+    public int editPw(@RequestBody UserEntity user){
+        if(user.getPw() == null){ //이메일이 있는지 확인 1번째 fetch
+            return service.selUser(user);
+        }
+        return service.editPw(user);
+    }
+
     @GetMapping("/auth")
     public String auth (UserEntity userEntity){
         service.auth(userEntity);
