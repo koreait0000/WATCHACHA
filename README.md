@@ -1,7 +1,10 @@
 <p align="center"><img src="/documents/logo.png"></img></p>
 
+# ER-Diagram
 
+<a href="https://github.com/koreait0000/WATCHACHA/issues/38">ER-Diagram Link</a>
 # Purpose and necessity of products and services<br>
+
 
 [기본 서비스인 넷플릭스와 왓챠플레이의 현황 및 문제점]
 
