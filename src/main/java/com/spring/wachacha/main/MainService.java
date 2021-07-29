@@ -90,7 +90,7 @@ public class MainService {
             String link = (String) jsonObject1.get("link");
             Document doc = Jsoup.connect(link).get();
             String poster = doc.select("div.mv_info_area").select("img").attr("src");
-            String name = doc.select("h3.h_movie").select("a").text();
+            String name = doc.select("h3.h_movie").select("a").first().text();
             testModel.setName(name);
             testModel.setPoster(poster);
             System.out.println(link);

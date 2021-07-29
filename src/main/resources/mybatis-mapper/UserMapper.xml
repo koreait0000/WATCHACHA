@@ -13,11 +13,17 @@
     <select id="selUser" resultType="UserEntity">
         SELECT * FROM t_user
         WHERE email = #{email}
-        AND provider = #{provider}
+        <if test="provider != null">
+            AND provider = #{provider}
+        </if>
     </select>
 
     <update id="updateAuth">
         update t_user set authCd = null where email = #{email}
+    </update>
+
+    <update id="editPw">
+        update t_user set pw = #{pw} where email = #{email}
     </update>
 
 </mapper>
