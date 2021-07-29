@@ -7,7 +7,6 @@
     <div class="movieInfoSection">
         <br>
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-
             <div class="saerch">
                 <div class="search_bar">
                     <i class="fas fa-search"></i>
@@ -17,7 +16,6 @@
                     </form>
                 </div>
             </div>
-
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -56,6 +54,7 @@
             </button>
         </div>
     </div><%--End movieInfoSection--%>
+
 
 
         <%--박스오피스랭킹--%>

@@ -1,12 +1,17 @@
 .web_wapper{
     background-color: 0C0C10;
     width: 100%;
-    height: 800%;
     min-width: 800px;
 }
+
 .movieInfoSection{
     min-width: 800px;
     width: 100%;
+    height: auto;
+}
+.movie_info_section{
+    width: 100%;
+    height: 100%;
 }
 #carouselExampleCaptions{
     position: relative;
@@ -21,9 +26,15 @@
 }
 .carousel-item img{
     width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+    height: auto;
+}
+.carousel-inner{
+    min-width: 800px;
+    min-height: 800px;
+}
+.carousel slide{
+    width: 100%;
+    height: auto;
 }
 /****************************************************************************************************************************************************************/
 .saerch{

@@ -1,5 +1,4 @@
 *{margin: 0; font-family:"Noto Sans KR", sans-serif; list-style: none;  text-decoration: none;}
-html, body{ width: 100%; height: 100vh;}
 h3{font-family: Noto Sans; font-style: normal; font-weight: 600; font-size: 17px; line-height: 123.7%; color: white;}
 p{ font-family: Noto Sans; font-style: normal; font-weight: 600; font-size: 12px; line-height: 154.7%;}
 
@@ -22,7 +21,7 @@ footer li{
 .container{
     min-width: 700px;
     width: 100%;
-    height: 80%;
+    height: 10;
     padding: 0 15px;
     display: flex;
     justify-content: space-evenly;
@@ -44,4 +43,4 @@ footer li{
 .Support{width: 90px; height: 100px;}
 .Contact_US{width: 335px; height: 126px;}
 .bottom{height: 20%;}
-.bottom h4{text-align: center; align-items: center; color: white; font-weight: 200; }
+.bottom h4{text-align: center; align-items: center; color: white; font-weight: 200; margin: 0; padding: 0; }

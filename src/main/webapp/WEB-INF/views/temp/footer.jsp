@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="/css/common/footer.css">
 <footer>
     <div class="footer container">
-
         <div class="About">
             <h3>ABOUT US</h3>
             <p>We are the team that achieves the best efficiency in a short time no matter what mission we give.
