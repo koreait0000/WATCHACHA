@@ -31,9 +31,13 @@
     </div>
 <%--    비밀번호 찾기 모달창--%>
     <div id="modal" class="hidden">
-        <div id="emailDiv"><input type="email" class="email" name="email" required placeholder="이메일"></div>
-        <button id="sendMail" type="button" class="goAuth">인증번호 발송</button>
-        <div id="authCheck" class="hidden">인증번호 : <input class="authCd" type="text" name="auth" required></div>
-        <div id="getPw" class="hidden"><button id="btnGetPw" type="button">비밀번호 찾기</button> </div>
+        <div class="modal_box">
+            <div class="modal_box1">
+                <div id="emailDiv"><input type="email" class="email" name="email" required placeholder="이메일"></div>
+                <button id="sendMail" type="button" class="goAuth">인증번호 발송</button>
+                <div id="authCheck" class="hidden">인증번호 : <input class="authCd" type="text" name="auth" required></div>
+                <div id="getPw" class="hidden"><button id="btnGetPw" type="button">비밀번호 찾기</button> </div>
+            </div>
+        </div>
     </div>
 <script src="/js/loginForm.js"></script>

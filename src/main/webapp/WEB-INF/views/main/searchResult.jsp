@@ -11,6 +11,13 @@
                 </c:if>
                 <c:if test="${empty test.poster}">
                     <span class="param_searchbar2">검색결과가 없습니다.</span>
+                    <div class="falesWapper">
+                        <div class="falesWapper_center">
+                            <img src="/img/main/searchResult/image 1.png">
+                            <h2>헤헤헷 검색결과가 없습니다.<br>
+                                네이버 api가 이정도 입니다.</h2>
+                        </div>
+                    </div>
                 </c:if>
             </div>
 

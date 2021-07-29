@@ -7,7 +7,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mysql://localhost:3308/watchacha
     username: root
-    password: root
+    password: koreait
 
   mail:
     host: smtp.gmail.com
