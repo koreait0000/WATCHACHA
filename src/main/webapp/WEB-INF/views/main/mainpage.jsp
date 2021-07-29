@@ -108,3 +108,4 @@
             </div>
         </div>
 </div><%--End web_wapper--%>
+<script src="/js/mainpage.js"></script>

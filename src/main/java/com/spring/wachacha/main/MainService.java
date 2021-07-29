@@ -68,7 +68,6 @@ public class MainService {
 
         try {
             text = URLEncoder.encode(searchbar, "UTF-8");
-            System.out.println("인코딩후 text " + text);
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException("검색어 인코딩 실패",e);
         }
