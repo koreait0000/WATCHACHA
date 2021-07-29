@@ -64,9 +64,9 @@
 <p align="center"><img width="70%" src="/documents/KakaoTalk_20210712_164704108.jpg"></img></p>
 
 # functional design<br>
-<a>https://www.figma.com/file/DQxGPTqXLNgpYwFeIU1spH/%EC%99%80%EC%B1%A0%EC%B1%A0</a>
 ※Click to see the enlarged original image.
-
+피그마주소
+<a href="https://www.figma.com/file/DQxGPTqXLNgpYwFeIU1spH/%EC%99%80%EC%B1%A0%EC%B1%A0">피그마</a><br>
 <table>
 	<tbody>
 		<tr><th colspan="2">Main Page Design</th></tr>
