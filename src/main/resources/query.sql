@@ -10,3 +10,16 @@ CREATE TABLE t_user(
     mainProfile VARCHAR(50),
     regdt DATETIME DEFAULT NOW()
 );
+
+CREATE TABLE t_user_follow (
+    from_iuser INT UNSIGNED,
+    to_iuser INT UNSIGNED,
+    PRIMARY KEY (from_iuser, to_iuser)
+);
+
+CREATE TABLE t_movie_fav (
+    iuser INT UNSIGNED,
+    title VARCHAR(30) NOT NULL,
+    image VARCHAR(60),
+    PRIMARY KEY (iuser, title)
+);
