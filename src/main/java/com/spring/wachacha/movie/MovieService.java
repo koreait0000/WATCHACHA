@@ -26,7 +26,7 @@ public class MovieService {
     public MovieEntity findByKeyword(String keyword){
         return movieApiClient.requestMovie(keyword);
     }
-
+//test
     public void info(String keyword){
 
     }
