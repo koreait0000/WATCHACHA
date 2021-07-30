@@ -10,9 +10,11 @@
                 <h3>로그인</h3>
                 <p id="lossPw">비밀번호를 잊어버리셨나요?</p>
             </div>
-            <c:if test="${auth eq 0 }"><span>이메일 인증을 해주세요.</span></c:if>
-            <c:if test="${auth eq 1 }"><span>이메일 인증이 완료되었습니다.</span></c:if>
-            <c:if test="${param.param ne error}">아이디 또는 비밀번호를 확인해주세요.</c:if>
+            <div class="errorMassage">
+                <c:if test="${auth eq 0 }"><span>이메일 인증을 해주세요.</span></c:if>
+                <c:if test="${auth eq 1 }"><span>이메일 인증이 완료되었습니다.</span></c:if>
+                <c:if test="${param.param ne error}">아이디 또는 비밀번호를 확인해주세요.</c:if>
+            </div>
             <form class="loginform" action="/login" method="post">
                 <input class="upper" type="text" name="email" placeholder="  이메일(example@gamil.com)">
                 <input class="down" type="password" name="password" placeholder="  비밀번호">
@@ -31,9 +33,20 @@
     </div>
 <%--    비밀번호 찾기 모달창--%>
     <div id="modal" class="hidden">
-        <div id="emailDiv"><input type="email" class="email" name="email" required placeholder="이메일"></div>
-        <button id="sendMail" type="button" class="goAuth">인증번호 발송</button>
-        <div id="authCheck" class="hidden">인증번호 : <input class="authCd" type="text" name="auth" required></div>
-        <div id="getPw" class="hidden"><button id="btnGetPw" type="button">비밀번호 찾기</button> </div>
+        <div class="modal_aline">
+            <div class="modal_box">
+                <div class="modal_box1">
+                    <div class="modal_box1_header">
+                        <h3>비밀번호찾기</h3>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="PasswordErrorMassage"></div>
+                        <div id="emailDiv"><input type="email" class="email" name="email" required placeholder="이메일(example@gmail.com)"></div>
+                        <button id="sendMail" type="button" class="goAuth">인증번호 발송</button>
+                        <div id="authCheck" class="hidden"><label><input class="authCd" type="text" name="auth" required placeholder="인증번호"></label></div>
+                        <div id="getPw" class="hidden"><button id="btnGetPw" type="button">비밀번호 찾기</button> </div>
+                </div>
+            </div>
+        </div>
     </div>
 <script src="/js/loginForm.js"></script>

@@ -22,6 +22,7 @@
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
+
                 <div class="carousel-item active">
                     <div class="movie_info_section">
                         <img src="/img/main/mainpage/라라랜드.jpg" class="d-block w-100" alt="...">
@@ -33,13 +34,23 @@
                     <div class="carousel-caption d-none d-md-block">
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img src="/img/main/mainpage/슬기로운생활.png" class="d-block w-100" alt="...">
+                    <div class="movie_info_section1">
+                        <h4>새로운 컨텐츠 조현민 바보바보 개 재밌네 쿠르 삥뽕</h4>
+                        <span>안녕하세요</span>
+                    </div>
                     <div class="carousel-caption d-none d-md-block">
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img src="/img/main/mainpage/라라랜드.jpg" class="d-block w-100" alt="...">
+                    <div class="movie_info_section1">
+                        <h4>새로운 컨텐츠 조현민 바보바보 개 재밌네 쿠르 삥뽕</h4>
+                        <span>안녕하세요</span>
+                    </div>
                     <div class="carousel-caption d-none d-md-block">
                     </div>
                 </div>
@@ -66,16 +77,18 @@
             <hr>
             <div class="Box__Office__poster">
                 <c:forEach var="i" items="${map.rankPoster}" varStatus="status">
-                    <div class="Box__Office__poster1">
-                        <img src="<c:out value="${i}"></c:out>">
-                        <div class="Box__Office__poster__info">
-                            <span style="color: #FFFFFF"><c:out value="${map.name[status.index]}"></c:out></span><br>
-                            <span style="color: #FFFFFF"><c:out value="${map.open[status.index]}"></c:out></span>
-                            <span style="color: yellow">
-                                   <i class="fas fa-star"><c:out value="${map.chart_num[status.index]}"></c:out></i>
-                               </span>
+                    <a href="/movie/detail?keyword=${map.name[status.index]}">
+                        <div class="Box__Office__poster1">
+                            <img src="<c:out value="${i}"></c:out>">
+                            <div class="Box__Office__poster__info">
+                                <span style="color: #FFFFFF"><c:out value="${map.name[status.index]}"></c:out></span><br>
+                                <span style="color: #FFFFFF"><c:out value="${map.open[status.index]}"></c:out></span>
+                                <span style="color: yellow">
+                                       <i class="fas fa-star"><c:out value="${map.chart_num[status.index]}"></c:out></i>
+                                   </span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </c:forEach>
             </div>
         </div><%--End of BoxOfficeRanking--%>
