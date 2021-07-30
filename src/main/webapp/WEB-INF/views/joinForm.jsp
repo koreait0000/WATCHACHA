@@ -18,7 +18,7 @@
                 <button class="loginBtn">회원가입</button>
             </form>
 <%--            <div class="joinForm footer">--%>
-<%--                <label>--%>
+<%--                <label>--%>aa
 <%--                    <input class="upper" type="checkbox" required placeholder="전체약간에 동의합니다."> <br>--%>
 <%--                </label>--%>
 <%--                <label>--%>
