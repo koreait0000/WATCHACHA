@@ -1,4 +1,4 @@
-header{ position: fixed; top: 0;  height: 83px; width: 100%}
+header{ position: fixed; top: 0;  height: 83px; width: 100%; min-width: 764px}
 .header_container{  display: flex; justify-content: space-between; padding: 0 2%; }
 .header_left>a>img{ width: 140px; margin-top: 10px;}
 .header_right{padding-top: 25px; display: flex}
