@@ -3,18 +3,15 @@
     width: 100%;
     min-width: 800px;
 }
-
 .movieInfoSection{
     min-width: 800px;
     width: 100%;
     height: auto;
 }
-.movie_info_section{
-    width: 100%;
-    height: 100%;
-}
 #carouselExampleCaptions{
     position: relative;
+    width: 100%;
+    height: auto;
     top: -23px;
 }
 .movie_info_section1{
@@ -28,15 +25,11 @@
     width: 100%;
     height: auto;
 }
-.carousel-inner{
-    min-width: 800px;
-    min-height: 800px;
-}
 .carousel slide{
     width: 100%;
     height: auto;
 }
-/****************************************************************************************************************************************************************/
+/****************************************************************************/
 .saerch{
     display: flex;
     justify-content: center;
@@ -102,8 +95,8 @@
     color: rgba(255, 255, 255, 0.75);
 }
 
-/*********************************************************************************************************************************************************************/
-.Box__Office__Ranking1{
+/********************************박스오피스 랭킹*****************************************************/
+.Box__Office__Ranking__header{
     display: flex;
     color: #FFFFFF;
     padding-left: 64px;
@@ -116,10 +109,10 @@
     margin: 0 auto;
 }
 .Box__Office__poster{
+    width: 100%;
     margin-top: 20px;
     margin-left: 30px;
     display: flex;
-    overflow: hidden;
 }
 .Box__Office__poster img{
     margin: 0 32px;
@@ -164,6 +157,12 @@
     letter-spacing: -0.04em;
     color: rgba(255, 255, 255, 0.65);
 }
+/*연습*/
 
-
-
+.test{
+    background-color: white;
+    display: flex;
+}
+.innerTest1{ width: 100vw; height: 322px; background-color: lightcoral;}
+.innerTest2{ width: 100vw; height: 322px; background-color: cornflowerblue;}
+.innerTest3{ width: 100vw; height: 322px; background-color: indianred;}

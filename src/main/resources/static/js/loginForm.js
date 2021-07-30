@@ -53,9 +53,11 @@ lossPw.addEventListener('click', () =>{
                                         pwElem2.setAttribute('type','text');
                                         pwElem2.setAttribute('name','editPw2');
                                         pwElem2.setAttribute('placeholder','비밀번호 확인');
+                                        pwElem2.setAttribute('class', 'pw2')
                                         pwElem.setAttribute('type','text');
                                         pwElem.setAttribute('name','editPw');
                                         pwElem.setAttribute('placeholder','비밀번호');
+                                        pwElem.setAttribute('class', 'pw1')
                                         btnElem.setAttribute('type','button');
                                         btnElem.setAttribute('id','editPwBtn');
                                         btnElem.innerText='비밀번호 변경';
@@ -66,6 +68,10 @@ lossPw.addEventListener('click', () =>{
                                         emailDiv.after(divElem2);
                                         emailDiv.after(divElem);
                                         btnElem.addEventListener('click',()=>{
+                                            if(pwElem.value === ''){
+                                                alert('변경할 비밀번호를 입력해주세요');
+                                                return;
+                                            }
                                             if(pwElem.value === pwElem2.value){
                                                 let data = {
                                                     email : email.value,

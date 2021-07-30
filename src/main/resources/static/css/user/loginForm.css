@@ -124,17 +124,15 @@ p {
     margin: 0 auto;
     width: 300px;
     height: 300px;
-    border: 1px solid white;
-    border-radius: 10px;
 }
 .modal_box1_header{ display: flex; justify-content: space-between; color: white;}
-.modal_box1_header h3{ font-style: normal; font-weight: 600; font-size: 17px;}
-.modal_box1_header>.fas{ font-size: 18px;}
+.modal_box1_header h3{ font-style: normal; font-weight: 500; font-size: 17px; color: rgba(255, 255, 255, 0.82);}
+.modal_box1_header>.fas{ font-size: 18px; color: rgba(255, 255, 255, 0.82);}
 .modal_box1_header>.fas:hover{cursor: pointer;}
 .PasswordErrorMassage{
     color: white;
     width: 300px;
-    height: 52px;
+    height: 7px;
     font-size: 12px;
     padding-left: 9px;
 }
@@ -145,7 +143,8 @@ p {
     height: 55px;
     border-radius: 12px;
     background-color: #FFFFFF;
-    margin-bottom: 15px;
+    margin-bottom: 13px;
+    margin-top: 34px;
     padding: 8px;
 }
 .modal_box1>#sendMail{
@@ -170,13 +169,38 @@ p {
 }
 #btnGetPw{
     width: 100%;
-    background-color: crimson;
+    background: rgba(248, 47, 98, 0.65);
     height: 48px;
     border-radius: 11px;
-    margin-top: 17px;
-    color: white;
+    margin-top: 13px;
+    color: rgba(255, 255, 255, 0.82);
     font-family: 'Noto Sans KR';
     font-size: 17px;
     font-weight: 500;
-
+}
+#editPwBtn{
+    width: 100%;
+    background: rgba(248, 47, 98, 0.65);
+    height: 51px;
+    border-radius: 14px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 16px;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+}
+.pw1{
+    width: 100%;
+    background-color: white;
+    height: 56px;
+    padding: 10px;
+    border-radius: 13px;
+}
+.pw2{
+    width: 100%;
+    background-color: white;
+    height: 56px;
+    padding: 10px;
+    border-radius: 13px;
+    margin-top: 13px;
+    margin-bottom: 13px;
 }
