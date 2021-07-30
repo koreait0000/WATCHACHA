@@ -17,6 +17,5 @@ public class MovieEntity {
         public String director; //검색 결과 영화의 감독.
         public String actor; //검색 결과 영화의 출연 배우.
         public float userRating; //검색 결과 영화에 대한 유저들의 평점.
-
     }
 }
