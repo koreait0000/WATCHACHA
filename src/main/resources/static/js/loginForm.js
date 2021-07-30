@@ -8,9 +8,11 @@ let getPw = document.querySelector('#getPw');
 let authCd = document.querySelector('.authCd');
 let btnGetPw = document.querySelector('#btnGetPw');
 let emailDiv = document.querySelector('#emailDiv');
+let loginModal = document.querySelector('.loginModal');
+let PasswordErrorMassage = document.querySelector('.PasswordErrorMassage');
 lossPw.addEventListener('click', () =>{
     modal.classList.remove('hidden'); //모달 on
-
+    loginModal.classList.add('hidden');//로그인창 hide
     sendMail.addEventListener('click', ()=>{
         fetch('/editPw',{
             method: 'post',
@@ -23,16 +25,13 @@ lossPw.addEventListener('click', () =>{
         })
             .then(res=>res.json())
             .then(myJson => {
-                let spanElem = document.createElement('span');
                 switch (myJson){
                     case 0:
-                        spanElem.classList.add('spanElem');
-                        spanElem.innerHTML='<br>존재하지 않는 이메일입니다.';
-                        emailDiv.append(spanElem);
+                        PasswordErrorMassage.innerHTML='<br>존재하지 않는 이메일입니다.';
                         break;
                     case 1:
-                        if(document.querySelector('.spanElem')){
-                            emailDiv.removeChild(document.querySelector('.spanElem'));
+                        if(PasswordErrorMassage){
+                            PasswordErrorMassage.classList.add('hidden');
                         }
                         sendMail.classList.add('hidden');
                         authCheck.classList.remove('hidden');
@@ -63,9 +62,9 @@ lossPw.addEventListener('click', () =>{
 
                                         divElem.append(pwElem);
                                         divElem2.append(pwElem2);
-                                        emailDiv.append(divElem);
-                                        emailDiv.append(divElem2);
-                                        emailDiv.append(btnElem);
+                                        emailDiv.after(btnElem);
+                                        emailDiv.after(divElem2);
+                                        emailDiv.after(divElem);
                                         btnElem.addEventListener('click',()=>{
                                             if(pwElem.value === pwElem2.value){
                                                 let data = {

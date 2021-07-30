@@ -5,9 +5,14 @@ server:
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mysql://localhost:3308/watchacha
+    url: jdbc:mysql://localhost:3306/watchacha
     username: root
-    password: koreait
+    password: root
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 30MB
+      location: C:/springImg
 
   mail:
     host: smtp.gmail.com

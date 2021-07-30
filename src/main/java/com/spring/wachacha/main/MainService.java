@@ -1,13 +1,12 @@
 package com.spring.wachacha.main;
 
-import com.spring.wachacha.main.model.TestModel;
+import com.spring.wachacha.main.model.MovieSearchModel;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -59,8 +58,8 @@ public class MainService {
         return map;
     }
 
-    public TestModel searchResult(String searchbar) {
-        TestModel testModel = new TestModel();
+    public MovieSearchModel searchResult(String searchbar) {
+        MovieSearchModel movieSearchModel = new MovieSearchModel();
         String clientId = "kKpU7wItpaTp7lBzqcNo"; //애플리케이션 클라이언트 아이디값"
         String clientSecret = "isV9qCZKQW"; //애플리케이션 클라이언트 시크릿값"
 
@@ -83,15 +82,15 @@ public class MainService {
         JSONParser jParser = new JSONParser();
         try {
             JSONObject jsonObject = (JSONObject) jParser.parse(responseBody);
-            TestModel t = new TestModel();
+            MovieSearchModel t = new MovieSearchModel();
             t.setList((List<JSONObject>) jsonObject.get("items"));
             JSONObject jsonObject1 = t.getList().get(0);
             String link = (String) jsonObject1.get("link");
             Document doc = Jsoup.connect(link).get();
             String poster = doc.select("div.mv_info_area").select("img").attr("src");
             String name = doc.select("h3.h_movie").select("a").first().text();
-            testModel.setName(name);
-            testModel.setPoster(poster);
+            movieSearchModel.setName(name);
+            movieSearchModel.setPoster(poster);
             System.out.println(link);
             Elements el = doc.select("ul.thumb_link_mv").select("li");
 //            System.out.println(el);
@@ -104,11 +103,11 @@ public class MainService {
                 map.put("relevantName", relevantName);
                 relevant.add(map);
             }
-            testModel.setRelevant(relevant);
+            movieSearchModel.setRelevant(relevant);
         } catch (Exception e){
             e.printStackTrace();
         }
-        return testModel;
+        return movieSearchModel;
     }
 
     private static String get(String apiUrl, Map<String, String> requestHeaders){

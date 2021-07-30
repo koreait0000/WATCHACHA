@@ -25,6 +25,28 @@
     <update id="editPw">
         update t_user set pw = #{pw} where email = #{email}
     </update>
+    <update id="updUser">
+        UPDATE t_user
+        <set>
+            <if test="mainProfile != null and mainProfile != '' ">
+                mainProfile = #{mainProfile}
+            </if>
+            <if test="pw != null and pw != '' ">
+                pw = #{pw}
+            </if>
+            <if test="nm != null and nm != '' ">
+                nm = #{nm}
+            </if>
+        </set>
+        WHERE iuser = #{iuser}
+    </update>
+    <update id="updUserMainProfile">
+        UPDATE t_user A
+        INNER JOIN t_user_profile B
+        ON A.iuser = B.iuser
+        AND B.iprofile = #{iprofile}
+        SET A.mainProfile = B.img
+        WHERE A.iuser = #{iuser}
 
 
 
@@ -54,8 +76,6 @@
         WHERE from_iuser = ${from_iuser} AND to_iuser = ${to_iuser}
     </delete>
 
-
-
     <insert id="insMyMovie">
         INSERT INTO t_movie_fav
             (iuser, title, image)
@@ -71,5 +91,11 @@
         DELETE FROM t_movie_fav
         WHERE iuser = ${iuser} AND title = #{title}
     </delete>
+      
+      
 
+        <selectKey order="AFTER" resultType="String" keyColumn="mainProfile" keyProperty="profile_img">
+            SELECT mainProfile FROM t_user WHERE iuser = #{iuser}
+        </selectKey>
+    </update>
 </mapper>
