@@ -25,5 +25,31 @@
     <update id="editPw">
         update t_user set pw = #{pw} where email = #{email}
     </update>
+    <update id="updUser">
+        UPDATE t_user
+        <set>
+            <if test="mainProfile != null and mainProfile != '' ">
+                mainProfile = #{mainProfile}
+            </if>
+            <if test="pw != null and pw != '' ">
+                pw = #{pw}
+            </if>
+            <if test="nm != null and nm != '' ">
+                nm = #{nm}
+            </if>
+        </set>
+        WHERE iuser = #{iuser}
+    </update>
+    <update id="updUserMainProfile">
+        UPDATE t_user A
+        INNER JOIN t_user_profile B
+        ON A.iuser = B.iuser
+        AND B.iprofile = #{iprofile}
+        SET A.mainProfile = B.img
+        WHERE A.iuser = #{iuser}
 
+        <selectKey order="AFTER" resultType="String" keyColumn="mainProfile" keyProperty="profile_img">
+            SELECT mainProfile FROM t_user WHERE iuser = #{iuser}
+        </selectKey>
+    </update>
 </mapper>
