@@ -10,7 +10,7 @@ import java.util.UUID;
 @Component
 public class MyFileUtils {
 
-    @Value("파일 업로드 될 경로") // 추가할것
+    @Value("${spring.servlet.multipart.location}") // 추가할것
     private String uploadFilePath;
 
     // make folder
