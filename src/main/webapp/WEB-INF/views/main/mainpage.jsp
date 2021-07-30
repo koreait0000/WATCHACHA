@@ -77,16 +77,18 @@
             <hr>
             <div class="Box__Office__poster">
                 <c:forEach var="i" items="${map.rankPoster}" varStatus="status">
-                    <div class="Box__Office__poster1">
-                        <img src="<c:out value="${i}"></c:out>">
-                        <div class="Box__Office__poster__info">
-                            <span style="color: #FFFFFF"><c:out value="${map.name[status.index]}"></c:out></span><br>
-                            <span style="color: #FFFFFF"><c:out value="${map.open[status.index]}"></c:out></span>
-                            <span style="color: yellow">
-                                   <i class="fas fa-star"><c:out value="${map.chart_num[status.index]}"></c:out></i>
-                               </span>
+                    <a href="/movie/detail?keyword=${map.name[status.index]}">
+                        <div class="Box__Office__poster1">
+                            <img src="<c:out value="${i}"></c:out>">
+                            <div class="Box__Office__poster__info">
+                                <span style="color: #FFFFFF"><c:out value="${map.name[status.index]}"></c:out></span><br>
+                                <span style="color: #FFFFFF"><c:out value="${map.open[status.index]}"></c:out></span>
+                                <span style="color: yellow">
+                                       <i class="fas fa-star"><c:out value="${map.chart_num[status.index]}"></c:out></i>
+                                   </span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </c:forEach>
             </div>
         </div><%--End of BoxOfficeRanking--%>
