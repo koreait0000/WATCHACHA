@@ -58,8 +58,7 @@ public class MainService {
         return map;
     }
 
-    public MovieSearchModel searchResult(String searchbar) {
-        MovieSearchModel movieSearchModel = new MovieSearchModel();
+    public String naverApi(String searchbar){
         String clientId = "kKpU7wItpaTp7lBzqcNo"; //애플리케이션 클라이언트 아이디값"
         String clientSecret = "isV9qCZKQW"; //애플리케이션 클라이언트 시크릿값"
 
@@ -77,7 +76,12 @@ public class MainService {
         requestHeaders.put("X-Naver-Client-Id", clientId);
         requestHeaders.put("X-Naver-Client-Secret", clientSecret);
         String responseBody = get(apiURL,requestHeaders);
+        return responseBody;
+    }
 
+    public MovieSearchModel searchResult(String searchbar) {
+        MovieSearchModel movieSearchModel = new MovieSearchModel();
+        String responseBody = naverApi(searchbar);
 
         JSONParser jParser = new JSONParser();
         try {
@@ -93,7 +97,6 @@ public class MainService {
             movieSearchModel.setPoster(poster);
             System.out.println(link);
             Elements el = doc.select("ul.thumb_link_mv").select("li");
-//            System.out.println(el);
             List<Map<String, Object>> relevant = new ArrayList<>();
             for (Element e:el) {
                 Map<String, Object> map = new HashMap<>();
