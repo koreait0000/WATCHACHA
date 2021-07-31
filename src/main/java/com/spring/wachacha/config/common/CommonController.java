@@ -41,7 +41,6 @@ public class CommonController {
     }
     //회원가입페이지
     @GetMapping("/joinForm")
-
     public void joinForm(@AuthenticationPrincipal UserDetailsImpl userDetails){
         if(userDetails != null){
             return;
