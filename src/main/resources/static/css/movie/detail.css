@@ -1,5 +1,108 @@
+*{ color: white; font-family: "Noto Sans KR", sans-serif}
 .bg_detail{
-    width: 100%; height: 100%;
+    width: 100%; height: 100vh;
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: center;
+}
+/***************************** 인포 모달 *****************************************/
+.info_modal{
+    width: 58.6%;
+    height: 67%;
+    vertical-align: center;
+    margin-left: 47px;
+    min-width: 474px;
+    max-width: 751px;
+}
+
+.movie_nm{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+    margin-top: 42px;
+    margin-left: 24px;
+}
+.nm_star{
+    display: flex;
+    font-size: 14px;
+    margin-left: 24px;
+}
+.movie_star{
+    margin-left: 15px;
+}
+.movie_summary_title{
+    margin-left: 24px;
+    padding-top: 7px;
+    font-size: 16px;
+    font-family: 'Noto Sans KR';
+    font-weight: bold;
+    font-style: normal;
+}
+/*줄거리*/
+.movie_summary_content{
+    margin-left: 27px;
+    margin-top: 11px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.movie_outline_Div{
+    margin-left: 29px;
+    margin-top: 8px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+}
+.movie_outline_Div div{
+    color: rgba(255, 255, 255, 0.65);
+}
+/*재생버튼*/
+.info_modal_footer{
+    display: flex;
+    align-items: center;
+    margin-left: 26px;
+    margin-top: 33px;
+}
+.movie_play_btn{
+    width: 100px;
+    height: 41px;
+    border-radius: 5px;
+    background-color: D73068;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    margin-right: 16px;
+}
+.movie_fav{
+    font-size: 18px;
+}
+
+
+/******************************모달 btm css임************************************/
+.modal_btn{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 46px;
+}
+.modal_btn>ul{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-size: 20px;
+}
+.modal_btn>ul>li{
+    margin: 0 12px;
+}
+/***************************************************유튜브 모달******************************************/
+.review_Div{
+    display: flex;
 }

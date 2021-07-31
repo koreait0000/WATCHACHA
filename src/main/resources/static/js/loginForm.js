@@ -10,6 +10,8 @@ let btnGetPw = document.querySelector('#btnGetPw');
 let emailDiv = document.querySelector('#emailDiv');
 let loginModal = document.querySelector('.loginModal');
 let PasswordErrorMassage = document.querySelector('.PasswordErrorMassage');
+let close = document.querySelector('.fas');
+
 lossPw.addEventListener('click', () =>{
     modal.classList.remove('hidden'); //모달 on
     loginModal.classList.add('hidden');//로그인창 hide
@@ -181,3 +183,8 @@ function doVaildRecaptcha(email){
         return false;
     }
 }
+// 비밀번호 찾기 모달
+close.addEventListener('click', ()=>{
+    modal.classList.add('hidden'); //모달 on
+    loginModal.classList.remove('hidden');//로그인창 hide
+});
