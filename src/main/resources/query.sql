@@ -31,3 +31,12 @@ CREATE TABLE t_user_profile(
     regdt DATETIME DEFAULT NOW(),
     FOREIGN KEY (iuser) REFERENCES t_user(iuser)
 );
+
+CREATE TABLE t_board (
+    iboard INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(50) NOT NULL,
+    ctnt VARCHAR(500) NOT NULL,
+    regdt DATETIME DEFAULT NOW(),
+    iuser INT UNSIGNED,
+    FOREIGN KEY(iuser) REFERENCES t_user(iuser)
+);

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.wachacha.board.BoardMapper">
+  <insert id="insBoard" useGeneratedKeys="true"
+          keyProperty="iboard">
+    INSERT INTO t_board
+      ( title, ctnt, iuser )
+    VALUES
+      ( #{title}, #{ctnt}, #{iuser} )
+  </insert>
+  <select id="selBoardList" resultType="BoardDomain">
+    SELECT *
+    FROM t_board
+  </select>
+  <select id="selBoard" resultType="BoardDomain">
+    SELECT A.iboard, A.title, A.ctnt, A.iuser, A.regdt
+         , B.unm AS writerNm, B.profileImg
+    FROM t_board A
+           INNER JOIN t_user B
+                      ON A.iuser = B.iuser
+    WHERE A.iboard = #{iboard}
+  </select>
+
+  <update id="updBoard">
+    UPDATE t_board
+    SET title = #{title}
+      , ctnt = #{ctnt}
+    WHERE iboard = #{iboard}
+      AND iuser = #{iuser}
+  </update>
+
+  <delete id="delBoard">
+    DELETE FROM t_board
+    WHERE iboard = #{iboard}
+      AND iuser = #{iuser}
+  </delete>
+</mapper>
