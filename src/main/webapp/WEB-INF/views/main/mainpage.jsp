@@ -69,35 +69,35 @@
         </div>
     </div><%--End movieInfoSection--%>
 
-        <div class="test">
-            <div class="innerTest1"></div>
-            <div class="innerTest2"></div>
-            <div class="innerTest3"></div>
-        </div>
+<%--        <div class="test">--%>
+<%--            <div class="innerTest1"></div>--%>
+<%--            <div class="innerTest2"></div>--%>
+<%--            <div class="innerTest3"></div>--%>
+<%--        </div>--%>
         <%--박스오피스랭킹--%>
-<%--        <div class="Box__Office__Ranking">--%>
-<%--            <div class="Box__Office__Ranking__header">--%>
-<%--                <i class="fas fa-ticket-alt"></i>--%>
-<%--                <h4>Box Office Rankings</h4>--%>
-<%--            </div>--%>
-<%--            <hr>--%>
-<%--            <div class="Box__Office__poster">--%>
-<%--                <c:forEach var="i" items="${map.rankPoster}" varStatus="status">--%>
-<%--                    <a href="/movie/detail?keyword=${map.name[status.index]}">--%>
-<%--                        <div class="Box__Office__poster1">--%>
-<%--                            <img src="<c:out value="${i}"></c:out>">--%>
-<%--                            <div class="Box__Office__poster__info">--%>
-<%--                                <span style="color: #FFFFFF"><c:out value="${map.name[status.index]}"></c:out></span><br>--%>
-<%--                                <span style="color: #FFFFFF"><c:out value="${map.open[status.index]}"></c:out></span>--%>
-<%--                                <span style="color: yellow">--%>
-<%--                                       <i class="fas fa-star"><c:out value="${map.chart_num[status.index]}"></c:out></i>--%>
-<%--                                   </span>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </a>--%>
-<%--                </c:forEach>--%>
-<%--            </div>--%>
-<%--        </div>&lt;%&ndash;End of BoxOfficeRanking&ndash;%&gt;--%>
+        <div class="Box__Office__Ranking">
+            <div class="Box__Office__Ranking__header">
+                <i class="fas fa-ticket-alt"></i>
+                <h4>Box Office Rankings</h4>
+            </div>
+            <hr>
+            <div class="Box__Office__poster">
+                <c:forEach var="i" items="${map.rankPoster}" varStatus="status">
+                    <a href="/movie/detail?keyword=${map.name[status.index]}&page=0">
+                        <div class="Box__Office__poster1">
+                            <img src="<c:out value="${i}"></c:out>">
+                            <div class="Box__Office__poster__info">
+                                <span style="color: #FFFFFF"><c:out value="${map.name[status.index]}"></c:out></span><br>
+                                <span style="color: #FFFFFF"><c:out value="${map.open[status.index]}"></c:out></span>
+                                <span style="color: yellow">
+                                       <i class="fas fa-star"><c:out value="${map.chart_num[status.index]}"></c:out></i>
+                                   </span>
+                            </div>
+                        </div>
+                    </a>
+                </c:forEach>
+            </div>
+        </div><%--End of BoxOfficeRanking--%>
 
         <%-- 팔로워들 영화추천 --%>
         <div class="Box__Office__Ranking">

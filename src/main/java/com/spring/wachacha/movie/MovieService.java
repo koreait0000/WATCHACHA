@@ -81,12 +81,12 @@ public class MovieService {
         return movieSearchModel;
     }
 
-    public void Youtube(String keyword, Model model){
+    public Map<String, Object> Youtube(String keyword, String page){
+        Map<String, Object> map = new HashMap<>();
         List<String> hrefList = new ArrayList();
         List<String> ImgList = new ArrayList();
         List<String> titleList = new ArrayList();
         List<String> writerList = new ArrayList();
-        int page = 0;
         String url = "https://www.google.com/search?q="+keyword+"+%EC%9C%A0%ED%8A%9C%EB%B8%8C&tbm=vid&sxsrf=ALeKk01qBi-AgEWm7Jjh2ZXJ2uq6DpSdWA:1627012528071&ei=sD36YPf3A8OQr7wPiYG0oAk&start="+page+"&sa=N&ved=2ahUKEwj3j5_-pfjxAhVDyIsBHYkADZQQ8tMDegQIARBR&biw=1299&bih=787&dpr=1";
         try {
             Document doc = Jsoup.connect(url).get();
@@ -99,15 +99,15 @@ public class MovieService {
                 titleList.add(doc2.title().substring(0,doc2.title().length()-10)); //제목
                 writerList.add(doc2.select("link[itemprop=name]").attr("content")); //작성자
             }
-            model.addAttribute("hrefList",hrefList);
-            model.addAttribute("ImgList",ImgList);
-            model.addAttribute("titleList",titleList);
-            model.addAttribute("writerList",writerList);
-            model.addAttribute("cntList",cnt);
+            map.put("hrefList",hrefList);
+            map.put("ImgList",ImgList);
+            map.put("titleList",titleList);
+            map.put("writerList",writerList);
+            map.put("cntList",cnt);
+            map.put("page",page);
         }catch (Exception e){
             e.printStackTrace();
-            model.addAttribute("error","해당 영상이 없습니다.");
         }
-
+        return map;
     }
 }

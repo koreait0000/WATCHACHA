@@ -22,7 +22,7 @@
     <c:if test="${!empty test.poster}">
         <div class="searchMovie">
             <div class="movie_Object">
-                <a href="/movie/detail?keyword=${test.name}">
+                <a href="/movie/detail?keyword=${test.name}&page=0">
                     <div><img src="<c:out value="${test.poster}"></c:out>"></div>
                     <div><c:out value="${test.name}"></c:out></div>
                 </a>
@@ -38,7 +38,7 @@
                 <div class="movie_relevant1">
                     <c:forEach var="i" items="${test.relevant}">
                         <div class="movie_relevant2">
-                            <a href="/movie/detail?keyword=${i.relevantName}">
+                            <a href="/movie/detail?keyword=${i.relevantName}&page=0">
                                 <div><img src="<c:out value="${i.relevantLink}"></c:out>"></div>
 <%--                                TODO:아래 span태그 왜 넣었는지? -현민- --%>
                                 <span class="movie_relevant_name"><h4><c:out value="${i.relevantName}"></c:out></h4></span>
