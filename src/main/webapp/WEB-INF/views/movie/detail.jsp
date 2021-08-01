@@ -38,12 +38,16 @@
     <%--youtube 모달창--%>
     <div class="review_Div">
         <div class="youtube_modal hidden">
-            <c:forEach var="i" items="${hrefList}" varStatus="status">
-                <a href="<c:out value="${i}"></c:out>"><img src="${ImgList[status.index]}" width="500px" height="300px"><br>
-                    <c:out value="${writerList[status.index]}"></c:out>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${cntList[status.index]}"></c:out><br>
-                    <c:out value="${titleList[status.index]}"></c:out>
-                </a><br>
-            </c:forEach>
+            <button class="prev" data-page="${page}" data-keyword="${param.keyword}"><</button>
+            <div>
+                <c:forEach var="i" items="${youtube.hrefList}" varStatus="status">
+                    <a href="<c:out value="${i}"></c:out>" target="_blank"><img src="${youtube.ImgList[status.index]}" width="500px" height="300px"><br>
+                        <c:out value="${youtube.writerList[status.index]}"></c:out>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${youtube.cntList[status.index]}"></c:out><br>
+                        <c:out value="${youtube.titleList[status.index]}"></c:out>
+                    </a><br>
+                </c:forEach>
+            </div>
+            <button class="next" data-page="${page}" data-keyword="${param.keyword}">></button>
         </div>
     </div>
 
