@@ -3,9 +3,13 @@
     width: 100%; height: 100vh;
     background-size: cover;
     background-position: center;
+}
+.info_modal_aline{
     display: flex;
     align-items: center;
+    height: 100vh;
 }
+
 /***************************** 인포 모달 *****************************************/
 .info_modal{
     width: 58.6%;
@@ -14,6 +18,10 @@
     margin-left: 47px;
     min-width: 474px;
     max-width: 751px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 77px;
 }
 
 .movie_nm{
