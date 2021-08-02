@@ -9,7 +9,6 @@
     align-items: center;
     height: 100vh;
 }
-
 /***************************** 인포 모달 *****************************************/
 .info_modal{
     width: 58.6%;
@@ -18,17 +17,19 @@
     margin-left: 47px;
     min-width: 474px;
     max-width: 751px;
+    margin-bottom: 77px;
+}
+.info_modal_section{
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 77px;
 }
-
 .movie_nm{
     font-style: normal;
     font-weight: bold;
     font-size: 45px;
-    margin-top: 42px;
     margin-left: 24px;
 }
 .nm_star{
@@ -94,7 +95,7 @@
 }
 
 
-/******************************모달 btm css임************************************/
+/******************************모달 btn css임************************************/
 .modal_btn{
     width: 100%;
     text-align: center;
@@ -111,6 +112,45 @@
     margin: 0 12px;
 }
 /***************************************************유튜브 모달******************************************/
+.centerContainer { width: 100%; height: 100vh; z-index: 10; display: flex; justify-content: center; align-items: center; }
+
+
 .review_Div{
     display: flex;
 }
+.youtube_modal_btn{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.youtube_modal i{
+    font-size: 30px;
+    color: #f82f62;
+}
+
+.movie_review_Object{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+                        "item1 item2 item3 item4 item5"
+                        "item6 item7 item8 item9 item10";
+}
+.movie_review_Object>div>a{
+ display: grid;
+ height: 100%;
+ align-items: center;
+}
+.movie_review_Object:nth-child(1){ grid-area: item1;}
+.movie_review_Object:nth-child(2){grid-area: item2;}
+.movie_review_Object:nth-child(3){grid-area: item3;}
+.movie_review_Object:nth-child(4){grid-area: item4;}
+.movie_review_Object:nth-child(5){grid-area: item5;}
+.movie_review_Object:nth-child(6){grid-area: item6;}
+.movie_review_Object:nth-child(7){grid-area: item7;}
+.movie_review_Object:nth-child(8){grid-area: item8;}
+.movie_review_Object:nth-child(9){grid-area: item9;}
+.movie_review_Object:nth-child(10){grid-area: item10;}
