@@ -4,37 +4,40 @@
 <%--info창--%>
 <link href="/css/movie/detail.css" rel="stylesheet">
 <div class="bg_detail" style="background-image:linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(${movie.bg_url});"> <!--배경화면-->
-    <div class="info_modal"> <!-- 인포 !-->
-        <div class="movie_nm">${movie.name}</div> <!-- 영화 제목 !-->
-        <div class="nm_star">
-            <div class="movie_engName">${movie.engName}</div> <!-- 영화 영어부제목 !-->
-            <div class="movie_star">평점 ${movie.star}</div> <!-- 평점(별점) !-->
-        </div>
 
-        <c:if test="${!empty movie.summary.title}">
-            <div class="movie_summary_title"><c:out value="${movie.summary.title}"></c:out></div> <!-- 줄거리 제목 !-->
-        </c:if>
-        <div class="movie_summary_content"><c:out value="${movie.summary.content}"></c:out></div><!-- 줄거리 내용 !-->
+    <div class="info_modal_aline">
+        <div class="info_modal"> <!-- 인포 !-->
+            <div class="movie_nm">${movie.name}</div> <!-- 영화 제목 !-->
+            <div class="nm_star">
+                <div class="movie_engName">${movie.engName}</div> <!-- 영화 영어부제목 !-->
+                <div class="movie_star">평점 ${movie.star}</div> <!-- 평점(별점) !-->
+            </div>
 
-        <div class="movie_outline_Div"> <!-- 영화 개요부분 !-->
-            <%--<div>${movie.spec.outline}</div> <!-- 개요 !-->--%>
-            <div class="movie_spec_director">감독  ${movie.spec.director}</div> <!-- 감독 !-->
-            <div class="movie_spec_appearance">배우  ${movie.spec.appearance}</div> <!-- 출연 !-->
-            <div class="movie_spec_rank">${movie.spec.rank}</div> <!-- 등급 !-->
-            <c:if test="${!empty movie.spec.outline}">
-                <div class="movie_spec_outline">${movie.spec.outline}</div> <!-- 흥행 !-->
+            <c:if test="${!empty movie.summary.title}">
+                <div class="movie_summary_title"><c:out value="${movie.summary.title}"></c:out></div> <!-- 줄거리 제목 !-->
             </c:if>
-        </div>
-        <div class="info_modal_footer">
-            <div class="movie_play_btn">
-                <a href="#"><i class="fas fa-play-circle"> 재생</i></a>
-            </div>
-            <div class="movie_fav">
-                <a href="#"><i class="fas fa-plus"> 보고싶어요</i></a>
-            </div>
-        </div>
+            <div class="movie_summary_content"><c:out value="${movie.summary.content}"></c:out></div><!-- 줄거리 내용 !-->
 
+            <div class="movie_outline_Div"> <!-- 영화 개요부분 !-->
+                <%--<div>${movie.spec.outline}</div> <!-- 개요 !-->--%>
+                <div class="movie_spec_director">감독  ${movie.spec.director}</div> <!-- 감독 !-->
+                <div class="movie_spec_appearance">배우  ${movie.spec.appearance}</div> <!-- 출연 !-->
+                <div class="movie_spec_rank">${movie.spec.rank}</div> <!-- 등급 !-->
+                <c:if test="${!empty movie.spec.outline}">
+                    <div class="movie_spec_outline">${movie.spec.outline}</div> <!-- 흥행 !-->
+                </c:if>
+            </div>
+            <div class="info_modal_footer">
+                <div class="movie_play_btn">
+                    <a href="#"><i class="fas fa-play-circle"> 재생</i></a>
+                </div>
+                <div class="movie_fav">
+                    <a href="#"><i class="fas fa-plus"> 보고싶어요</i></a>
+                </div>
+            </div>
+        </div>
     </div>
+
     <%--youtube 모달창--%>
     <div class="review_Div">
         <div class="youtube_modal hidden">
@@ -47,7 +50,7 @@
                     </a><br>
                 </c:forEach>
             </div>
-            <button class="next" data-page="${page}" data-keyword="${param.keyword}">></button>
+            <button class="next" data-page="${page}" data-keyword="${param.keyword}"></button>
         </div>
     </div>
 
