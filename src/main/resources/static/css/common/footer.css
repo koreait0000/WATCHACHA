@@ -1,46 +1,41 @@
-*{margin: 0; font-family:"Noto Sans KR", sans-serif; list-style: none;  text-decoration: none;}
-h3{font-family: Noto Sans; font-style: normal; font-weight: 600; font-size: 17px; line-height: 123.7%; color: white;}
-p{ font-family: Noto Sans; font-style: normal; font-weight: 600; font-size: 12px; line-height: 154.7%;}
-
-footer{
-    min-width: 900px;
-    width: 100%;
-    height: 220px;
+*{margin: 0; padding: 0;list-style: none;}
+p, h3, a,h4{
+    color: white;
+    text-decoration: none;
+    margin: 0; padding: 0;
+}
+ul, li{
+    margin: 0; padding: 0;
+}
+.footer_container{
+    min-width: 833px;
     background-color: black;
-}
-ul{ padding: 0px;}
-
-footer li{
-    font-family: Noto Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    color: white;
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr 0.5fr 1.5fr; /*가로길이*/
+    grid-template-areas:
+                        "footer_header footer_header footer_header footer_header"
+                        "About QuickLink Support Contact_US"
+                        "footer_bottom footer_bottom footer_bottom footer_bottom";
 
 }
-.container{
-    min-width: 700px;
-    width: 100%;
-    height: 10;
-    padding: 0 15px;
-    display: flex;
-    justify-content: space-evenly;
+.footer_header{grid-area: footer_header; height: 37px;}
 
-}
-.container div{margin-left: 15px; margin-right: 15px; margin-top: 50px; margin-bottom: 10px;}
-.container div ul{margin-top: 5px;}
-.container div ul a{color: #fff; font-weight: 200;}
-.About{ width: 332px; height: 124px;}
-.About p{
-    margin-top: 7px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 154.7%;
-    color: white;
-}
-.QuickLink{ width: 95px; height: 100px;}
-.Support{width: 90px; height: 100px;}
-.Contact_US{width: 335px; height: 126px;}
-.bottom{height: 20%;}
-.bottom h4{text-align: center; align-items: center; color: white; font-weight: 200; margin: 0; padding: 0; }
+.About{grid-area: About; display: flex; justify-content: center; align-items: center}
+.About_section{width: 332px;}
+.About_section p{font-style: normal;font-size: 12px;}
+.About_section h3{ margin-bottom: 10px; font-style: normal; font-weight: 600; font-size: 17px; line-height: 123.7%;}
+
+.QuickLink{grid-area: QuickLink;}
+.QuickLink_section>h3{ font-style: normal; font-weight: 600; font-size: 17px; line-height: 123.7%;letter-spacing: -0.03em;}
+.QuickLink_section>ul>li{ margin-top: 10px; font-family: Noto Sans; font-style: normal; font-size: 12px; line-height: 123.7%; letter-spacing: -0.03em;}
+
+.Support{grid-area: Support;}
+.Support_section>h3{ font-style: normal; font-weight: 600; font-size: 17px; line-height: 123.7%; letter-spacing: -0.03em;}
+.Support_section>ul>li{ margin-top: 10px; font-family: Noto Sans; font-style: normal; font-size: 12px; line-height: 123.7%; letter-spacing: -0.03em;}
+
+.Contact_US{grid-area: Contact_US;}
+.Contact_US_section>h3{ font-family: Noto Sans; font-style: normal; font-weight: 600; font-size: 17px; line-height: 123.7%; letter-spacing: -0.03em;}
+.Contact_US_section>table>tr, td{ color: white; font-size: 12px; line-height: 123.7%; letter-spacing: -0.03em;}
+.Contact_US_section>table{ border-collapse: separate; border-spacing: 0 5px; margin-top: 5px;}
+.footer_bottom{grid-area: footer_bottom; display: flex; justify-content: center }
+.footer_bottom h4{ padding-bottom: 15px;padding-top: 30px; font-weight: 300; font-size: 16px; font-style: normal;}
