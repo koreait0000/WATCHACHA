@@ -148,8 +148,8 @@
     grid-gap: 11px;
     padding: 152px;
     display: grid;
-    grid-template-columns:0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr ;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns:0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr ; /*가로길이*/
+    grid-template-rows: 1fr 1fr;                            /*세로길이*/
     grid-template-areas:
                         "prev item1 item2 item3 item4 item5 next"
                         "prev item6 item7 item8 item9 item10 next";
