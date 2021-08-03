@@ -16,9 +16,9 @@
         <div class="QuickLink_section">
             <h3>QUICK_LINK</h3>
             <ul>
-                <li><a href="#">Our_Account</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="https://watcha.com/">Watcha</a></li>
+                <li><a href="#">My Page</a></li>
+                <li><a href="/main/mainpage">Main Page</a></li>
+                <li><a href="#">Payments</a></li>
             </ul>
         </div>
     </div>
@@ -27,9 +27,9 @@
         <div class="Support_section">
             <h3>SUPPROT</h3>
             <ul>
-                <li><a href="#">Tech Support</a></li>
-                <li><a href="#">Document</a></li>
-                <li><a href="#">F.A.Q.</a></li>
+                <li><a href="https://www.data.go.kr/">Open Data Api</a></li>
+                <li><a href="https://developers.google.com/">Google Api</a></li>
+                <li style="color: white">OAuth</li>
             </ul>
         </div>
     </div>
