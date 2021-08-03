@@ -57,7 +57,7 @@
                         <a href="<c:out value="${i}"></c:out>" target="_blank"><img src="${youtube.ImgList[status.index]}"width="300px" height="200px"><br>
                             <c:out value="${youtube.writerList[status.index]}"></c:out>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${youtube.cntList[status.index]}"></c:out><br>
                             <c:out value="${youtube.titleList[status.index]}"></c:out>
-                        </a><br>
+                        </a>
                     </div>
                 </c:forEach>
             </div>
