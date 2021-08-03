@@ -42,22 +42,27 @@
     <%--youtube 모달창--%>
     <div class="centerContainer">
         <div class="youtube_modal hidden">
-            <div class="youtube_modal_btn">
+
+            <div class="movie_review_Object">
                 <button class="prev" data-page="${page}" data-keyword="${param.keyword}">
                     <i class="fas fa-arrow-circle-left"></i>
                 </button>
                 <button class="next" data-page="${page}" data-keyword="${param.keyword}">
                     <i class="fas fa-arrow-circle-right"></i>
                 </button>
-            </div>
-
-            <div class="movie_review_Object">
                 <c:forEach var="i" items="${youtube.hrefList}" varStatus="status">
                     <div class="item">
-                        <a href="<c:out value="${i}"></c:out>" target="_blank"><img src="${youtube.ImgList[status.index]}"width="300px" height="200px"><br>
-                            <c:out value="${youtube.writerList[status.index]}"></c:out>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${youtube.cntList[status.index]}"></c:out><br>
-                            <c:out value="${youtube.titleList[status.index]}"></c:out>
-                        </a><br>
+                        <a href="<c:out value="${i}"></c:out>" target="_blank"><img src="${youtube.ImgList[status.index]}"width="300px" height="200px">
+                            <div class="txt_post">
+                                <div class="txt_post_header">
+                                    <c:out value="${youtube.writerList[status.index]}"></c:out>
+                                    <c:out value="${youtube.cntList[status.index]}"></c:out><br>
+                                </div>
+                                <div class="txt_post_section">
+                                    <c:out value="${youtube.titleList[status.index]}"></c:out>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </c:forEach>
             </div>
