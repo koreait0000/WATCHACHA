@@ -5,7 +5,9 @@ import com.spring.wachacha.config.security.IAuthenticationFacade;
 import com.spring.wachacha.config.security.UserDetailsServiceImpl;
 import com.spring.wachacha.email.CommonUtils;
 import com.spring.wachacha.email.EmailService;
+import com.spring.wachacha.user.model.UserDomain;
 import com.spring.wachacha.user.model.UserEntity;
+import com.spring.wachacha.user.model.UserFollowEntity;
 import com.spring.wachacha.user.model.UserProfileEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -139,5 +141,31 @@ public class UserService {
         res.put("result", result);
         res.put("img", param.getImg());
         return res;
+    }
+
+
+
+    // 팔로우
+    public UserFollowEntity insFollow(UserFollowEntity param) {
+        int test = userMapper.insFollow(param);
+        if(test == 0) return null;
+        return userMapper.isFollow(param);
+    }
+    public UserFollowEntity delFollow(UserFollowEntity param) {
+        int test = userMapper.delFollow(param);
+        if(test == 0) return null;
+        return userMapper.isFollow(param);
+    }
+    public List<UserDomain> selFollower(UserEntity param) {
+        if(param.getIuser() == 0) {
+            param.setIuser(auth.getLoginUserPk());
+        }
+        return userMapper.selFollower(param);
+    }
+    public List<UserDomain> selFollowing(UserEntity param) {
+        if(param.getIuser() == 0) {
+            param.setIuser(auth.getLoginUserPk());
+        }
+        return userMapper.selFollowing(param);
     }
 }

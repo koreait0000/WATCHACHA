@@ -53,13 +53,17 @@
     </update>
 
 
-    <!-- follow / MyList -->
+    <!-- follow -->
     <insert id="insFollow">
         INSERT INTO t_user_follow
             (from_iuser, to_iuser)
             VALUES
             (${from_iuser}, ${to_iuser})
     </insert>
+    <select id="isFollow" resultType="UserFollowEntity">
+        SELECT (SELECT COUNT(*) FROM t_user_follow WHERE from_iuser = ${from_iuser} AND to_iuser = ${to_iuser}) AS from_iuser
+            , (SELECT COUNT(*) FROM t_user_follow WHERE to_iuser = ${from_iuser} AND from_iuser = ${to_iuser}) AS to_iuser
+    </select>
     <select id="selFollower" resultType="UserDomain">
         SELECT B.*
         FROM t_user_follow A
@@ -79,6 +83,7 @@
         WHERE from_iuser = ${from_iuser} AND to_iuser = ${to_iuser}
     </delete>
 
+    <!-- MyList -->
     <insert id="insMyMovie">
         INSERT INTO t_movie_fav
             (iuser, title, image)
