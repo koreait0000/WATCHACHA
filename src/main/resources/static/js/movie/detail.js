@@ -10,12 +10,17 @@ step_1.style.cursor = 'default';
 step_2.style.cursor = 'pointer';
 step_3.style.cursor = 'pointer';
 
+let page = 0;
+let keyword = prevElem.dataset.keyword;
+prevElem.style.cursor = 'default';
+
 liSpanElem.forEach(e => {
    let infoDiv = document.querySelector('.info_modal');
    let episodeDiv = document.querySelector('.episode_modal')
    e.addEventListener('click', ()=>{
       //모달창 on/off
       if(e.textContent === 'Youtube'){
+         pageChange(page,keyword);
          step_1.style.cursor = 'pointer';
          step_2.style.cursor = 'default';
          step_3.style.cursor = 'pointer';
@@ -40,9 +45,6 @@ liSpanElem.forEach(e => {
    });
 });
 
-let page = 0;
-let keyword = prevElem.dataset.keyword;
-prevElem.style.cursor = 'default';
 prevElem.addEventListener('click', () =>{
    page-=10;
    pageChange(page, keyword);

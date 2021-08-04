@@ -27,7 +27,7 @@ public class MovieController {
     @GetMapping("/movie/detail")
     public String movieYoutube(String keyword, Model model, String page){
         model.addAttribute("movie",movieService.info(keyword));
-        model.addAttribute("youtube",movieService.Youtube(keyword,page));
+//        model.addAttribute("youtube",movieService.Youtube(keyword,page));
         return "movie/detail";
     }
 
