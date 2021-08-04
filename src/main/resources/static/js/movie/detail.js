@@ -57,6 +57,7 @@ nextElem.addEventListener('click', () => {
 });
 
 function pageChange(page, keyword){
+   this.showLoading();
    fetch('/youtube?page='+page+'&keyword='+keyword,{
       method: 'put'
    }).then(res => res.json())
@@ -78,5 +79,13 @@ function pageChange(page, keyword){
             </a>`;
              movie_review_Object.append(div);
           }
-       });
+       }).catch( err =>{
+          console.log(err);
+   }).then(()=>{
+      this.hideLoading();
+   })
 }
+
+const loadingElem = document.querySelector('.loading');
+hideLoading = function() { loadingElem.classList.add('hidden');}
+showLoading = function() { loadingElem.classList.remove('hidden'); }
