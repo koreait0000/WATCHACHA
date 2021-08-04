@@ -27,6 +27,9 @@ liSpanElem.forEach(e => {
          infoDiv.classList.add('hidden');
          youtubeDiv.classList.remove('hidden');
          episodeDiv.classList.add('hidden');
+         prevElem.classList.remove('hidden');
+         nextElem.classList.remove('hidden');
+
       }else if(e.textContent === 'Info'){
          step_1.style.cursor = 'default';
          step_2.style.cursor = 'pointer';

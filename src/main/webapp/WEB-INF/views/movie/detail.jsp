@@ -39,15 +39,21 @@
 
     <%--youtube 모달창--%>
     <div class="centerContainer">
+        <div class="loading hidden">
+            <div class="loading-dots">
+                <div class="bounce"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div><%--로딩창--%>
         <div class="youtube_modal hidden">
             <div class="movie_review_Object">
-                <button class="prev" data-keyword="${param.keyword}">
+                <button class="prev hidden" data-keyword="${param.keyword}">
                     <i class="fas fa-arrow-circle-left"></i>
                 </button>
-                <button class="next" data-keyword="${param.keyword}">
+                <button class="next hidden" data-keyword="${param.keyword}">
                     <i class="fas fa-arrow-circle-right"></i>
                 </button>
-                <div class="loading hidden"><img src="/img/loading.gif"></div> <%--로딩창--%>
 <%--                <c:forEach var="i" items="${youtube.hrefList}" varStatus="status">--%>
 <%--                    <div class="item">--%>
 <%--                        <a href="<c:out value="${i}"></c:out>" target="_blank"><img src="${youtube.ImgList[status.index]}"width="300px" height="200px">--%>
