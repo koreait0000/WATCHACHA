@@ -90,10 +90,22 @@
         VALUES
             (${iuser}, #{title}, #{image})
     </insert>
-    <select id="selMyMovie" resultType="MovieFavEntity">
-        SELECT *
-        FROM t_movie_fav
-        WHERE iuser = ${iuser}
+    <select id="selMyMovie" resultType="MovieFavDomain">
+        SELECT A.*, B.nm
+        FROM t_movie_fav A
+        INNER JOIN t_user B
+        ON A.iuser = B.iuser
+        WHERE A.iuser = ${iuser}
+    </select>
+    <select id="selUserMovieFavOrder" resultType="UserEntity">
+        SELECT iuser
+        FROM t_movie_fav A
+        INNER JOIN t_user_follow B
+        ON A.iuser = B.to_iuser
+        WHERE B.from_iuser = ${iuser}
+        GROUP BY A.iuser
+        ORDER BY MAX(i_movie_fav) DESC
+        LIMIT 3;
     </select>
     <delete id="delMyMovie">
         DELETE FROM t_movie_fav

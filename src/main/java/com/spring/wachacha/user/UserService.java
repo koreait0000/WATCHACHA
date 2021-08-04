@@ -5,6 +5,7 @@ import com.spring.wachacha.config.security.IAuthenticationFacade;
 import com.spring.wachacha.config.security.UserDetailsServiceImpl;
 import com.spring.wachacha.email.CommonUtils;
 import com.spring.wachacha.email.EmailService;
+import com.spring.wachacha.movie.model.MovieFavDomain;
 import com.spring.wachacha.user.model.UserDomain;
 import com.spring.wachacha.user.model.UserEntity;
 import com.spring.wachacha.user.model.UserFollowEntity;
@@ -168,4 +169,18 @@ public class UserService {
         }
         return userMapper.selFollowing(param);
     }
+
+    // 팔로우 한 사람들이 좋아요 한 영화
+    public Map<String, List<MovieFavDomain>> selFollowingFav(UserEntity param) {
+        if(param.getIuser() == 0) {
+            param.setIuser(auth.getLoginUserPk());
+        }
+        Map<String, List<MovieFavDomain>> result = new HashMap();
+        List<UserEntity> userList = userMapper.selUserMovieFavOrder(param);
+        for(UserEntity user : userList) {
+            List<MovieFavDomain> list = userMapper.selMyMovie(user);
+            result.put(list.get(0).getNm(), list);
+        }
+        return result;
+    } // key 는 사람 이름, value 는 좋아요한 영화 리스트.
 }
