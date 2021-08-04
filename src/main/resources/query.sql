@@ -18,10 +18,11 @@ CREATE TABLE t_user_follow (
 );
 
 CREATE TABLE t_movie_fav (
+    i_movie_fav INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     iuser INT UNSIGNED,
     title VARCHAR(30) NOT NULL,
     image VARCHAR(60),
-    PRIMARY KEY (iuser, title)
+    FOREIGN KEY (iuser) REFERENCES t_user(iuser)
 );
 
 CREATE TABLE t_user_profile(

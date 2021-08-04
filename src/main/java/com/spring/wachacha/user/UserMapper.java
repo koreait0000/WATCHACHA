@@ -1,5 +1,6 @@
 package com.spring.wachacha.user;
 
+import com.spring.wachacha.movie.model.MovieFavDomain;
 import com.spring.wachacha.movie.model.MovieFavEntity;
 import com.spring.wachacha.user.model.UserFollowEntity;
 import com.spring.wachacha.user.model.UserDomain;
@@ -26,7 +27,8 @@ public interface UserMapper {
 
     /* movie fav */
     int insMyMovie(MovieFavEntity param);
-    List<MovieFavEntity> selMyMovie(UserEntity param);
+    List<MovieFavDomain> selMyMovie(UserEntity param);
+    List<UserEntity> selUserMovieFavOrder(UserEntity param);
     int delMyMovie(MovieFavEntity param);
   
   
