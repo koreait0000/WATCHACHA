@@ -38,6 +38,7 @@
                 </div>
             </div>
         </div>
+    <div class="loading"><img src="/img/loading.gif"></div>
 
     <%--youtube 모달창--%>
     <div class="centerContainer">
