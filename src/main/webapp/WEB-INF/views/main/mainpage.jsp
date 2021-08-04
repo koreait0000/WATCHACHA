@@ -100,7 +100,6 @@
 
         <%-- 팔로워들 영화추천 --%>
         <div class="Box__Office__Ranking">
-
             <div class="Box__Office__Ranking1">
                 <i class="fas fa-ticket-alt"></i>
                 <h4>추천 Movie</h4>
