@@ -42,12 +42,11 @@
     <%--youtube 모달창--%>
     <div class="centerContainer">
         <div class="youtube_modal hidden">
-
             <div class="movie_review_Object">
-                <button class="prev" data-page="${page}" data-keyword="${param.keyword}">
+                <button class="prev" data-keyword="${param.keyword}">
                     <i class="fas fa-arrow-circle-left"></i>
                 </button>
-                <button class="next" data-page="${page}" data-keyword="${param.keyword}">
+                <button class="next" data-keyword="${param.keyword}">
                     <i class="fas fa-arrow-circle-right"></i>
                 </button>
                 <c:forEach var="i" items="${youtube.hrefList}" varStatus="status">
@@ -77,8 +76,8 @@
     <div class="modal_btn">
         <ul>
             <li><span class="step_1"><i class="fas fa-info-circle"></i>Info</span></li>
-            <li><span class="step_2 cursor"><i class="fab fa-youtube"></i>Youtube</span></li>
-            <li><span class="step_3 cursor">Episode</span></li>
+            <li><span class="step_2"><i class="fab fa-youtube"></i>Youtube</span></li>
+            <li><span class="step_3">Episode</span></li>
         </ul>
     </div>
 </div>
