@@ -1,11 +1,10 @@
 package com.spring.wachacha.user;
 
 import com.spring.wachacha.movie.model.MovieFavEntity;
-import com.spring.wachacha.user.model.UserDTO;
+import com.spring.wachacha.user.model.UserFollowEntity;
 import com.spring.wachacha.user.model.UserDomain;
 import com.spring.wachacha.user.model.UserEntity;
 import com.spring.wachacha.user.model.UserProfileEntity;
-import org.apache.catalina.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -19,10 +18,11 @@ public interface UserMapper {
     int editPw(UserEntity userEntity);
   
     /* follow */
-    int insFollow(UserDTO param);
+    int insFollow(UserFollowEntity param);
+    UserFollowEntity isFollow(UserFollowEntity param);
     List<UserDomain> selFollower(UserEntity param);
     List<UserDomain> selFollowing(UserEntity param);
-    int delFollow(UserDTO param);
+    int delFollow(UserFollowEntity param);
 
     /* movie fav */
     int insMyMovie(MovieFavEntity param);
