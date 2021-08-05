@@ -33,7 +33,8 @@ public class MovieService {
     public MovieEntity findByKeyword(String keyword){
         return movieApiClient.requestMovie(keyword);
     }
-//test
+
+    //test
     public MovieSearchModel info(String keyword){
         MovieSearchModel movieSearchModel = new MovieSearchModel();
         String responseBody = mainService.naverApi(keyword);
@@ -47,9 +48,13 @@ public class MovieService {
             Document doc = Jsoup.connect(link).get();
             String poster = doc.select("div.mv_info_area").select("img").attr("src");
             String name = doc.select("h3.h_movie").select("a").first().text();
+            String previewUrl = "https://movie.naver.com/"+doc.select("ul.video_thumb").select("li").select("a").attr("href");
+
+            System.out.println("previewUrl : " + previewUrl);
             movieSearchModel.setName(name);
             movieSearchModel.setPoster(poster);
-            System.out.println(link);
+            movieSearchModel.setPreviewUrl(previewUrl);
+            System.out.println(link);//네이버 api로 받은 링크
             Elements el = doc.select("ul.thumb_link_mv").select("li");
             Map<String, Object> summary = new HashMap<>();
             summary.put("title",doc.select("div.story_area").select("h5").text());
