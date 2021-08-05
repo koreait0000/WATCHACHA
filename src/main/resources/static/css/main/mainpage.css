@@ -36,38 +36,15 @@
     height: 100vh;
     top: -23px;
 }
-/*컨텐츠내용*/
-.movie_info_section1{
-    position: absolute;
-    top: 118px;
-    left: 40px;
-    width: 100%;
-    height: auto;
+
+.WATCHACHA_section{display: flex; flex-direction: column;align-items: center;height: 100vh; justify-content: center }
+.WATCHACHA_section_Logo>h1{font-family: Anton; font-style: normal; font-weight: normal; font-size: 338px; line-height: 123.7%; color: rgba(0,0,0,0); -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: white}
+.testtesttest{ position: relative;top: -5%;}
+.testtesttest h3{font-family: "Noto Sans KR", sans-serif; margin-bottom: 2px; font-style: normal; font-weight: normal; font-size: 30px; line-height: 123.7%; letter-spacing: -0.03em; color: #FFFFFF;}
+.testtesttest p{ font-family: "Noto Sans KR"; font-style: normal; font-weight: normal; font-size: 20px; line-height: 123.7%; letter-spacing: -0.03em; color: #7D7D7D;
+
 }
-.WATCHACHA_Big_Logo{
-    display: flex;
-    justify-content: center;
-}
-.WATCHACHA_Big_Logo>h1{
-    font-family: Anton;
-    color: rgb(0,0,0,0);
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18rem;
-    -webkit-text-stroke: 3px white;
-}
-.WATCHACHA_Big_section{
-    position: absolute;
-    left: 8.5%;
-    bottom: -0.5%;
-}
-.WATCHACHA_Big_section{
-    font-family: Anton;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-}
-/******************************* searchbar *************************************/
+/******************************* search_bar *************************************/
 .saerch{
     display: flex;
     justify-content: center;
