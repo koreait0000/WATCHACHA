@@ -54,21 +54,17 @@ liSpanElem.forEach(e => {
    });
 });
 
-if(page !== 0){
-   prevElem.addEventListener('click', () =>{
-   page-=10;
-   this.showLoading();
-   pageChange(page, keyword);
+prevElem.addEventListener('click', () =>{
+   if(page !== 0){
+      page-=10;
+      this.showLoading();
+      pageChange(page, keyword);
       if(page === 0) {
          prevElem.style.cursor = 'default';
-         prevElem.disabled = true;
-      }else{
-         prevElem.disabled = false;
       }
-   });
-}
+   }
+});
 nextElem.addEventListener('click', () => {
-   prevElem.disabled = false;
    page += 10;
    prevElem.style.cursor = 'pointer';
    this.showLoading();
@@ -90,7 +86,7 @@ function pageChange(page, keyword){
              let div = document.createElement('div');
              div.classList.add('item');
              div.innerHTML =
-            `<a href=${myJson.change.hrefList[i]} target="_blank"><img src=${myJson.change.ImgList[i]} width="300px" height="200px">
+                 `<a href=${myJson.change.hrefList[i]} target="_blank"><img src=${myJson.change.ImgList[i]} width="300px" height="200px">
                <div class="txt_post">
                    <div class="txt_post_header">${myJson.change.writerList[i]}${myJson.change.cntList[i]}</div>
                    <div class="txt_post_section">${myJson.change.titleList[i]}</div>
@@ -99,7 +95,7 @@ function pageChange(page, keyword){
              movie_review_Object.append(div);
           }
        }).catch( err =>{
-          console.log(err);
+      console.log(err);
    }).then(()=>{
       this.hideLoading();
       prevElem.classList.remove('hidden');
@@ -109,6 +105,6 @@ function pageChange(page, keyword){
 movie_play_btn.addEventListener('click', ()=>{
    let div = document.createElement('div');
    div.classList.add('play_big_modal');
-   div.innerHTML = 
+   div.innerHTML =
        `<h1>안녕하세요 예시</h1>`
 })
