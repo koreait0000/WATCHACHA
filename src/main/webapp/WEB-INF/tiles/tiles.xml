@@ -7,6 +7,7 @@
     <definition name="tiles_temp" template="/WEB-INF/views/temp/tiles_temp.jsp">
         <put-attribute name="header" value="/WEB-INF/views/temp/header.jsp"/>
         <put-attribute name="content" value=""/>
+        <put-attribute name="chat" value="/WEB-INF/views/temp/chat.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/temp/footer.jsp"/>
     </definition>
 

@@ -12,7 +12,6 @@
                 <div class="movie_engName">${movie.engName}</div> <!-- 영화 영어부제목 !-->
                 <div class="movie_star">평점 ${movie.star}</div> <!-- 평점(별점) !-->
             </div>
-
             <c:if test="${!empty movie.summary.title}">
                 <div class="movie_summary_title"><c:out value="${movie.summary.title}"></c:out></div> <!-- 줄거리 제목 !-->
             </c:if>

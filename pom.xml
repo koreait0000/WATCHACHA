@@ -113,7 +113,10 @@
             <artifactId>jsoup</artifactId>
             <version>1.14.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+        </dependency>
         <!-- Google reCAPTCHA -->
         <dependency>
             <groupId>net.tanesha.recaptcha4j</groupId>

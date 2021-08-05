@@ -92,7 +92,7 @@ public class MovieService {
         List<String> ImgList = new ArrayList();
         List<String> titleList = new ArrayList();
         List<String> writerList = new ArrayList();
-        String url = "https://www.google.com/search?q="+keyword+"+%EC%9C%A0%ED%8A%9C%EB%B8%8C&tbm=vid&sxsrf=ALeKk01qBi-AgEWm7Jjh2ZXJ2uq6DpSdWA:1627012528071&ei=sD36YPf3A8OQr7wPiYG0oAk&start="+page+"&sa=N&ved=2ahUKEwj3j5_-pfjxAhVDyIsBHYkADZQQ8tMDegQIARBR&biw=1299&bih=787&dpr=1";
+        String url = "https://www.google.com/search?q=%EC%98%81%ED%99%94"+keyword+"+%EC%9C%A0%ED%8A%9C%EB%B8%8C&tbm=vid&sxsrf=ALeKk01qBi-AgEWm7Jjh2ZXJ2uq6DpSdWA:1627012528071&ei=sD36YPf3A8OQr7wPiYG0oAk&start="+page+"&sa=N&ved=2ahUKEwj3j5_-pfjxAhVDyIsBHYkADZQQ8tMDegQIARBR&biw=1299&bih=787&dpr=1";
         try {
             Document doc = Jsoup.connect(url).get();
             Elements el = doc.select("a.rGhul");
