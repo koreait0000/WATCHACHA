@@ -53,22 +53,17 @@ liSpanElem.forEach(e => {
       }
    });
 });
-
-if(page !== 0){
-   prevElem.addEventListener('click', () =>{
-   page-=10;
-   this.showLoading();
-   pageChange(page, keyword);
+prevElem.addEventListener('click', () =>{
+   if(page !== 0){
+      page-=10;
+      this.showLoading();
+      pageChange(page, keyword);
       if(page === 0) {
          prevElem.style.cursor = 'default';
-         prevElem.disabled = true;
-      }else{
-         prevElem.disabled = false;
       }
-   });
-}
+   }
+});
 nextElem.addEventListener('click', () => {
-   prevElem.disabled = false;
    page += 10;
    prevElem.style.cursor = 'pointer';
    this.showLoading();
