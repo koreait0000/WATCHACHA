@@ -29,6 +29,9 @@
 
 <main style="z-index: 3">
   <tiles:insertAttribute name="content"></tiles:insertAttribute>
+  <section>
+    <tiles:insertAttribute name="chat"></tiles:insertAttribute>
+  </section>
   <div class="margin100"></div>
 </main>
 

@@ -12,10 +12,8 @@ import java.util.Map;
 @Data
 public class UserDetailsImpl implements UserDetails, OAuth2User {
 
-
     private UserEntity user;
     private Map<String, Object> attributes;
-
 
     //생성자호출
     public UserDetailsImpl(UserEntity user) { this.user = user; }
