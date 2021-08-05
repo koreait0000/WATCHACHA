@@ -5,8 +5,13 @@
 <link href="/css/movie/detail.css" rel="stylesheet">
 <script defer src="/js/movie/detail.js"></script>
 <div class="bg_detail" style="background-image:linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(${movie.bg_url});"> <!--배경화면-->
+
+<%--    <div>--%>
+<%--        <iframe width="560" height="315" src="${movie.previewUrl}" title="${movie.name}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--%>
+<%--    </div>--%>
     <div class="info_modal"> <!-- 인포 !-->
         <div class="info_modal_section">
+            <input type="hidden" class="poster" value="${movie.poster}">
             <div class="movie_nm">${movie.name}</div> <!-- 영화 제목 !-->
             <div class="nm_star">
                 <div class="movie_engName">${movie.engName}</div> <!-- 영화 영어부제목 !-->
@@ -24,7 +29,7 @@
                 <div class="movie_spec_appearance">배우  ${movie.spec.appearance}</div> <!-- 출연 !-->
                 <div class="movie_spec_rank">${movie.spec.rank}</div> <!-- 등급 !-->
                 <c:if test="${!empty movie.spec.outline}">
-                    <div class="movie_spec_outline">${movie.spec.outline}</div> <!-- 흥행 !-->
+                    <div class="movie_spec_outline" data-genre="${movie.spec.outline}">${movie.spec.outline}</div> <!-- 흥행 !-->
                 </c:if>
             </div>
             <div class="info_modal_footer">
@@ -32,7 +37,12 @@
                     <a href="#"><i class="fas fa-play-circle"> 재생</i></a>
                 </div>
                 <div class="movie_fav">
-                    <a href="#"><i class="fas fa-plus"> 보고싶어요</i></a>
+                    <div class="movie_love">
+                        <i class="fas fa-plus"> 보고싶어요</i>
+                    </div>
+                    <div class="movie_hate hidden">
+                        <i class="fas fa-check-circle"> 보고싶어요</i>
+                    </div>
                 </div>
             </div>
         </div>
