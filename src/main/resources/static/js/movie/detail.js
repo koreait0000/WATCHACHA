@@ -6,7 +6,7 @@ let step_1 = document.querySelector('.step_1')
 let step_2 = document.querySelector('.step_2')
 let step_3 = document.querySelector('.step_3')
 let movie_play_btn = document.querySelector('.movie_play_btn');
-
+let movie_fav = document.querySelector('.movie_fav');
 let movie_review_Object= document.querySelector('.movie_review_Object');
 const loadingElem = document.querySelector('.loading');
 
@@ -72,7 +72,6 @@ nextElem.addEventListener('click', () => {
 });
 
 function pageChange(page, keyword){
-
    fetch('/youtube?page='+page+'&keyword='+keyword,{
       method: 'put'
    }).then(res => res.json())
@@ -108,3 +107,29 @@ movie_play_btn.addEventListener('click', ()=>{
    div.innerHTML =
        `<h1>안녕하세요 예시</h1>`
 })
+/*보고싶어요*/
+let movie_love = document.querySelector('.movie_love');
+let movie_hate = document.querySelector('.movie_hate');
+movie_love.addEventListener('click',()=>{
+   let genre = "";
+   console.log(document.querySelector('.movie_spec_outline').dataset.genre.split(' '));
+   genre = document.querySelector('.movie_spec_outline').dataset.genre.split(' ')[0];
+   genre = genre.split(',')[0];
+
+   console.log(genre);
+   console.log(document.querySelector('.poster').value);
+   console.log(keyword);
+
+   movie_love.classList.add('hidden');
+   movie_hate.classList.remove('hidden');
+
+
+});
+movie_hate.addEventListener('click', ()=>{
+   movie_hate.classList.add('hidden');
+   movie_love.classList.remove('hidden');
+
+});
+function my_movie_add(){
+   fetch()
+}

@@ -90,11 +90,10 @@
     font-size: 21px;
     margin-right: 16px;
 }
-.movie_fav{
-    font-size: 18px;
-}
-
-
+.movie_fav{font-size: 18px;}
+.movie_fav:hover{cursor: pointer;}
+.movie_hate>fas{font-size: 20px;}
+.movie_hate i{color: #d63269;}
 /******************************모달 btn css임************************************/
 .modal_btn{
     width: 100%;

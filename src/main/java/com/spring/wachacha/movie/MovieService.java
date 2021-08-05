@@ -49,8 +49,8 @@ public class MovieService {
             String poster = doc.select("div.mv_info_area").select("img").attr("src");
             String name = doc.select("h3.h_movie").select("a").first().text();
             String previewUrl = "https://movie.naver.com/"+doc.select("ul.video_thumb").select("li").select("a").attr("href");
-
-            System.out.println("previewUrl : " + previewUrl);
+            Document doc2 = Jsoup.connect(previewUrl).get();
+            previewUrl = "https://movie.naver.com/" + doc2.select("iframe._videoPlayer").attr("src");
             movieSearchModel.setName(name);
             movieSearchModel.setPoster(poster);
             movieSearchModel.setPreviewUrl(previewUrl);
