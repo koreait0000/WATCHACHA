@@ -23,27 +23,36 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="movie_info_section_first">
-                        <div class="movie_info_section1">
-                            <h4>새로운 컨텐츠 조현민 바보바보 개 재밌네 쿠르 삥뽕</h4>
-                            <span>안녕하세요</span>
-                        </div>
+                    <div class="movie_info_section_second">
+                            <div class="WATCHACHA_section">
+                                <div class="WATCHACHA_section_Logo"><h1>WATCAHCAH</h1></div>
+                                <div class="testtesttest">
+                                    <h3>다양하고 새로운 영화 정보들을 이곳에서 즐기세요.<br>
+                                        해당 페이지는 실시간 업데이트 됩니다. </h3>
+                                    <P>여러 유튜버들의 리뷰 영상을 이곳에서 간편하게 즐기세요.</P>
+                                </div>
+                            </div>
                     </div>
+<%--                    <div class="movie_info_section_first">--%>
+<%--                        <div class="movie_info_section1">--%>
+
+<%--                        </div>--%>
+<%--                    </div>--%>
                     <div class="carousel-caption d-none d-md-block">
                     </div>
                 </div>
 
                 <div class="carousel-item">
                     <div class="movie_info_section_second">
-                        <div class="movie_info_section1">
-                            <div class="WATCHACHA_Big_Logo">
+                        <div class="WATCHACHA_section">
+                            <div class="WATCHACHA_section_Logo">
                                 <h1>WATCAHCAH</h1>
+                                <div class="WATCHACHA_section_Logo_description">
+                                    <h3>다양하고 새로운 영화 정보들을 이곳에서 즐기세요.<br>
+                                        해당 페이지는 실시간 업데이트 됩니다. </h3>
+                                    <P>여러 유튜버들의 리뷰 영상을 이곳에서 간편하게 즐기세요.</P>
+                                </div>
                             </div>
-                            <div class="WATCHACHA_Big_section">
-                                <P>다양하고 새로운 영화 정보들을 이곳에서 즐기세요.<br>
-                                    해당 페이지는 실시간 업데이트 됩니다. </P>
-                            </div>
-
                         </div>
                     </div>
                     <div class="carousel-caption d-none d-md-block">
@@ -52,10 +61,7 @@
 
                 <div class="carousel-item">
                     <div class="movie_info_section_third">
-                        <div class="movie_info_section1">
-                            <h4>새로운 컨텐츠 조현민 바보바보 개 재밌네 쿠르 삥뽕</h4>
-                            <span>안녕하세요</span>
-                        </div>
+
                     </div>
                     <div class="carousel-caption d-none d-md-block">
                     </div>

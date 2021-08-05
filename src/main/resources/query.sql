@@ -40,3 +40,6 @@ CREATE TABLE t_board (
     iuser INT UNSIGNED,
     FOREIGN KEY(iuser) REFERENCES t_user(iuser)
 );
+
+
+
