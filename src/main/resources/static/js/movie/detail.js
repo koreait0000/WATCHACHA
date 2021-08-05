@@ -5,6 +5,8 @@ let youtubeDiv = document.querySelector('.youtube_modal');
 let step_1 = document.querySelector('.step_1')
 let step_2 = document.querySelector('.step_2')
 let step_3 = document.querySelector('.step_3')
+let movie_play_btn = document.querySelector('.movie_play_btn');
+
 let movie_review_Object= document.querySelector('.movie_review_Object');
 const loadingElem = document.querySelector('.loading');
 
@@ -104,7 +106,9 @@ function pageChange(page, keyword){
       nextElem.classList.remove('hidden');
    })
 }
-
-
-
-
+movie_play_btn.addEventListener('click', ()=>{
+   let div = document.createElement('div');
+   div.classList.add('play_big_modal');
+   div.innerHTML = 
+       `<h1>안녕하세요 예시</h1>`
+})
