@@ -6,31 +6,34 @@ let step_1 = document.querySelector('.step_1')
 let step_2 = document.querySelector('.step_2')
 let step_3 = document.querySelector('.step_3')
 let movie_review_Object= document.querySelector('.movie_review_Object');
+const loadingElem = document.querySelector('.loading');
+
 step_1.style.cursor = 'default';
 step_2.style.cursor = 'pointer';
 step_3.style.cursor = 'pointer';
+
+hideLoading = function() { loadingElem.classList.add('hidden');}
+showLoading = function() { loadingElem.classList.remove('hidden'); }
 
 let page = 0;
 let keyword = prevElem.dataset.keyword;
 prevElem.style.cursor = 'default';
 
+pageChange(page, keyword);
 liSpanElem.forEach(e => {
    let infoDiv = document.querySelector('.info_modal');
    let episodeDiv = document.querySelector('.episode_modal')
    e.addEventListener('click', ()=>{
       //모달창 on/off
       if(e.textContent === 'Youtube'){
-         pageChange(page,keyword);
          step_1.style.cursor = 'pointer';
          step_2.style.cursor = 'default';
          step_3.style.cursor = 'pointer';
          infoDiv.classList.add('hidden');
          youtubeDiv.classList.remove('hidden');
          episodeDiv.classList.add('hidden');
-         prevElem.classList.remove('hidden');
-         nextElem.classList.remove('hidden');
-
       }else if(e.textContent === 'Info'){
+         this.hideLoading();
          step_1.style.cursor = 'default';
          step_2.style.cursor = 'pointer';
          step_3.style.cursor = 'pointer';
@@ -38,6 +41,7 @@ liSpanElem.forEach(e => {
          episodeDiv.classList.add('hidden');
          infoDiv.classList.remove('hidden');
       }else if(e.textContent === 'Episode'){
+         this.hideLoading();
          step_1.style.cursor = 'pointer';
          step_2.style.cursor = 'pointer';
          step_3.style.cursor = 'default';
@@ -48,21 +52,29 @@ liSpanElem.forEach(e => {
    });
 });
 
-prevElem.addEventListener('click', () =>{
+if(page !== 0){
+   prevElem.addEventListener('click', () =>{
    page-=10;
+   this.showLoading();
    pageChange(page, keyword);
-   if(page === 0) {
-      prevElem.style.cursor = 'default';
-   }
-});
+      if(page === 0) {
+         prevElem.style.cursor = 'default';
+         prevElem.disabled = true;
+      }else{
+         prevElem.disabled = false;
+      }
+   });
+}
 nextElem.addEventListener('click', () => {
+   prevElem.disabled = false;
    page += 10;
    prevElem.style.cursor = 'pointer';
+   this.showLoading();
    pageChange(page, keyword);
 });
 
 function pageChange(page, keyword){
-   this.showLoading();
+
    fetch('/youtube?page='+page+'&keyword='+keyword,{
       method: 'put'
    }).then(res => res.json())
@@ -88,9 +100,11 @@ function pageChange(page, keyword){
           console.log(err);
    }).then(()=>{
       this.hideLoading();
+      prevElem.classList.remove('hidden');
+      nextElem.classList.remove('hidden');
    })
 }
 
-const loadingElem = document.querySelector('.loading');
-hideLoading = function() { loadingElem.classList.add('hidden');}
-showLoading = function() { loadingElem.classList.remove('hidden'); }
+
+
+
