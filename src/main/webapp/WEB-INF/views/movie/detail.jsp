@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--info창--%>
 <link href="/css/movie/detail.css" rel="stylesheet">
+<script defer src="/js/movie/detail.js"></script>
 <div class="bg_detail" style="background-image:linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(${movie.bg_url});"> <!--배경화면-->
     <div class="info_modal"> <!-- 인포 !-->
         <div class="info_modal_section">
@@ -39,14 +40,14 @@
 
     <%--youtube 모달창--%>
     <div class="centerContainer">
-        <div class="loading hidden">
-            <div class="loading-dots">
-                <div class="bounce"></div>
-                <div class="bounce2"></div>
-                <div class="bounce3"></div>
-            </div>
-        </div><%--로딩창--%>
         <div class="youtube_modal hidden">
+            <div class="loading">
+                <div class="loading-dots">
+                    <div class="bounce"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div> <%--로딩창--%>
             <div class="movie_review_Object">
                 <button class="prev hidden" data-keyword="${param.keyword}">
                     <i class="fas fa-arrow-circle-left"></i>
@@ -86,4 +87,3 @@
         </ul>
     </div>
 </div>
-<script src="/js/movie/detail.js"></script>
