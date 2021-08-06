@@ -7,7 +7,7 @@ import java.util.Map;
 @Data
 public class KakaoUserInfo implements OAuth2UserInfo{
 
-    private Map<String, Object> attributes;
+    public Map<String, Object> attributes;
 
     public KakaoUserInfo(Map<String, Object> attributes) { this.attributes = attributes; }
 
@@ -26,7 +26,9 @@ public class KakaoUserInfo implements OAuth2UserInfo{
     @Override
     public String getName() {
         Map<String, Object> map = (Map<String, Object>) attributes.get("profile");
-        return (String) map.get("nickname");
+        String result = map.get("nickname").toString();
+        System.out.println(result);
+        return result;
     }
 
 }
