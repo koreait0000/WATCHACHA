@@ -22,6 +22,8 @@ CREATE TABLE t_movie_fav (
     iuser INT UNSIGNED,
     title VARCHAR(30) NOT NULL,
     image VARCHAR(60),
+    nation VARCHAR(20),
+    genre VARCHAR(10),
     FOREIGN KEY (iuser) REFERENCES t_user(iuser)
 );
 

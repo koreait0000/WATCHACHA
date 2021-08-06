@@ -1,8 +1,11 @@
 package com.spring.wachacha.movie;
 
+import com.spring.wachacha.config.security.IAuthenticationFacade;
 import com.spring.wachacha.main.MainService;
 import com.spring.wachacha.main.model.MovieSearchModel;
 import com.spring.wachacha.movie.model.MovieEntity;
+import com.spring.wachacha.movie.model.MovieFavEntity;
+import com.spring.wachacha.user.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -28,6 +31,8 @@ public class MovieService {
     private final MovieApiClient movieApiClient;
     @Autowired
     private MainService mainService;
+    @Autowired private UserMapper userMapper;
+    @Autowired private IAuthenticationFacade auth;
 
     @Transactional(readOnly = true)
     public MovieEntity findByKeyword(String keyword){
@@ -125,5 +130,16 @@ public class MovieService {
             e.printStackTrace();
         }
         return map;
+    }
+
+
+    // 보고싶어요
+    public int insMovieFav(MovieFavEntity param) {
+        param.setIuser(auth.getLoginUserPk());
+        return userMapper.insMyMovie(param);
+    }
+    public int delMovieFav(MovieFavEntity param) {
+        param.setIuser(auth.getLoginUserPk());
+        return userMapper.delMyMovie(param);
     }
 }
