@@ -1,6 +1,7 @@
 package com.spring.wachacha.config.oauth;
 
 import com.spring.wachacha.config.oauth.provider.*;
+import com.spring.wachacha.config.security.UserDetailsImpl;
 import com.spring.wachacha.config.security.UserDetailsServiceImpl;
 import com.spring.wachacha.user.UserMapper;
 import com.spring.wachacha.user.model.UserEntity;
@@ -56,17 +57,20 @@ public class PricipalOauth2UserService extends DefaultOAuth2UserService {
         else {
             System.out.println("");
         }
+        ((KakaoUserInfo)userInfo).attributes.entrySet().forEach(entry->{
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        });
 
         UserEntity param = new UserEntity();
         param.setEmail(userInfo.getEmail());
         param.setProvider(userInfo.getProvider());
-        System.out.println("param.getEmail() : " +param.getEmail());
-        System.out.println("param.getEmail() : " +param.getProvider());
 
         System.out.println(param);
         UserEntity result = mapper.selUser(param);
+        System.out.println("result : "+result);
         if(result == null ){
             // 1.provider 2.email 3.nm 4. tell null
+            param.setEmail(userInfo.getEmail());
             param.setNm(userInfo.getName());
             param.setGrade("UNCASHED");
             param.setPw(bCryptPasswordEncoder.encode("login"));
@@ -79,6 +83,6 @@ public class PricipalOauth2UserService extends DefaultOAuth2UserService {
 //        String password = bCryptPasswordEncoder.encode("소셜로그인패스워드");
 //        String email = userInfo.getEmail();
 //        String grade = "ROLE_USER";
-        return super.loadUser(userRequest);
+        return new UserDetailsImpl(param,oAuth2User.getAttributes());
     }
 }
