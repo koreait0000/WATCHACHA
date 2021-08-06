@@ -35,7 +35,7 @@ public class MovieController {
 
     @ResponseBody
     @PostMapping("/movie/movieFav")
-    public Map<String, Integer> movieFav(@RequestBody MovieFavEntity movieFavEntity){
+    public void movieFav(@RequestBody MovieFavEntity movieFavEntity){
         System.out.println("movieFavEntity : " + movieFavEntity);
     }
 

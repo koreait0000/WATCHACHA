@@ -101,13 +101,19 @@ function pageChange(page, keyword){
       nextElem.classList.remove('hidden');
    })
 }
+/*--------------------------------리뷰영상 -----------------------------------*/
 movie_play_btn.addEventListener('click', ()=>{
-   let div = document.createElement('div');
-   div.classList.add('play_big_modal');
-   div.innerHTML =
-       `<h1>안녕하세요 예시</h1>`
+   let previewModal = document.querySelector('.preview_modal');
+   previewModal.classList.remove('hidden');
+   let modalCloseBtn = document.querySelector('.modal_close_btn');
+
+   modalCloseBtn.addEventListener('click', ()=>{
+      previewModal.classList.add('hidden');
+   })
+
+
 })
-/*보고싶어요*/
+/*------------------------------보고싶어요----------------------------------*/
 let movie_love = document.querySelector('.movie_love');
 let movie_hate = document.querySelector('.movie_hate');
 
@@ -146,6 +152,3 @@ movie_hate.addEventListener('click', ()=>{
    movie_love.classList.remove('hidden');
 
 });
-function my_movie_add(){
-   fetch()
-}
