@@ -86,9 +86,9 @@
     <!-- MyList -->
     <insert id="insMyMovie">
         INSERT INTO t_movie_fav
-            (iuser, title, image)
+            (iuser, title, image, nation, genre)
         VALUES
-            (${iuser}, #{title}, #{image})
+            (${iuser}, #{title}, #{image}, #{nation}, #{genre})
     </insert>
     <select id="selMyMovie" resultType="MovieFavDomain">
         SELECT A.*, B.nm

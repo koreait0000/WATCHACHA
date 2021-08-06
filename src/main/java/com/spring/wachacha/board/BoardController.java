@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/board")
 public class BoardController {
+
     @Autowired
     private BoardService service;
+
     @RequestMapping("/list")
     public String list(BoardDTO param, Model model) {
         model.addAttribute("list", service.selBoardList(param));

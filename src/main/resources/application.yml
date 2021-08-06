@@ -5,9 +5,9 @@ server:
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/watchacha
-    username: root
-    password: koreait
+    url: jdbc:mysql://watchacha.ckhnav7yzn73.ap-northeast-2.rds.amazonaws.com
+    username: admin
+    password: koreait1234
   servlet:
     multipart:
       max-file-size: 5MB
