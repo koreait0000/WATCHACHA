@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
+        http.headers().frameOptions().sameOrigin();
         http.authorizeRequests()
                 .antMatchers("/main/**").authenticated() //로그인한 사람들만
                 .antMatchers("/manager/**").access("hasRole('ROLE_MANAGER')")//매니저권한가진사람만

@@ -1,14 +1,14 @@
 const chatBtn = document.getElementById('chatBtn');
 const chatDiv = document.getElementById('chatDiv');
 const username1 = document.getElementById('username');
-let keyword = prevElem.dataset.keyword;
 
 chatBtn.addEventListener('click', e=>{
     chatDiv.classList.toggle('hidden');
 })
 
 $(document).ready(function (){
-    const username = [[$('#msgArea').data('username')]];
+    let keyword = document.querySelector('.prev').dataset.keyword;
+    const username = [$('#msgArea').data('username')];
     console.log(username);
     $("#disconn").on("click", (e) => {
         disconnect();
@@ -18,7 +18,8 @@ $(document).ready(function (){
         send();
     });
 
-    const websocket = new WebSocket("ws://localhost:8090/ws/*");
+    const websocket = new WebSocket("ws://localhost:8090/ws/movie/detail");
+    let stomp = webstomp.over(websocket);
 
     websocket.onmessage = onMessage;
     websocket.onopen = onOpen;
