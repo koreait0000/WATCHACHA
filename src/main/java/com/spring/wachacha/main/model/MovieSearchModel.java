@@ -10,6 +10,8 @@ import java.util.Map;
 public class MovieSearchModel {
     private List<JSONObject> list;
     private String poster;//영화포스터
+    private String genre;//영화장르
+    private String nation;//국가
     private String link; //영화링크
     private String name; //영화제목
     private String engName;

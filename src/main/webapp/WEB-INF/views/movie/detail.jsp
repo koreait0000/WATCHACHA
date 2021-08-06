@@ -11,7 +11,6 @@
 <%--    </div>--%>
     <div class="info_modal"> <!-- 인포 !-->
         <div class="info_modal_section">
-            <input type="hidden" class="poster" value="${movie.poster}">
             <div class="movie_nm">${movie.name}</div> <!-- 영화 제목 !-->
             <div class="nm_star">
                 <div class="movie_engName">${movie.engName}</div> <!-- 영화 영어부제목 !-->
@@ -35,7 +34,10 @@
                 <div class="movie_play_btn">
                     <a href="#"><i class="fas fa-play-circle"> 재생</i></a>
                 </div>
-                <div class="movie_fav">
+                <div class="movie_fav"
+                     data-genre="${movie.genre}" data-nation="${movie.nation}"
+                     data-poster="${movie.poster}" >
+
                     <div class="movie_love">
                         <i class="fas fa-plus"> 보고싶어요</i>
                     </div>
