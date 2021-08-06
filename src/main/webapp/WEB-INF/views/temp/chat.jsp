@@ -8,10 +8,8 @@
     <div>
         <label><b>watchacha채팅방입니다.</b></label>
     </div>
-    <div data-id>
-        <div id="msgArea">asdasdasd
-        asdasdasd
-        asdasdas</div>
+    <div id="username" data-username="${username}">
+        <div id="msgArea" data-username="${username}"></div>
         <div class="col-6">
             <div class="input-group mb-3">
                 <input type="text" id="msg" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">

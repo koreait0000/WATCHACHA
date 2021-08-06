@@ -63,28 +63,22 @@ public class PricipalOauth2UserService extends DefaultOAuth2UserService {
         System.out.println("param.getEmail() : " +param.getEmail());
         System.out.println("param.getEmail() : " +param.getProvider());
 
+        System.out.println(param);
         UserEntity result = mapper.selUser(param);
-
         if(result == null ){
-
             // 1.provider 2.email 3.nm 4. tell null
-
             param.setNm(userInfo.getName());
             param.setGrade("UNCASHED");
             param.setPw(bCryptPasswordEncoder.encode("login"));
             mapper.join(param);
             System.out.println("login success!");
-
         }
-
 //        String provider = userInfo.getProvider();
 //        String providerId = userInfo.getProviderId();
 //        String username = provider + "_" + providerId;
 //        String password = bCryptPasswordEncoder.encode("소셜로그인패스워드");
 //        String email = userInfo.getEmail();
 //        String grade = "ROLE_USER";
-
-
         return super.loadUser(userRequest);
     }
 }

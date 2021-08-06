@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%--info창--%>
 <link href="/css/movie/detail.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/common/chat.css">
 <script defer src="/js/movie/detail.js"></script>
 <div class="bg_detail" style="background-image:linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(${movie.bg_url});"> <!--배경화면-->
 
@@ -95,4 +97,28 @@
             <li><span class="step_3">Episode</span></li>
         </ul>
     </div>
+
+<%--    채팅창--%>
+    <section>
+        <button id="chatBtn">
+            Chat
+        </button>
+        <div id="chatDiv"class="hidden" >
+            <div>
+                <label><b>${param.keyword}채팅방입니다.</b></label>
+            </div>
+            <div>
+                <div id="msgArea" data-username="${username}"></div>
+                <div class="col-6">
+                    <div class="input-group mb-3">
+                        <input type="text" id="msg" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-send">전송</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
+<script src="/js/common/chat.js"></script>
