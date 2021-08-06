@@ -2,13 +2,15 @@ package com.spring.wachacha.movie;
 
 import com.spring.wachacha.config.security.UserDetailsImpl;
 import com.spring.wachacha.movie.model.MovieEntity;
+import com.spring.wachacha.movie.model.MovieFavEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Controller
@@ -35,8 +37,22 @@ public class MovieController {
         return "movie/detail";
     }
 
-
-
+    @ResponseBody
+    @PostMapping("/movie/movieFav")
+    public Map<String, Integer> insMovieFav(@RequestBody MovieFavEntity movieFavEntity){
+        System.out.println("movieFavEntity : " + movieFavEntity);
+        Map<String, Integer> result = new HashMap<>();
+        result.put("result", movieService.insMovieFav(movieFavEntity));
+        return result;
+    }
+    @ResponseBody
+    @DeleteMapping("/movie/movieFav")
+    public Map<String, Integer> delMovieFav(@RequestBody MovieFavEntity movieFavEntity){
+        System.out.println("movieFavEntity : " + movieFavEntity);
+        Map<String, Integer> result = new HashMap<>();
+        result.put("result", movieService.delMovieFav(movieFavEntity));
+        return result;
+    }
 
 
 }

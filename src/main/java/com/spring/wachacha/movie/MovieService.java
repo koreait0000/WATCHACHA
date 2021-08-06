@@ -1,8 +1,11 @@
 package com.spring.wachacha.movie;
 
+import com.spring.wachacha.config.security.IAuthenticationFacade;
 import com.spring.wachacha.main.MainService;
 import com.spring.wachacha.main.model.MovieSearchModel;
 import com.spring.wachacha.movie.model.MovieEntity;
+import com.spring.wachacha.movie.model.MovieFavEntity;
+import com.spring.wachacha.user.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -28,6 +31,8 @@ public class MovieService {
     private final MovieApiClient movieApiClient;
     @Autowired
     private MainService mainService;
+    @Autowired private UserMapper userMapper;
+    @Autowired private IAuthenticationFacade auth;
 
     @Transactional(readOnly = true)
     public MovieEntity findByKeyword(String keyword){
@@ -48,17 +53,28 @@ public class MovieService {
             Document doc = Jsoup.connect(link).get();
             String poster = doc.select("div.mv_info_area").select("img").attr("src");
             String name = doc.select("h3.h_movie").select("a").first().text();
+
+            /*specInfo span tag에 장르 국가만 담겨져있습니다.*/
+            Elements specInfo = doc.select("p.info_spec").select("span");
+            String nation = specInfo.get(1).select("a").text();
+            String genre = specInfo.get(0).select("a").text();
+            genre = genre.split(" ")[0];
             String previewUrl = "https://movie.naver.com/"+doc.select("ul.video_thumb").select("li").select("a").attr("href");
+
+            /*예고영상을 띄우기 위해서 */
             Document doc2 = Jsoup.connect(previewUrl).get();
             previewUrl = "https://movie.naver.com/" + doc2.select("iframe._videoPlayer").attr("src");
-            movieSearchModel.setName(name);
-            movieSearchModel.setPoster(poster);
-            movieSearchModel.setPreviewUrl(previewUrl);
+            movieSearchModel.setName(name); /*해당영화제목*/
+            movieSearchModel.setPoster(poster); /*포스터URL*/
+            movieSearchModel.setPreviewUrl(previewUrl); /*예고편URL*/
+            movieSearchModel.setNation(nation);
+            movieSearchModel.setGenre(genre);
             System.out.println(link);//네이버 api로 받은 링크
             Elements el = doc.select("ul.thumb_link_mv").select("li");
+
             Map<String, Object> summary = new HashMap<>();
-            summary.put("title",doc.select("div.story_area").select("h5").text());
-            summary.put("content", doc.select("div.story_area").select("p").text());
+            summary.put("title",doc.select("div.story_area").select("h5").text());//소제목
+            summary.put("content", doc.select("div.story_area").select("p").text());//줄거리
             movieSearchModel.setSummary(summary);
             Element info = doc.select("div.mv_info").get(1);
             movieSearchModel.setEngName(info.select("strong.h_movie2").text());
@@ -114,5 +130,16 @@ public class MovieService {
             e.printStackTrace();
         }
         return map;
+    }
+
+
+    // 보고싶어요
+    public int insMovieFav(MovieFavEntity param) {
+        param.setIuser(auth.getLoginUserPk());
+        return userMapper.insMyMovie(param);
+    }
+    public int delMovieFav(MovieFavEntity param) {
+        param.setIuser(auth.getLoginUserPk());
+        return userMapper.delMyMovie(param);
     }
 }

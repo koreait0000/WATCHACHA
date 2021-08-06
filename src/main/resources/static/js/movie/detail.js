@@ -101,35 +101,84 @@ function pageChange(page, keyword){
       nextElem.classList.remove('hidden');
    })
 }
+/*--------------------------------리뷰영상 -----------------------------------*/
 movie_play_btn.addEventListener('click', ()=>{
-   let div = document.createElement('div');
-   div.classList.add('play_big_modal');
-   div.innerHTML =
-       `<h1>안녕하세요 예시</h1>`
+   let previewModal = document.querySelector('.preview_modal');
+   let modalCloseBtn = document.querySelector('.modal_close');
+
+   previewModal.classList.remove('hidden');
+   modalCloseBtn.addEventListener('click', ()=>{
+      previewModal.classList.add('hidden');
+   })
+
+
+
 })
-/*보고싶어요*/
+/*------------------------------보고싶어요----------------------------------*/
 let movie_love = document.querySelector('.movie_love');
 let movie_hate = document.querySelector('.movie_hate');
+
 movie_love.addEventListener('click',()=>{
-   let genre = "";
-   console.log(document.querySelector('.movie_spec_outline').dataset.genre.split(' '));
-   genre = document.querySelector('.movie_spec_outline').dataset.genre.split(' ')[0];
-   genre = genre.split(',')[0];
 
-   console.log(genre);
-   console.log(document.querySelector('.poster').value);
-   console.log(keyword);
+   const data = {
+      title: keyword,
+      image: movie_fav.dataset.poster,
+      genre: movie_fav.dataset.genre,
+      nation: movie_fav.dataset.nation
+   }
+   console.log(data);
 
-   movie_love.classList.add('hidden');
-   movie_hate.classList.remove('hidden');
+   fetch('/movie/movieFav',{
+      method: 'POST',
+      headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+   })
+       .then(res => res.json())
+       .then(myJson =>{
+          if(myJson.result === 0) {
+             alert('오류가 발생했습니다.');
+          }else if(myJson.result === 1) {
+             movie_love.classList.add('hidden');
+             movie_hate.classList.remove('hidden');
+          }
+         }
+       )
+
+
 
 
 });
+
+
 movie_hate.addEventListener('click', ()=>{
-   movie_hate.classList.add('hidden');
-   movie_love.classList.remove('hidden');
+   const data = {
+      title: keyword,
+      image: movie_fav.dataset.poster,
+      genre: movie_fav.dataset.genre,
+      nation: movie_fav.dataset.nation
+   }
+   console.log(data);
+
+   fetch('/movie/movieFav',{
+      method: 'DELETE',
+      headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+   })
+       .then(res => res.json())
+       .then(myJson =>{
+              if(myJson.result === 0) {
+                 alert('오류가 발생했습니다.');
+              }else if(myJson.result === 1) {
+                 movie_hate.classList.add('hidden');
+                 movie_love.classList.remove('hidden');
+              }
+           }
+       )
 
 });
-function my_movie_add(){
-   fetch()
-}
