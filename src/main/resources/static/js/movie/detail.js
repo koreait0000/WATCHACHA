@@ -104,12 +104,13 @@ function pageChange(page, keyword){
 /*--------------------------------리뷰영상 -----------------------------------*/
 movie_play_btn.addEventListener('click', ()=>{
    let previewModal = document.querySelector('.preview_modal');
-   previewModal.classList.remove('hidden');
-   let modalCloseBtn = document.querySelector('.modal_close_btn');
+   let modalCloseBtn = document.querySelector('.modal_close');
 
+   previewModal.classList.remove('hidden');
    modalCloseBtn.addEventListener('click', ()=>{
       previewModal.classList.add('hidden');
    })
+
 
 
 })

@@ -51,11 +51,11 @@
 
     <%--리뷰영상 모달--%>
     <div class="preview_modal hidden">
-        <div class="modal_close_btn">
-            <i class="fas fa-times"></i>
-        </div>
         <div class="preview_modal_video">
-            <iframe width="1130px" height="673px" src="${movie.previewUrl}" title="${movie.name}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
+            <div class="preview_modal_container">
+                <div class="preview_modal_header"><div class="modal_close"><i class="fas fa-times"></i></div></div>
+                <div class="preview_modal_section"><iframe width="1130px" height="673px" src="${movie.previewUrl}" title="${movie.name}" frameborder="0" allowfullscreen ></iframe></div>
+            </div>
         </div>
     </div>
 
@@ -131,4 +131,3 @@
         </div>
     </section>
 </div>
-<script src="/js/common/chat.js"></script>
