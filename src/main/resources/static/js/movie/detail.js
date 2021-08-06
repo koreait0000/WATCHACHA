@@ -131,19 +131,48 @@ movie_love.addEventListener('click',()=>{
    })
        .then(res => res.json())
        .then(myJson =>{
+          if(myJson.result === 0) {
+             alert('오류가 발생했습니다.');
+          }else if(myJson.result === 1) {
+             movie_love.classList.add('hidden');
+             movie_hate.classList.remove('hidden');
+          }
+         }
+       )
 
-       })
 
 
-   movie_love.classList.add('hidden');
-   movie_hate.classList.remove('hidden');
 
 });
 
 
 movie_hate.addEventListener('click', ()=>{
-   movie_hate.classList.add('hidden');
-   movie_love.classList.remove('hidden');
+   const data = {
+      title: keyword,
+      image: movie_fav.dataset.poster,
+      genre: movie_fav.dataset.genre,
+      nation: movie_fav.dataset.nation
+   }
+   console.log(data);
+
+   fetch('/movie/movieFav',{
+      method: 'DELETE',
+      headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+   })
+       .then(res => res.json())
+       .then(myJson =>{
+              if(myJson.result === 0) {
+                 alert('오류가 발생했습니다.');
+              }else if(myJson.result === 1) {
+                 movie_hate.classList.add('hidden');
+                 movie_love.classList.remove('hidden');
+              }
+           }
+       )
 
 });
 function my_movie_add(){
