@@ -8,9 +8,7 @@
 <script defer src="/js/movie/detail.js"></script>
 <div class="bg_detail" style="background-image:linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(${movie.bg_url});"> <!--배경화면-->
 
-<%--    <div>--%>
-<%--        <iframe width="560" height="315" src="${movie.previewUrl}" title="${movie.name}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--%>
-<%--    </div>--%>
+
     <div class="info_modal"> <!-- 인포 !-->
         <div class="info_modal_section">
             <div class="movie_nm">${movie.name}</div> <!-- 영화 제목 !-->
@@ -34,7 +32,7 @@
             </div>
             <div class="info_modal_footer">
                 <div class="movie_play_btn">
-                    <a href="#"><i class="fas fa-play-circle"> 재생</i></a>
+                    <i class="fas fa-play-circle"> 재생</i>
                 </div>
                 <div class="movie_fav"
                      data-genre="${movie.genre}" data-nation="${movie.nation}"
@@ -48,6 +46,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <%--리뷰영상 모달--%>
+    <div class="preview_modal hidden">
+        <div class="modal_close_btn">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="preview_modal_video">
+            <iframe width="1130px" height="673px" src="${movie.previewUrl}" title="${movie.name}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
         </div>
     </div>
 
