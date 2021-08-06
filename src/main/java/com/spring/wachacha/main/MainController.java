@@ -18,9 +18,8 @@ public class MainController {
     private MainService mainService;
 
     @GetMapping("/mainpage")
-    public void mainpage(Model model, @AuthenticationPrincipal UserDetailsImpl userDetails){
+    public void mainpage(Model model){
         model.addAttribute("map",mainService.mainpage());
-        model.addAttribute("username",userDetails.getUser().getNm());
     }
 
     @GetMapping("/show")

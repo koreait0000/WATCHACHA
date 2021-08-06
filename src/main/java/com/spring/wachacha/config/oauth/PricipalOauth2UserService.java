@@ -54,12 +54,12 @@ public class PricipalOauth2UserService extends DefaultOAuth2UserService {
 
         userInfo = new KakaoUserInfo((Map<String, Object>) oAuth2User.getAttributes().get("kakao_account"));
     }
-        else {
-            System.out.println("");
-        }
-        ((KakaoUserInfo)userInfo).attributes.entrySet().forEach(entry->{
-            System.out.println(entry.getKey()+" "+entry.getValue());
-        });
+//        else {
+//            System.out.println("");
+//        }
+//        ((KakaoUserInfo)userInfo).attributes.entrySet().forEach(entry->{
+//            System.out.println(entry.getKey()+" "+entry.getValue());
+//        });
 
         UserEntity param = new UserEntity();
         param.setEmail(userInfo.getEmail());
