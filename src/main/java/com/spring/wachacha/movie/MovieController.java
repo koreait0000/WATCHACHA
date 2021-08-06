@@ -1,12 +1,13 @@
 package com.spring.wachacha.movie;
 
 import com.spring.wachacha.movie.model.MovieEntity;
+import com.spring.wachacha.movie.model.MovieFavEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 
 @Controller
@@ -32,8 +33,11 @@ public class MovieController {
         return "movie/detail";
     }
 
-
-
+    @ResponseBody
+    @PostMapping("/movie/movieFav")
+    public Map<String, Integer> movieFav(@RequestBody MovieFavEntity movieFavEntity){
+        System.out.println("movieFavEntity : " + movieFavEntity);
+    }
 
 
 }

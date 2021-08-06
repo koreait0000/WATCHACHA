@@ -110,21 +110,37 @@ movie_play_btn.addEventListener('click', ()=>{
 /*보고싶어요*/
 let movie_love = document.querySelector('.movie_love');
 let movie_hate = document.querySelector('.movie_hate');
-movie_love.addEventListener('click',()=>{
-   let genre = "";
-   console.log(document.querySelector('.movie_spec_outline').dataset.genre.split(' '));
-   genre = document.querySelector('.movie_spec_outline').dataset.genre.split(' ')[0];
-   genre = genre.split(',')[0];
 
-   console.log(genre);
-   console.log(document.querySelector('.poster').value);
-   console.log(keyword);
+movie_love.addEventListener('click',()=>{
+
+   const data = {
+      title: keyword,
+      image: movie_fav.dataset.poster,
+      genre: movie_fav.dataset.genre,
+      nation: movie_fav.dataset.nation
+   }
+   console.log(data);
+
+   fetch('/movie/movieFav',{
+      method: 'POST',
+      headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+   })
+       .then(res => res.json())
+       .then(myJson =>{
+
+       })
+
 
    movie_love.classList.add('hidden');
    movie_hate.classList.remove('hidden');
 
-
 });
+
+
 movie_hate.addEventListener('click', ()=>{
    movie_hate.classList.add('hidden');
    movie_love.classList.remove('hidden');
