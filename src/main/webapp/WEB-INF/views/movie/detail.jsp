@@ -103,7 +103,7 @@
         <button id="chatBtn">
             Chat
         </button>
-        <div id="chatDiv"class="hidden" >
+        <div id="chatDiv"class="hidden">
             <div>
                 <label><b>${param.keyword}채팅방입니다.</b></label>
             </div>
@@ -121,4 +121,6 @@
         </div>
     </section>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.2/sockjs.js"></script>
+<script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
 <script src="/js/common/chat.js"></script>

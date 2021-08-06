@@ -20,4 +20,3 @@
         </div>
     </div>
 </div>
-<script src="/js/common/chat.js"></script>
