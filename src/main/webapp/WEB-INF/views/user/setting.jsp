@@ -65,14 +65,85 @@
         <!--------------------------setting_container 끝---------------------->
 
         <!--------------------------이용권변경 btn 모달---------------------->
-        <div class="change_right_modal_bg">
+        <div class="right_modal hidden">
+            <div class="change_right_modal_bg">
+                <div class="change_right_container">
+                    <div class="right_modal_header">
+                        <h2>이제 프리미엄으로 즐기세요!</h2>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="right_modal_center">
+                        <div class="section_left">
+                            <div class="left1"></div>
+                            <div class="left2">동시에 재생이 가능한 수 </div>
+                            <div class="left3">지원하는 최대 화질</div>
+                            <div class="left4">HDR 10+의 선명한 화질</div>
+                            <div class="left5">저장 가능한 다운로드 영상 수</div>
+                        </div>
 
+                        <div class="section_center">
+                            <div class="center1">
+                                <h5>베이직 이용권</h5>
+                                <P>월 8,900원</P>
+                            </div>
+                            <div class="center2">1</div>
+                            <div class="center3">Full HD</div>
+                            <div class="center4">X</div>
+                            <div class="center5">5</div>
+                        </div>
+
+
+                        <div class="section_right">
+                            <div class="right1">
+                                <h5>프리미엄이용권</h5>
+                                <P>월 12,900원</P>
+                            </div>
+                            <div class="right2">4</div>
+                            <div class="right3">Ultra HD 4K</div>
+                            <div class="right4">O</div>
+                            <div class="right5">100</div>
+                        </div>
+
+                    </div>
+                    <div class="right_modal_footer">
+                        <div class="payment_btn">
+                            <span>결제</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!--------------------------이용권변경 btn 모달끝---------------------->
 
 
         <!--------------------------이메일변경 btn 모달---------------------->
-        <div></div>
+        <div class="change_email">
+            <div class="change_email_bg">
+                <div class="change_email_container">
+                    <div class="change_email_header">
+                        <div>
+                            <h6>이메일 변경</h6>
+                            <p>계정 이메일은 모든 프로필에 로그인하고 이메일을 발송하는데 사용됩니다.</p>
+                        </div>
+                    </div>
+                    <div class="change_email_center">
+                        <!--Error Msg-->
+                        <div class="errorEmailMassage">
+                            <div class="overlap_email">중복된 이메일이 있습니다.</div>
+                            <div class="myEmail">현재 이메일<span>example@gmail.com</span></div>
+                        </div>
+                        <div class="change_email_form">
+                            <form action="" method="">
+                                <input type="text" value="" placeholder="새 이메일">
+                                <input type="password" value="" placeholder="비밀번호">
+                                <input type="submit" value="변경하기">
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <!--------------------------이메일변경 btn 모달끝---------------------->
 
 
