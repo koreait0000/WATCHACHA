@@ -35,6 +35,9 @@ public class UserController {
         return service.delFollow(param);
     }
 
+    /* settingPage 작업*/
+    @GetMapping("/setting")
+    public void setting(){}
 
 
 }
