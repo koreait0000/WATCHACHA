@@ -131,6 +131,7 @@
         </div>
     </section>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.2/sockjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.2/sockjs.min.js"></script>
 <script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
 <script src="/js/common/chat.js"></script>

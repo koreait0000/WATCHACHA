@@ -27,8 +27,8 @@
         <div class="Support_section">
             <h3>SUPPROT</h3>
             <ul>
-                <li><a href="https://www.data.go.kr/">Open Data Api</a></li>
-                <li><a href="https://developers.google.com/">Google Api</a></li>
+                <li><a href="https://www.data.go.kr/" target="_blank">Open Data Api</a></li>
+                <li><a href="https://developers.google.com/" target="_blank">Google Api</a></li>
                 <li style="color: white">OAuth</li>
             </ul>
         </div>
