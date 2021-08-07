@@ -52,4 +52,87 @@
 
 
 /*--------------------------------------------------------이용권 변경 Modal-------------------------------------------------------*/
-.change_right_modal_bg{width: 100%; height: 100vh; background-color: black; position: absolute; top: 0; left: 0; opacity: 0.7;}
+.change_right_modal_bg{display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh; background-color: rgba(0,0,0,0.8); position: absolute; top: 0; left: 0; min-width: 985px; min-height: 800px;}
+.change_right_container{ width: 50%; height: 67%;  min-width: 737px; min-height: 737px; border-radius: 11px;border: 0.5px solid rgba(255,255,255,0.4); background-color: #121314}
+
+/*이용권 모달 header*/
+.right_modal_header{width: 100%; height: 10%;display: flex; justify-content: space-between; align-items: center}
+.right_modal_header>h2{ font-style: normal; font-weight: bold; font-size: 22px; color: white; margin-left: 2%;}
+.right_modal_header>i{color: white; opacity: 0.7; margin-right: 3%;}
+.right_modal_header>.fas{font-size: 24px;}
+.right_modal_header>.fas:hover{cursor: pointer;}
+
+/*이용권 모달 center*/
+.right_modal_center{width: 100%; height: 70%;
+    display: grid;
+    grid-gap: 10px;
+    justify-content: center;
+    grid-template-columns: 40% 25% 25%;
+    grid-template-areas:  " section_left section_center section_right";
+}
+/*left*/
+.section_left{grid-area: section_left;display: flex; flex-direction: column; justify-content: space-evenly;}
+.section_left>div{font-style: normal; padding-left: 5px;font-style: normal;font-weight: bold;font-size: 17px;line-height: 123.7%;letter-spacing: 0.01em;color: #FFFFFF;}
+.left1{height: 58px;}
+
+/*center*/
+.section_center{grid-area: section_center;display: flex; flex-direction: column; justify-content: space-evenly;}
+.section_center:hover{background-color: black; border: 1px solid #E02C59; border-radius: 10px;}
+
+.section_center>div{display: flex; justify-content: center; color: #E02C59;font-style: normal;font-weight: 500;font-size: 17px;line-height: 123.7%;letter-spacing: -0.02em;color: #E02C59;}
+.center1{flex-direction: column; align-items: center;}
+.center1>h5{ font-family: Noto Sans; font-style: normal; font-weight: bold; font-size: 22px; line-height: 123.7%; letter-spacing: -0.02em; color: #E02C59;}
+.center1>p{font-style: normal;font-weight: 500;font-size: 16px;line-height: 123.7%;letter-spacing: -0.02em;color: #E02C59;}
+
+
+
+/*right*/
+.section_right{grid-area: section_right;display: flex; flex-direction: column; justify-content: space-evenly;}
+.section_right:hover{background-color: black;border: 1px solid #E02C59; border-radius: 10px;}
+
+.section_right>div{display: flex; justify-content: center;font-style: normal;font-weight: 500;font-size: 17px;line-height: 123.7%;letter-spacing: -0.02em;color: #E02C59;}
+.right1{flex-direction: column;align-items: center;}
+.right1>h5{ font-family: Noto Sans; font-style: normal; font-weight: bold; font-size: 22px; line-height: 123.7%; letter-spacing: -0.02em; color: #E02C59;}
+.right1>p{font-style: normal;font-weight: 500;font-size: 16px;line-height: 123.7%;letter-spacing: -0.02em;color: #E02C59;}
+
+
+
+.right_modal_footer{width: 100%; height: 20%;display: flex; justify-content: center; align-items: center;}
+.payment_btn{width: 24%; height: 42%; background-color: #E02C59; display: flex; justify-content: center; align-items: center; border-radius: 11px;}
+.payment_btn:hover{cursor: pointer; opacity: 0.8;}
+.payment_btn>span{font-style: normal;font-weight: bold;font-size: 25px;line-height: 123.7%;letter-spacing: 0.01em;color: #FFFFFF;}
+/*--------------------------------------------------------이용권 변경 Modal끝-------------------------------------------------------*/
+
+.change_email_bg{display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh; background-color: rgba(0,0,0,0.8); position: absolute; top: 0; left: 0; min-width: 985px; min-height: 800px;}
+.change_email_container{ width: 50%; height: 67%;  min-width: 737px; min-height: 737px; border-radius: 11px;border: 0.5px solid rgba(255,255,255,0.4); background-color: #121314;}
+
+.change_email_header{width: 100%; height: 15%; background-color: lightseagreen; display: flex;align-items: center;}
+.change_email_header>div{margin-left: 5px;}
+.change_email_header>div>h6{font-style: normal;font-weight: bold;font-size: 30px;line-height: 123.7%;letter-spacing: -0.02em;color: #FFFFFF;}
+.change_email_header>div>p{font-style: normal;font-weight: 600;font-size: 16px;line-height: 123.7%;letter-spacing: -0.02em;color: #5E5E5E;}
+
+.change_email_center{display: flex; flex-direction: column; justify-content: center;}
+.change_email_center>.errorEmailMassage{margin-bottom: 10px; padding-left: 10px;}
+.errorEmailMassage>.overlap_email{font-style: normal;font-weight: 600;font-size: 21px;line-height: 123.7%;letter-spacing: 0.01em;color: #E02C59;}
+.myEmail{ font-weight: 600;font-size: 17px;line-height: 123.7%;letter-spacing: -0.02em;color: #5E5E5E;}
+.myEmail>span{color: #FFFFFF;}
+
+.change_email_form>form{display: flex;flex-direction: column; align-items: center;}
+.change_email_form>form>input{
+    border: 0.5px solid rgba(255,255,255,0.4);
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+
+
+
+
+
+
+
+
+.change_email_center{width: 100%; height: 85%; background-color: lightsalmon;}
+
