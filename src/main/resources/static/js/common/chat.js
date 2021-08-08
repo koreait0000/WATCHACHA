@@ -1,25 +1,12 @@
 const chatBtn = document.getElementById('chatBtn');
 const chatDiv = document.getElementById('chatDiv');
-const username1 = document.getElementById('username');
 
 chatBtn.addEventListener('click', e=>{
-    sendName();
     chatDiv.classList.toggle('hidden');
+    // sendName();
 })
 
 let stompClient = null;
-
-// function setConnected(connected) {
-//     $("#connect").prop("disabled", connected);
-//     $("#disconnect").prop("disabled", !connected);
-//     if (connected) {
-//         $("#conversation").show();
-//     }
-//     else {
-//         $("#conversation").hide();
-//     }
-//     $("#greetings").html("");
-// }
 
 function connect() {
     const socket = new SockJS('/movie/detail');
@@ -29,7 +16,7 @@ function connect() {
         // setConnected(true);
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/greetings/'+keyword, function (greeting) {
-            showGreeting(JSON.parse(greeting.body).content);
+            showGreeting(JSON.parse(greeting.body).name);
         });
         stompClient.subscribe('/topic/chat/'+keyword, function (chat) {
             showChat(JSON.parse(chat.body));
@@ -41,7 +28,6 @@ function disconnect() {
     if (stompClient !== null) {
         stompClient.disconnect();
     }
-    // setConnected(false);
     console.log("Disconnected");
 }
 
@@ -55,7 +41,10 @@ function showGreeting(message) {
 }
 
 function sendChat() {
-    stompClient.send("/app/chat/"+keyword, {}, JSON.stringify({'name': $("#msgArea").data('username'), 'message': $("#msg").val()}));
+    if($("#msg").val()){
+        stompClient.send("/app/chat/"+keyword, {}, JSON.stringify({'name': $("#msgArea").data('username'), 'message': $("#msg").val()}));
+        $("#msg").val('');
+    }
 }
 function showChat(chat) {
     $("#msgArea").append("<tr><td>" + chat.name + " : " + chat.message + "</td></tr>");
@@ -69,7 +58,15 @@ function showChat(chat) {
 //     $( "#button-send" ).click(function(){ sendChat(); });
 // });
 $('#button-send').click(function(){ sendChat(); });
+document.addEventListener('keyup', e=>{
+    if(e.key === 'Enter'){
+        if($("#msg").val()){
+            sendChat();
+        }
+    }
+})
 connect();
+
 // $(document).ready(function (){
 //     let keyword = document.querySelector('.prev').dataset.keyword;
 //     const username = [$('#msgArea').data('username')];

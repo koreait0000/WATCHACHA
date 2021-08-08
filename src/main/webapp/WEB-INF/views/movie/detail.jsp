@@ -115,7 +115,7 @@
         </button>
         <div id="chatDiv"class="hidden">
             <div>
-                <label><b>${param.keyword}채팅방입니다.</b></label>
+                <label><b>${param.keyword} 채팅방</b></label>
             </div>
             <div>
                 <div id="msgArea" data-username="${username}"></div>
