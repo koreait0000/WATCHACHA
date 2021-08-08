@@ -10,8 +10,8 @@ import org.springframework.web.util.HtmlUtils;
 public class ChatController {
     @MessageMapping("/hello/{keyword}")
     @SendTo("/topic/greetings/{keyword}")
-    public Greeting greeting(HelloMessage message,@PathVariable String keyword) throws Exception {
-        return new Greeting("Hello, " + HtmlUtils.htmlEscape(message.getName()) + "!");
+    public Chat greeting(Chat chat,@PathVariable String keyword) throws Exception {
+        return new Chat(HtmlUtils.htmlEscape(chat.getName()) + "님 어서오세요!");
     }
 
     @MessageMapping("/chat/{keyword}")

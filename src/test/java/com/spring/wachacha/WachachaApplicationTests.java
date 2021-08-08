@@ -247,4 +247,24 @@ class WachachaApplicationTests {
 //                System.out.print(i+" ");
 //            }
 //        }
+public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    String alpha = sc.next();
+    String upper = alpha.toUpperCase();
+    int[] num = new int[26];
+    for(int i=0; i<upper.length(); i++){
+        num[upper.charAt(i)-65]++;
+    }
+    int max= -1;
+    char al='?';
+    for(int i=0; i<num.length; i++){
+        if(max<num[i]){
+            max = num[i];
+            al = (char) (i+65);
+        }else if(max == num[i]){
+            al = '?';
+        }
+    }
+    System.out.print(al);
+}
 }
