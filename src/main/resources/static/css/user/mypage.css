@@ -1,0 +1,17 @@
+.mypage_wrapper{width: 100%; background-color: #1B1C1F}
+.mypage_container{width: 100%; display: flex; align-items: center; flex-direction: column; min-width: 1116px;}
+/*profile_header*/
+.profile_header{margin-top: 100px;}
+.profile_header>.profile_img{ width: 200px; height: 200px; background-color: lightseagreen; border-radius: 50%; border: 6px solid white;}
+.profile_header>.profile_ifo{ width: 200px; height: 100px; background-color: lightpink;}
+
+.profile_search{width: 65%; margin-top: 10px;}
+
+.profile_search>form>input{width: 100%; padding: 19px; border: 1px solid white; border-radius: 12px; color: white; background-color: rgba(66, 66, 66, 0.8);}
+
+.profile_myFavList{ width: 77.5%;}
+.myfavMovie_List{display: flex; justify-content: center; min-width: 1200px;}
+.myfav_movie{ width: 208px; height: 323px; background-color: #5E5E5E; margin: 25px; border-radius: 10px;}
+
+
+.myfav_movie_footer{display: flex;}
