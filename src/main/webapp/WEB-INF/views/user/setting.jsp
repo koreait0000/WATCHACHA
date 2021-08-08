@@ -70,7 +70,7 @@
                 <div class="change_right_container">
                     <div class="right_modal_header">
                         <h2>이제 프리미엄으로 즐기세요!</h2>
-                        <i class="fas fa-times"></i>
+                        <i class="fas fa-times close"></i>
                     </div>
                     <div class="right_modal_center">
                         <div class="section_left">
@@ -117,7 +117,7 @@
 
 
         <!--------------------------이메일변경 btn 모달---------------------->
-        <div class="change_email">
+        <div class="change_email hidden">
             <div class="change_email_bg">
                 <div class="change_email_container">
                     <div class="change_email_header">
@@ -125,6 +125,7 @@
                             <h6>이메일 변경</h6>
                             <p>계정 이메일은 모든 프로필에 로그인하고 이메일을 발송하는데 사용됩니다.</p>
                         </div>
+                        <i class="fas fa-times close"></i>
                     </div>
                     <div class="change_email_center">
                         <!--Error Msg-->
@@ -136,7 +137,7 @@
                             <form action="" method="">
                                 <input type="text" value="" placeholder="새 이메일">
                                 <input type="password" value="" placeholder="비밀번호">
-                                <input type="submit" value="변경하기">
+                                <button>변경하기</button>
                             </form>
                         </div>
                     </div>
@@ -148,9 +149,34 @@
 
 
         <!--------------------------비밀번호변경 btn 모달---------------------->
-        <div></div>
-        <!--------------------------비밀번호변경 btn 모달끝---------------------->
+        <div class="change_password hidden">
+            <div class="change_password_bg">
+                <div class="change_password_container">
+                    <!--header-->
+                    <div class="change_password_header">
+                        <div>
+                            <h5>비밀번호 변경</h5>
+                            <span>비밀번호가 변경되면 로그인된 모든 디바이스에서 다시 로그인해야 합니다.</span>
+                        </div>
+                        <i class="fas fa-times close"></i>
+                    </div>
 
+                    <!--err-->
+                    <div class="change_password_err"><h5>비밀번호가 일치하지 않습니다.<br>다시 확인해주세요.</h5></div>
+
+                    <!--form-->
+                    <div class="change_password_form">
+                        <form action="" method="">
+                            <input type="password" placeholder="기존 비밀번호">
+                            <input type="password" placeholder="새 비밀번호">
+                            <input type="password" placeholder="새 비밀번호 확인">
+                            <button>변경하기</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--------------------------비밀번호변경 btn 모달끝---------------------->
 
 
     </div>
