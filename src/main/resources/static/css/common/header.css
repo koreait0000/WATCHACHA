@@ -17,7 +17,9 @@ header{ position: fixed; top: 0;  height: 83px; width: 100%; min-width: 764px}
     flex-direction: column;
     background-color: #2B3336;
     padding: 10px;
-    margin-top: 15px;
+    margin-top: 10px;
+    border: 0.5px solid #575757;
+    border-radius: 5px;
 }
 .userProfile_modal_container>a{
     margin: 7.5px;
