@@ -58,7 +58,8 @@
                                     </c:when>
                                 <c:otherwise>
                                     <div class="social_Msg">
-                                        소셜로그인은 비밀번경이 불가능합니다.
+                                        <h5>'소셜로그인'은</h5>
+                                        <h6>비밀번경이 불가능합니다.</h6>
                                     </div>
                                 </c:otherwise>
                             </c:choose>
