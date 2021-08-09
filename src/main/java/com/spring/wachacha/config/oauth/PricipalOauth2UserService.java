@@ -76,6 +76,7 @@ public class PricipalOauth2UserService extends DefaultOAuth2UserService {
             param.setPw(bCryptPasswordEncoder.encode("login"));
             mapper.join(param);
             System.out.println("login success!");
+            result = param;
         }
 //        String provider = userInfo.getProvider();
 //        String providerId = userInfo.getProviderId();
@@ -83,6 +84,6 @@ public class PricipalOauth2UserService extends DefaultOAuth2UserService {
 //        String password = bCryptPasswordEncoder.encode("소셜로그인패스워드");
 //        String email = userInfo.getEmail();
 //        String grade = "ROLE_USER";
-        return new UserDetailsImpl(param,oAuth2User.getAttributes());
+        return new UserDetailsImpl(result,oAuth2User.getAttributes());
     }
 }
