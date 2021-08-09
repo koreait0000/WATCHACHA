@@ -54,7 +54,9 @@ checkpw.addEventListener('click', () => {
                     let span = document.createElement('span');
                     span.className ='error';
                     span.innerText = '비밀번호를 확인해주세요.';
-                    $('#oldPw').after(span);
+                    if(!document.querySelector('.error')){
+                        $('#oldPw').after(span);
+                    }
                     break;
                 case 2:
                     let spanError = document.querySelector('.error');
