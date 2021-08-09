@@ -169,10 +169,10 @@
                         <sec:authentication property="principal" var="principal" />
                     <div class="change_password_form">
 <%--                        <form action="/editPw" method="post">--%>
-                            <input type="password" id="oldPw" data-email="${principal.user.email}" placeholder="기존 비밀번호">
+                            <input type="password" id="oldPw" required data-email="${principal.user.email}" placeholder="기존 비밀번호">
                             <button id="checkpw">비밀번호 확인</button>
-                            <input type="password" id="newPw" placeholder="새 비밀번호">
-                            <input type="password" id="newPw2" placeholder="새 비밀번호 확인">
+                            <input type="password" id="newPw" placeholder="새 비밀번호" required>
+                            <input type="password" id="newPw2" placeholder="새 비밀번호 확인" required>
                             <button class="hidden" id="btnGetPw">변경하기</button>
 <%--                        </form>--%>
                     </div>
