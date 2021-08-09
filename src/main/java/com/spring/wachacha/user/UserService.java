@@ -60,7 +60,7 @@ public class UserService {
 
     public int selUser(UserEntity user){
         user.setProvider("local");
-        UserEntity userEntity = userMapper.selUser(user);
+        UserEntity userEntity = userMapper.selUser(user); //아이디랑 비밀번호만 있는상태
         if(userEntity == null){
             return 0;
         }else{
