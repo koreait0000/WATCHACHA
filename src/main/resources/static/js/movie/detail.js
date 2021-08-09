@@ -152,10 +152,6 @@ movie_love.addEventListener('click',()=>{
           }
          }
        )
-
-
-
-
 });
 
 

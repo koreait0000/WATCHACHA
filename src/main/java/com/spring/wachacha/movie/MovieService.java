@@ -136,6 +136,7 @@ public class MovieService {
     // 보고싶어요
     public int insMovieFav(MovieFavEntity param) {
         param.setIuser(auth.getLoginUserPk());
+        System.out.println(param);
         return userMapper.insMyMovie(param);
     }
     public int delMovieFav(MovieFavEntity param) {
