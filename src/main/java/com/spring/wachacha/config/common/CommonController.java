@@ -97,6 +97,16 @@ public class CommonController {
     @PostMapping("/selUser")
     public int selUser(@RequestBody UserEntity user){
         return service.selUser(user);
+
+    }
+
+    @ResponseBody
+    @PostMapping("/selUser2")
+    public int selUser2(@RequestBody UserEntity user){
+        System.out.println("/selUser2 시작");
+        user.setProvider("local");
+        System.out.println("user : " + user);
+        return service.selUser(user);
     }
 
 }

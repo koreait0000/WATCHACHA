@@ -1,44 +1,35 @@
 let right_payment = document.querySelector('.right_payment');
-let email_change = document.querySelector('.email_change');
 let password_change = document.querySelector('.password_change');
-let close_modal = document.querySelectorAll('.close');
 
 let right_modal = document.querySelector('.right_modal');
-let change_email = document.querySelector('.change_email');
 let change_password = document.querySelector('.change_password');
+
 let btnGetPw = document.querySelector('#btnGetPw');
 let checkpw = document.querySelector('#checkpw');
 
 right_payment.addEventListener('click', ()=>{
     right_modal.classList.remove('hidden');
-    close_modal.addEventListener('click', ()=>{
+    let closeModal = document.querySelector('.close1');
+    closeModal.addEventListener('click', ()=>{
+        right_modal.classList.add('hidden');
+    });
+    document.addEventListener('keyup', e=>{
+        if (e.key === 'Escape');
         right_modal.classList.add('hidden');
     });
 });
 
-
-//작업하는동안 주석함 필요하면 푸셈
-// email_change.addEventListener('click',()=>{
-//
-//     change_email.classList.remove('hidden');
-//     close_modal.addEventListener('click', ()=>{
-//         change_email.classList.add('hidden');
-//     });
-//
-// });
-
 password_change.addEventListener('click', ()=>{
-
     change_password.classList.remove('hidden');
-    // close_modal.addEventListener('click', ()=>{
-    //     change_password.classList.add('hidden');
-    // });
-
+    let closeModal = document.querySelector('.close2');
+    closeModal.addEventListener('click', ()=>{
+        change_password.classList.add('hidden');
+    });
 });
 
 checkpw.addEventListener('click', () => {
     let oldpw = document.querySelector('#oldPw');
-    fetch('/selUser', {
+    fetch('/selUser2', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
@@ -49,6 +40,7 @@ checkpw.addEventListener('click', () => {
         })
     }).then(res => res.json())
         .then(myJson => {
+
             switch (myJson){
                 case 0: //비번 일치하지않음
                     let span = document.createElement('span');
