@@ -1,4 +1,11 @@
 loginBtnElem = document.querySelector('.loginBtn');
-loginBtnElem.addEventListener('click', function (){
-    console.log('ddd');
-})
+userProfileElem = document.querySelector('.header_right');
+userProfileModalElem = document.querySelector('.userProfile_modal');
+
+userProfileElem.addEventListener('mouseover', ()=>{
+    userProfileModalElem.classList.remove('hidden');
+});
+
+userProfileElem.addEventListener('mouseout',()=>{
+    userProfileModalElem.classList.add('hidden');
+});

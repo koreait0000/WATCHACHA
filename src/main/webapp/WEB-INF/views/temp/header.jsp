@@ -31,7 +31,22 @@
                 <a href="/main/mainpage"><img class="logo" src="/img/왓챠로고/wachacha.png"></a>
             </div>
             <div class="header_right">
-                <a  class="loginBtn" href="/logout">로그아웃</a>
+                <div class="header_right_container">
+                    <div class="header_userProfile" >
+                        <div class="header_userImg"></div>
+                        <div class="header_userName">username</div>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                    <div class="userProfile_modal hidden">
+                        <div class="userProfile_modal_container">
+                            <a href="/user/mypage"><div>마이페이지</div></a>
+                            <a href="/user/setting"><div>설정</div></a>
+                            <a href=""><div>공지사항</div></a>
+                            <a href="/logout"><div>로그아웃</div></a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </sec:authorize>

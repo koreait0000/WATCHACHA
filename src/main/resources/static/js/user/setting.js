@@ -10,13 +10,12 @@ let btnGetPw = document.querySelector('#btnGetPw');
 let checkpw = document.querySelector('#checkpw');
 
 right_payment.addEventListener('click', ()=>{
-
     right_modal.classList.remove('hidden');
     close_modal.addEventListener('click', ()=>{
         right_modal.classList.add('hidden');
     });
-
 });
+
 
 //작업하는동안 주석함 필요하면 푸셈
 // email_change.addEventListener('click',()=>{
