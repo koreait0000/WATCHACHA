@@ -2,7 +2,6 @@ package com.spring.wachacha.movie.model;
 
 import lombok.Data;
 
-
 @Data
 public class MovieEntity {
     private int display; //검색 결과 출력 건수를 지정.

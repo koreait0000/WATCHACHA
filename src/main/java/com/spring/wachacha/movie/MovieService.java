@@ -33,6 +33,7 @@ public class MovieService {
     private MainService mainService;
     @Autowired private UserMapper userMapper;
     @Autowired private IAuthenticationFacade auth;
+    @Autowired private MovieMapper movieMapper;
 
     @Transactional(readOnly = true)
     public MovieEntity findByKeyword(String keyword){
@@ -143,4 +144,14 @@ public class MovieService {
         param.setIuser(auth.getLoginUserPk());
         return userMapper.delMyMovie(param);
     }
+
+    //보고싶어요 체크
+    public int checkMyfav(String keyword){
+        MovieFavEntity movieFavEntity;
+
+        int num = 0;
+        return num;
+    }
+
+
 }

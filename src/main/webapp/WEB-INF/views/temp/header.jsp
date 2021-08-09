@@ -26,6 +26,7 @@
 
     <!-- 로그인 중인 사용자 -->
     <sec:authorize access="isAuthenticated()">
+        <sec:authentication property="principal" var="principal" />
         <div class="header_container">
             <div class="header_left">
                 <a href="/main/mainpage"><img class="logo" src="/img/왓챠로고/wachacha.png"></a>
@@ -34,7 +35,7 @@
                 <div class="header_right_container">
                     <div class="header_userProfile" >
                         <div class="header_userImg"></div>
-                        <div class="header_userName">username</div>
+                        <div class="header_userName">${principal.user.nm}</div>
                         <i class="fas fa-caret-down"></i>
                     </div>
                     <div class="userProfile_modal hidden">

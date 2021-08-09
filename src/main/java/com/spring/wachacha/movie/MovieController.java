@@ -29,9 +29,13 @@ public class MovieController {
         return movieService.findByKeyword(keyword);
     }
 
+
     @GetMapping("/movie/detail")
     public String movieYoutube(String keyword, Model model, @AuthenticationPrincipal UserDetailsImpl userDetails){
-        model.addAttribute("movie",movieService.info(keyword));
+        model.addAttribute("movie", movieService.info(keyword));
+
+        model.addAttribute("fav", movieService.checkMyfav(keyword));
+
         model.addAttribute("username",userDetails.getUser().getNm());
         //model.addAttribute("youtube",movieService.Youtube(keyword,page));
         return "movie/detail";
