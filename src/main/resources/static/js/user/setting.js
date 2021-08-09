@@ -8,16 +8,14 @@ let change_email = document.querySelector('.change_email');
 let change_password = document.querySelector('.change_password');
 
 right_payment.addEventListener('click', ()=>{
-
     right_modal.classList.remove('hidden');
     close_modal.addEventListener('click', ()=>{
         right_modal.classList.add('hidden');
     });
-
 });
 
-email_change.addEventListener('click',()=>{
 
+email_change.addEventListener('click',()=>{
     change_email.classList.remove('hidden');
     close_modal.addEventListener('click', ()=>{
         change_email.classList.add('hidden');

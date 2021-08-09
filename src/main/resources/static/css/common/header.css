@@ -2,28 +2,21 @@ header{ position: fixed; top: 0;  height: 83px; width: 100%; min-width: 764px}
 .header_container{  display: flex; justify-content: space-between; padding: 0 2%; }
 .header_left>a>img{ width: 140px; margin-top: 10px;}
 .header_right{padding-top: 25px; display: flex}
-.header_right a{
-    height: 40px;
-    width: 106px;
-    padding: 10px 0px;
-    border-radius: 213px;
-    background-color: #fff;
-    text-align: center;
+.loginBtn{height: 40px;width: 106px;padding: 10px 0px;border-radius: 213px;background-color: #fff;text-align: center;font-family: Noto Sans;font-style: normal;font-weight: bold;font-size: 14.7px;color: #000000;text-decoration: none;}
 
-    font-family: Noto Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14.7px;
-    color: #000000;
-    text-decoration: none;
+.header_right{display: flex; flex-direction: column;}
+.header_userProfile{display: flex; align-items: center; padding-bottom: 16px;}
+.header_userProfile:hover{cursor: pointer;}
+.header_userProfile>.header_userImg{width: 45px;height: 45px;border-radius: 50%;background-color: lightblue;}
+.header_userProfile>.header_userName{padding-left: 5px; padding-right: 5px; color: white;}
+.header_userProfile>.fas{color: white; font-size: 18px;}
+
+
+.userProfile_modal{background-color: #2B3336;}
+.userProfile_modal>a>div{
+    color: white;
 }
-.header_right a h4{
-    height: 40px;
-    margin-top: 7px;
-    align-items: center;
-    text-decoration: none;
-    font-family: "Noto Sans KR", sans-serif;
-    font-weight: bold;
-    font-size: 14.7px;
-    color: rgb(27, 27, 27);
-}
+
+
+
+
