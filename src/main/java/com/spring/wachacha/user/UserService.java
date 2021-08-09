@@ -59,10 +59,19 @@ public class UserService {
     }
 
     public int selUser(UserEntity user){
-        if(userMapper.selUser(user) == null){
+        UserEntity userEntity = userMapper.selUser(user);
+        if(userEntity == null){
             return 0;
         }else{
-            return 1;
+            if(user.getPw() != null){
+                if(passwordEncoder.matches(user.getPw(),userEntity.getPw())){
+                    return 2;
+                }else{
+                    return 0;
+                }
+            }else{
+                return 1;
+            }
         }
     }
 

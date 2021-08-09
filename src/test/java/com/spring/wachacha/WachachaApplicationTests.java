@@ -163,7 +163,7 @@ class WachachaApplicationTests {
 //        return switches;
 //    }
 
-//    public static void main(String[] args){
+    //    public static void main(String[] args){
 //        Scanner sc = new Scanner(System.in);
 //        int a = sc.nextInt();
 //        int b = sc.nextInt();
@@ -247,24 +247,49 @@ class WachachaApplicationTests {
 //                System.out.print(i+" ");
 //            }
 //        }
-public static void main(String[] args){
-    Scanner sc = new Scanner(System.in);
-    String alpha = sc.next();
-    String upper = alpha.toUpperCase();
-    int[] num = new int[26];
-    for(int i=0; i<upper.length(); i++){
-        num[upper.charAt(i)-65]++;
-    }
-    int max= -1;
-    char al='?';
-    for(int i=0; i<num.length; i++){
-        if(max<num[i]){
-            max = num[i];
-            al = (char) (i+65);
-        }else if(max == num[i]){
-            al = '?';
-        }
-    }
-    System.out.print(al);
-}
+//public static void main(String[] args){
+//    Scanner sc = new Scanner(System.in);
+//    String alpha = sc.next();
+//    String upper = alpha.toUpperCase();
+//    int[] num = new int[26];
+//    for(int i=0; i<upper.length(); i++){
+//        num[upper.charAt(i)-65]++;
+//    }
+//    int max= -1;
+//    char al='?';
+//    for(int i=0; i<num.length; i++){
+//        if(max<num[i]){
+//            max = num[i];
+//            al = (char) (i+65);
+//        }else if(max == num[i]){
+//            al = '?';
+//        }
+//    }
+//    System.out.print(al);
+//}
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        String s = sc.next();
+//        int cnt=0;
+//        for(int i=0; i<s.length(); i++){
+//            switch(s.charAt(i)){
+//                case 'A': case 'B': case 'C':
+//                    cnt+=3; break;
+//                case 'D': case 'E': case 'F':
+//                    cnt+=4; break;
+//                case 'G': case 'H': case 'I':
+//                    cnt+=5; break;
+//                case 'J': case 'K': case 'L':
+//                    cnt+=6; break;
+//                case 'M': case 'N': case 'O':
+//                    cnt+=7; break;
+//                case 'P': case 'Q': case 'R': case 'S':
+//                    cnt+=8; break;
+//                case 'T': case 'U': case 'V':
+//                    cnt+=9; break;
+//                default:
+//                    cnt+=10;
+//            }
+//        }
+//    }
 }
