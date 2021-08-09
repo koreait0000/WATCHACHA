@@ -45,6 +45,7 @@ public class MovieController {
         result.put("result", movieService.insMovieFav(movieFavEntity));
         return result;
     }
+
     @ResponseBody
     @DeleteMapping("/movie/movieFav")
     public Map<String, Integer> delMovieFav(@RequestBody MovieFavEntity movieFavEntity){
