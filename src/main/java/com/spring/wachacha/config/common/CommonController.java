@@ -93,4 +93,10 @@ public class CommonController {
         return "redirect:/loginForm?auth=1";
     }
 
+    @ResponseBody
+    @PostMapping("/selUser")
+    public int selUser(@RequestBody UserEntity user){
+        return service.selUser(user);
+    }
+
 }
