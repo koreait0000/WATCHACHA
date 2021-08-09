@@ -23,7 +23,7 @@
     </update>
 
     <update id="editPw">
-        update t_user set pw = #{pw} where email = #{email} and provider = local
+        update t_user set pw = #{pw} where email = #{email} and provider = "local"
     </update>
     <update id="updUser">
         UPDATE t_user

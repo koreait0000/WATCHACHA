@@ -165,14 +165,18 @@
                     <div class="change_password_err"><h5>비밀번호가 일치하지 않습니다.<br>다시 확인해주세요.</h5></div>
 
                     <!--form-->
+                    <sec:authorize access="isAuthenticated()">
+                        <sec:authentication property="principal" var="principal" />
                     <div class="change_password_form">
-                        <form action="" method="">
-                            <input type="password" placeholder="기존 비밀번호">
-                            <input type="password" placeholder="새 비밀번호">
-                            <input type="password" placeholder="새 비밀번호 확인">
-                            <button>변경하기</button>
-                        </form>
+<%--                        <form action="/editPw" method="post">--%>
+                            <input type="password" id="oldPw" data-email="${principal.user.email}" placeholder="기존 비밀번호">
+                            <button id="checkpw">비밀번호 확인</button>
+                            <input type="password" id="newPw" placeholder="새 비밀번호">
+                            <input type="password" id="newPw2" placeholder="새 비밀번호 확인">
+                            <button class="hidden" id="btnGetPw">변경하기</button>
+<%--                        </form>--%>
                     </div>
+                    </sec:authorize>
                 </div>
             </div>
         </div>
