@@ -59,6 +59,7 @@ public class UserService {
     }
 
     public int selUser(UserEntity user){
+        user.setProvider("local");
         UserEntity userEntity = userMapper.selUser(user);
         if(userEntity == null){
             return 0;
