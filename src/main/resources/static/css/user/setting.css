@@ -19,7 +19,7 @@
 .right_detail>h4{position: relative; top: 25%; font-style: normal; font-weight: 800; font-size: 22px; line-height: 77.7%; letter-spacing: 0.01em; color: #FFFFFF;}
 .right_result{width: 80%; height: 100%;}
 .right_result_Msg{ position: relative; top: 25%; margin-left: 3%;}
-.right_result_Msg>h4{font-style: normal;font-weight: 800;font-size: 22px;line-height: 77.7%;letter-spacing: 0.1em;color: #FFFFFF; margin-bottom: 2%;}
+.right_result_Msg>h4{font-style: normal;font-weight: 800;font-size: 22px;line-height: 77.7%;letter-spacing: 0.1em;color: #FFFFFF; margin-bottom: 3%;}
 .right_result_Msg>h5{ font-style: normal; font-weight: bold; font-size: 17px; line-height: 77.7%; letter-spacing: 0.01em; color: #6C6C6C;}
 
 .right_section_right{width: 25%; height: 100%;display: flex; justify-content: center;}
@@ -107,21 +107,24 @@
 .change_password_bg{display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh; background-color: rgba(0,0,0,0.8); position: absolute; top: 0; left: 0; min-width: 985px; min-height: 800px;}
 .change_password_container{ width: 42.5%; height: 67%;  min-width: 737px; min-height: 737px; border-radius: 11px;border: 0.5px solid rgba(255,255,255,0.4); background-color: #121314; padding: 2.25%;}
 
-.change_password_header{width: 100%; height: 20%; display: flex; justify-content: space-between;}
+.change_password_header{width: 100%; height: 20%; display: flex; justify-content: space-between; margin-top: 10px;}
 .change_password_header>div{margin-left: 3.5%;}
 .change_password_header>div>h5{font-style: normal;font-weight: bold;font-size: 32px;color: #FFFFFF;}
 .change_password_header>div>span{font-style: normal;font-weight: 600;font-size: 16px;color: #5E5E5E;}
 .change_password_header>i{color: white; font-size: 24px;}
 .change_password_header>i:hover{cursor: pointer;}
 
-.change_password_err{width: 100%; height: 15%;display: flex; align-items: flex-end;}
-.change_password_err>h5{font-style: normal;font-weight: 600;font-size: 16px;color: #E02C59; margin-left: 5%;}
-
-.change_password_form{width: 100%; height: 60%; background-color: lightcoral;}
-.change_password_form>form{height: 100%; display: flex;flex-direction: column;align-items: center; justify-content: center;}
-.change_password_form>form>input{border: 0.5px solid rgba(255,255,255,0.4);width: 90%;padding: 18px;margin-bottom: 29px;border-radius: 6px; color: white;}
-.change_password_form>form>button{background-color: rgba(224, 44, 89, 0.85);width: 31%; height: 61px; border-radius: 8px;font-style: normal;font-weight: bold;font-size: 27px;line-height: 123.7%;letter-spacing: 0.01em;color: #FFFFFF;}
+.change_password_form{width: 100%; height: 67%;display: flex; flex-direction: column; align-items: center; justify-content: center;}
+.change_password_form>input{
+    color: white;
+    width: 80%;border: 0.5px solid rgba(255,255,255,0.4);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.change_password_form>button{color: white;background-color: #f82f62;opacity: 0.8;width: 80%;padding: 15px;border-radius: 10px;margin: 5px;}
+.error{color: #E02C59; align-items: flex-start;}
 
 .social_Msg{color: white; opacity: 0.8; font-size: 14px; padding-top: 61px;}
-
+.social_Msg>h5{margin-bottom: 0.25rem; color: #f82f62; font-weight: 600;}
 /*--------------------------------------------------------비밀번호 변경 Modal 끝-------------------------------------------------------*/

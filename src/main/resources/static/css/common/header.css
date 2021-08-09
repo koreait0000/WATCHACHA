@@ -11,12 +11,17 @@ header{ position: fixed; top: 0;  height: 83px; width: 100%; min-width: 764px}
 .header_userProfile>.header_userName{padding-left: 5px; padding-right: 5px; color: white;}
 .header_userProfile>.fas{color: white; font-size: 18px;}
 
-
-.userProfile_modal{background-color: #2B3336;}
-.userProfile_modal>a>div{
-    color: white;
+.userProfile_modal{position: absolute; top: 78px; right: 20px;}
+.userProfile_modal_container{
+    display: flex;
+    flex-direction: column;
+    background-color: #2B3336;
+    padding: 10px;
+    margin-top: 15px;
 }
-
+.userProfile_modal_container>a{
+    margin: 7.5px;
+}
 
 
 
