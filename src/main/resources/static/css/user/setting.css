@@ -69,6 +69,7 @@
     justify-content: center;
     grid-template-columns: 40% 25% 25%;
     grid-template-areas:  " section_left section_center section_right";
+    margin-top: 21px;
 }
 /*left*/
 .section_left{grid-area: section_left;display: flex; flex-direction: column; justify-content: space-evenly;}

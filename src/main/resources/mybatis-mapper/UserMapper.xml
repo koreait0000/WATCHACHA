@@ -96,6 +96,7 @@
         INNER JOIN t_user B
         ON A.iuser = B.iuser
         WHERE A.iuser = ${user.iuser}
+        ORDER BY i_movie_fav DESC
         <if test="page.nation != null">
             AND A.nation = #{page.nation}
         </if>
@@ -105,7 +106,7 @@
         <if test="page.searchText != null">
             AND A.title LIKE CONCAT('%', #{page.searchText}, '%')
         </if>
-        LIMIT ${page.minIndex}, ${page.maxIndex}
+        LIMIT ${page.minIndex}, ${page.listLength}
     </select>
     <select id="selUserMovieFavOrder" resultType="UserEntity">
         SELECT iuser

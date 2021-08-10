@@ -93,6 +93,7 @@
             <div class="Box__Office__poster">
                 <c:forEach var="i" items="${map.rankPoster}" varStatus="status">
                     <div class="item">
+                        <div class="item_container"></div>
                         <a href="/movie/detail?keyword=${map.name[status.index]}&page=0">
                             <div class="Box__Office__poster1">
                                 <img src="<c:out value="${i}"></c:out>">

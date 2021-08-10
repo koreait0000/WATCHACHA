@@ -7,7 +7,7 @@ infinityScrolling.getItemList(1);
 function makeMovieList(movieList) {
     console.log(movieList);
     movieList.forEach(movie => {
-        const iElem1 = document.createElement('i');
+        /*const iElem1 = document.createElement('i');
         iElem1.className = 'fas fa-heart';
         const divElem1 = document.createElement('div');
         divElem1.className = 'myfav_movie-footer';
@@ -33,7 +33,23 @@ function makeMovieList(movieList) {
         divElem3.append(divElem2);
         divElem2.append(iElem2);
         divElem2.append(divElem1);
-        divElem1.append(iElem1);
+        divElem1.append(iElem1);*/
+        const divElem = document.createElement('div');
+        divElem.className = 'myfavMovie_List';
+        divElem.innerHTML = `
+            <a href="/movie/detail?keyword=${movie.title}&page=0">
+                <div class="myfavMovie_List">
+                    <div class="myfav_movie">
+                        <img src="${movie.image}">
+                    </div>
+                    <div class="playBtn">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+            </a>
+            `
+        myFavListDivElem.append(divElem);
+
         // = movieContainerElem.innerHTML += `<img src='https://image.tmdb.org/t/p/w500/${movie.poster_path}'>`;
     })
 }

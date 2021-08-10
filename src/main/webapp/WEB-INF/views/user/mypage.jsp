@@ -26,58 +26,8 @@
             </div>
                 <%-----------------------------profile_search끝----------------------%>
 
-            <div class="profile_myFavList">
-                <div class="myfavMovie_List">
-                    <c:forEach  begin="1" end="5" step="1" varStatus="status">
-                        <div class="myfav_movie">
-                            <img>
-                            <span>제목</span>
-                            <div class="myfav_movie_hover">
-                                <i class="fas fa-play-circle"></i>
-                                <div class="myfav_movie_footer">
-                                    <i class="fas fa-heart"></i>
-                                    <h5>평점</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-            </div>
+            <div class="profile_myFavList"></div>
 
-            <div class="profile_myFavList">
-                <div class="myfavMovie_List">
-                    <c:forEach  begin="1" end="5" step="1" varStatus="status">
-                        <div class="myfav_movie">
-                            <img>
-                            <span>제목</span>
-                            <div class="myfav_movie_hover">
-                                <i class="fas fa-play-circle"></i>
-                                <div class="myfav_movie_footer">
-                                    <i class="fas fa-heart"></i>
-                                    <h5>평점</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-            </div>
-
-            <div class="profile_myFavList">
-                <div class="myfavMovie_List">
-                    <c:forEach  begin="1" end="5" step="1" varStatus="status">
-                        <div class="myfav_movie">
-                            <img>
-                            <div class="myfav_movie_hover">
-                                <i class="fas fa-play-circle"></i>
-                                <div class="myfav_movie_footer">
-                                    <i class="fas fa-heart"></i>
-                                    <h5>평점</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-            </div>
                 <%-----------------------------profile_myFavList끝----------------------%>
 
         </div>
