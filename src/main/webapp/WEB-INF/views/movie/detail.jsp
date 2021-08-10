@@ -57,7 +57,28 @@
         <div class="preview_modal_video">
             <div class="preview_modal_container">
                 <div class="preview_modal_header"><div class="modal_close"><i class="fas fa-times"></i></div></div>
-                <div class="preview_modal_section"><iframe width="1130px" height="673px" src="${movie.previewUrl}" title="${movie.name}" frameborder="0" allowfullscreen ></iframe></div>
+                <div class="preview_modal_section">
+                    <iframe width="1130px" height="673px" src="${movie.previewUrl}" title="${movie.name}" frameborder="0" allowfullscreen ></iframe>
+                    <%--채팅창--%>
+                    <section>
+                        <div id="chatDiv"class="hidden">
+                            <div class="chatDiv_container">
+                                <div class="chatDiv_header"><b>${param.keyword} 채팅방</b></div>
+                                <div class="chatDiv_section">
+                                    <div id="msgArea" data-username="${username}"></div>
+                                    <div class="col-6">
+                                        <div class="input-group mb-3">
+                                            <input type="text" id="msg" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button" id="button-send">전송</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
@@ -71,7 +92,8 @@
                     <div class="bounce2"></div>
                     <div class="bounce3"></div>
                 </div>
-            </div> <%--로딩창--%>
+            </div>
+            <%--로딩창--%>
             <div class="movie_review_Object">
                 <button class="prev hidden" data-keyword="${param.keyword}">
                     <i class="fas fa-arrow-circle-left"></i>
@@ -79,21 +101,6 @@
                 <button class="next hidden" data-keyword="${param.keyword}">
                     <i class="fas fa-arrow-circle-right"></i>
                 </button>
-<%--                <c:forEach var="i" items="${youtube.hrefList}" varStatus="status">--%>
-<%--                    <div class="item">--%>
-<%--                        <a href="<c:out value="${i}"></c:out>" target="_blank"><img src="${youtube.ImgList[status.index]}"width="300px" height="200px">--%>
-<%--                            <div class="txt_post">--%>
-<%--                                <div class="txt_post_header">--%>
-<%--                                    <c:out value="${youtube.writerList[status.index]}"></c:out>--%>
-<%--                                    <c:out value="${youtube.cntList[status.index]}"></c:out><br>--%>
-<%--                                </div>--%>
-<%--                                <div class="txt_post_section">--%>
-<%--                                    <c:out value="${youtube.titleList[status.index]}"></c:out>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </a>--%>
-<%--                    </div>--%>
-<%--                </c:forEach>--%>
             </div>
         </div>
     </div>
@@ -111,25 +118,6 @@
         </ul>
     </div>
 
-<%--    채팅창--%>
-    <section>
-        <div id="chatDiv"class="hidden">
-            <div>
-                <label><b>${param.keyword} 채팅방</b></label>
-            </div>
-            <div>
-                <div id="msgArea" data-username="${username}"></div>
-                <div class="col-6">
-                    <div class="input-group mb-3">
-                        <input type="text" id="msg" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="button-send">전송</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.2/sockjs.min.js"></script>
