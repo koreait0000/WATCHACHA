@@ -108,15 +108,18 @@ let modalCloseBtn = document.querySelector('.modal_close');
 function previewModalHidden(){
    modalCloseBtn.addEventListener('click', ()=>{
       previewModal.classList.add('hidden');
+      chatDiv.classList.add('hidden');
    })
 }
 movie_play_btn.addEventListener('click', ()=>{
 
    previewModal.classList.remove('hidden');
    previewModalHidden();
+   chatDiv.classList.remove('hidden');
    document.addEventListener('keyup', e =>{
       if(e.key === 'Escape'){
          previewModal.classList.add('hidden');
+         chatDiv.classList.add('hidden');
       }
    });
 })
@@ -147,8 +150,8 @@ movie_love.addEventListener('click',()=>{
           if(myJson.result === 0) {
              alert('오류가 발생했습니다.');
           }else if(myJson.result === 1) {
-             movie_love.classList.add('hidden');
-             movie_hate.classList.remove('hidden');
+             movie_love.children.item(0).remove();
+             movie_hate.innerHTML = `<i class="fas fa-check-circle"> 보고싶어요</i>`;
           }
          }
        )
@@ -177,8 +180,8 @@ movie_hate.addEventListener('click', ()=>{
               if(myJson.result === 0) {
                  alert('오류가 발생했습니다.');
               }else if(myJson.result === 1) {
-                 movie_hate.classList.add('hidden');
-                 movie_love.classList.remove('hidden');
+                 movie_hate.children.item(0).remove();
+                 movie_love.innerHTML = `<i class="fas fa-plus"> 보고싶어요</i>`;
               }
            }
        )
