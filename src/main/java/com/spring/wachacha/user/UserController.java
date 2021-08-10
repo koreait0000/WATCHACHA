@@ -1,12 +1,16 @@
 package com.spring.wachacha.user;
 
+import com.spring.wachacha.board.model.PagingDTO;
 import com.spring.wachacha.config.security.AuthenticationFacadeImpl;
 import com.spring.wachacha.config.security.IAuthenticationFacade;
+import com.spring.wachacha.movie.model.MovieFavDomain;
 import com.spring.wachacha.user.model.UserFollowEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -21,6 +25,14 @@ public class UserController {
 
     @GetMapping("/profileMod")
     public void profileMod(){}
+
+    @ResponseBody
+    @GetMapping("/getMyMovie")
+    public List<MovieFavDomain> getMyMovie(int page) {
+        PagingDTO pagingDTO = new PagingDTO(page);
+        System.out.println("paing = " + pagingDTO);
+        return service.getMyMovie(pagingDTO);
+    }
 
 
     @ResponseBody

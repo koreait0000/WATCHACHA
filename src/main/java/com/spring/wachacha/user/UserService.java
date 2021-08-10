@@ -1,5 +1,6 @@
 package com.spring.wachacha.user;
 
+import com.spring.wachacha.board.model.PagingDTO;
 import com.spring.wachacha.config.files.MyFileUtils;
 import com.spring.wachacha.config.security.IAuthenticationFacade;
 import com.spring.wachacha.config.security.UserDetailsServiceImpl;
@@ -190,12 +191,16 @@ public class UserService {
         Map<String, List<MovieFavDomain>> result = new HashMap();
         List<UserEntity> userList = userMapper.selUserMovieFavOrder(param);
         for(UserEntity user : userList) {
-            List<MovieFavDomain> list = userMapper.selMyMovie(user);
+            List<MovieFavDomain> list = userMapper.selMyMovie(user, new PagingDTO(1));
             result.put(list.get(0).getNm(), list);
         }
         return result;
     } // key 는 사람 이름, value 는 좋아요한 영화 리스트.
 
+    // 내가 좋아요 한 영화
+    public List<MovieFavDomain> getMyMovie(PagingDTO pagingDTO) {
+        pagingDTO.setListLength(15);
+        return userMapper.selMyMovie(auth.getLoginUser(), pagingDTO);
 
     /*프로필이미지 변경*/
     public void modProfile(MultipartFile[] imgArr) {
