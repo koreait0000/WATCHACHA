@@ -114,9 +114,9 @@
 
                     </div>
                     <div class="right_modal_footer">
-                        <div class="payment_btn">
+                        <%--<div class="payment_btn" id="payment-button">
                             <span>결제</span>
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
             </div>
@@ -155,3 +155,5 @@
 </div>
 </sec:authorize>
 <script src="/js/user/setting.js"></script>
+<script src="https://js.tosspayments.com/v1"></script>
+<script src="/js/user/setting2.js"></script>
