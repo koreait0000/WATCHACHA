@@ -20,7 +20,7 @@
 
             <div class="profile_search">
                 <form>
-                    <input type="text" placeholder="Search...">
+                    <input id="searchText" type="text" placeholder="Search...">
                     <input type="submit" hidden>
                 </form>
             </div>
@@ -83,4 +83,5 @@
         </div>
     </div>
 </sec:authorize>
+<script src="/js/common/infiniteScroll.js"></script>
 <script src="/js/user/mypage.js"></script>
