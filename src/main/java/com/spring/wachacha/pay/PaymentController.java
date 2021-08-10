@@ -25,7 +25,7 @@ public class PaymentController {
         return "pay/index";
     }
 
-    @RequestMapping("pay/success")
+    @RequestMapping("user/success")
     public String confirmPayment(
             @RequestParam String paymentKey, @RequestParam String orderId, @RequestParam Long amount,
             Model model) throws Exception {
@@ -48,20 +48,20 @@ public class PaymentController {
             JsonNode successNode = responseEntity.getBody();
             model.addAttribute("orderId", successNode.get("orderId").asText());
             String secret = successNode.get("secret").asText(); // 가상계좌의 경우 입금 callback 검증을 위해서 secret을 저장하기를 권장함
-            return "pay/success";
+            return "user/success";
         } else {
             JsonNode failNode = responseEntity.getBody();
             model.addAttribute("message", failNode.get("message").asText());
             model.addAttribute("code", failNode.get("code").asText());
-            return "pay/fail";
+            return "user/fail";
         }
     }
 
-    @RequestMapping("pay/fail")
+    @RequestMapping("user/fail")
     public String failPayment(@RequestParam String message, @RequestParam String code, Model model) {
         model.addAttribute("message", message);
         model.addAttribute("code", code);
-        return "pay/fail";
+        return "user/fail";
     }
 
     @RequestMapping("/virtual-account/callback")
