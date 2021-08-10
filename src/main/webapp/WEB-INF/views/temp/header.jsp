@@ -34,7 +34,11 @@
             <div class="header_right">
                 <div class="header_right_container">
                     <div class="header_userProfile" >
-                        <div class="header_userImg"></div>
+                        <div class="header_userImg">
+                            <c:if test="${principal.user.mainProfile != null}">
+                                <img src="/pic/profile/${principal.user.iuser}/${principal.user.mainProfile}">
+                            </c:if>
+                        </div>
                         <div class="header_userName">${principal.user.nm}</div>
                         <i class="fas fa-caret-down"></i>
                     </div>
