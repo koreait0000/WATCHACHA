@@ -9,7 +9,7 @@
         <div class="mypage_container">
 
             <div class="profile_header">
-                <div class="profile_img"></div>
+                <div class="profile_img"><a href="/user/profileMod">프로필수정</a></div>
                 <div class="profile_info">
                     <div class="profile_info_name">${principal.user.nm}</div>
                     <%--팔로워할곳--%>

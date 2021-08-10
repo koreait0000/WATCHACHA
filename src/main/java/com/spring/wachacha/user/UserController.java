@@ -6,6 +6,7 @@ import com.spring.wachacha.user.model.UserFollowEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/user")
@@ -18,8 +19,8 @@ public class UserController {
     public void mypage(){}
 
 
-    @GetMapping("/profileModify")
-    public void modifyPage(){}
+    @GetMapping("/profileMod")
+    public void profileMod(){}
 
 
     @ResponseBody
@@ -39,5 +40,12 @@ public class UserController {
     @GetMapping("/setting")
     public void setting(){}
 
+
+    /*프로필이미지 변경*/
+    @PostMapping("/modProfile")
+    public String modProfile(MultipartFile[] file){
+        service.modProfile(file);
+        return "redirect:profileMod";
+    }
 
 }

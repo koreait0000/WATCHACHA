@@ -37,18 +37,12 @@
                 <div class="movie_fav"
                      data-genre="${movie.genre}" data-nation="${movie.nation}"
                      data-poster="${movie.poster}" >
-                    <c:choose>
-                        <c:when test="${fav} eq 0">
-                            <div class="movie_love">
-                                <i class="fas fa-plus"> 보고싶어요</i>
-                            </div>
-                        </c:when>
-                        <c:otherwise>
-                            <div class="movie_hate hidden">
-                                <i class="fas fa-check-circle"> 보고싶어요</i>
-                            </div>
-                        </c:otherwise>
-                    </c:choose>
+                        <div class="movie_love">
+                            <i class="fas fa-plus"> 보고싶어요</i>
+                        </div>
+                        <div class="movie_hate hidden">
+                            <i class="fas fa-check-circle"> 보고싶어요</i>
+                        </div>
                 </div>
             </div>
         </div>

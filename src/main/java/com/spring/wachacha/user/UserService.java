@@ -10,6 +10,7 @@ import com.spring.wachacha.user.model.UserDomain;
 import com.spring.wachacha.user.model.UserEntity;
 import com.spring.wachacha.user.model.UserFollowEntity;
 import com.spring.wachacha.user.model.UserProfileEntity;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -17,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.net.SocketTimeoutException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -193,4 +195,32 @@ public class UserService {
         }
         return result;
     } // key 는 사람 이름, value 는 좋아요한 영화 리스트.
+
+
+    /*프로필이미지 변경*/
+    public void modProfile(MultipartFile[] imgArr) {
+        UserEntity loginuser = auth.getLoginUser();
+        int iuser = loginuser.getIuser();
+        String target = "profile/"+iuser;
+
+        UserProfileEntity param = new UserProfileEntity();
+        param.setIuser(iuser);
+
+        for (MultipartFile img : imgArr){
+            //파일을 서버에 넣는거
+            String saveFileNm = myFileUtils.transferTo(img, target);
+            if (saveFileNm != null){
+                param.setImg(saveFileNm);
+                if (profileMapper.insUserProfile(param) == 1 && loginuser.getMainProfile()== null){
+                    UserEntity param2 = new UserEntity();
+                    param2.setIuser(iuser);
+                    param2.setMainProfile(saveFileNm);
+
+                    if(userMapper.updUser(param2) == 1){
+                        loginuser.setMainProfile(saveFileNm);
+                    }
+                }
+            }
+        }
+    }
 }
