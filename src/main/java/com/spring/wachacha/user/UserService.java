@@ -199,8 +199,8 @@ public class UserService {
 
     // 내가 좋아요 한 영화
     public List<MovieFavDomain> getMyMovie(PagingDTO pagingDTO) {
-        pagingDTO.setListLength(15);
         return userMapper.selMyMovie(auth.getLoginUser(), pagingDTO);
+    }
 
     /*프로필이미지 변경*/
     public void modProfile(MultipartFile[] imgArr) {

@@ -3,10 +3,15 @@ package com.spring.wachacha.user;
 import com.spring.wachacha.board.model.PagingDTO;
 import com.spring.wachacha.config.security.AuthenticationFacadeImpl;
 import com.spring.wachacha.config.security.IAuthenticationFacade;
+import com.spring.wachacha.config.security.UserDetailsImpl;
 import com.spring.wachacha.movie.model.MovieFavDomain;
+import com.spring.wachacha.user.model.UserDTO;
+import com.spring.wachacha.user.model.UserEntity;
 import com.spring.wachacha.user.model.UserFollowEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,8 +24,19 @@ public class UserController {
     @Autowired private UserService service;
     @Autowired private IAuthenticationFacade auth;
 
+
+
+
     @GetMapping("/mypage")
-    public void mypage(){}
+    public void mypage(Model model, UserEntity param, @AuthenticationPrincipal UserDetailsImpl userDetails){
+        UserDTO param2 = new UserDTO();
+        param2.setYouIuser(param.getIuser());
+        if (param2.getYouIuser() == 0){
+            param2.setYouIuser(userDetails.getUser().getIuser());
+            param.setIuser(userDetails.getUser().getIuser());
+        }
+
+    }
 
 
     @GetMapping("/profileMod")

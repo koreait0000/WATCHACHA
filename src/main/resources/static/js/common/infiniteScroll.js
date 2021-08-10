@@ -1,5 +1,5 @@
 const infinityScrolling = {
-    limit: 20,
+    limit: 10,
     itemLength: 0,
     currentPage: 1,
     url: '',
@@ -19,7 +19,6 @@ const infinityScrolling = {
     },
     getItemList: function(page) {
         // this.showLoading(); 로딩 이미지를 보여주는 함수. 후에 추가해주자
-
         fetch(`${this.url}?page=${page}`)
             .then(res => res.json())
             .then(myJson => {
