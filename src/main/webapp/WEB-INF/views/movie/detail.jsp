@@ -36,12 +36,16 @@
                 </div>
                 <div class="movie_fav"
                      data-genre="${movie.genre}" data-nation="${movie.nation}"
-                     data-poster="${movie.poster}" >
+                     data-poster="${movie.poster}">
                         <div class="movie_love">
+                        <c:if test="${movieFav == 0}">
                             <i class="fas fa-plus"> 보고싶어요</i>
+                        </c:if>
                         </div>
-                        <div class="movie_hate hidden">
+                        <div class="movie_hate">
+                        <c:if test="${movieFav == 1}">
                             <i class="fas fa-check-circle"> 보고싶어요</i>
+                        </c:if>
                         </div>
                 </div>
             </div>
@@ -109,9 +113,6 @@
 
 <%--    채팅창--%>
     <section>
-        <button id="chatBtn">
-            Chat
-        </button>
         <div id="chatDiv"class="hidden">
             <div>
                 <label><b>${param.keyword} 채팅방</b></label>

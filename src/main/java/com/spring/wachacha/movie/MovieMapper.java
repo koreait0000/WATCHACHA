@@ -6,5 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Mapper
 public interface MovieMapper {
-    int checkMovieFav(MovieFavEntity movieFavEntity);
+    MovieFavEntity checkMovieFav(MovieFavEntity movieFavEntity);
+
 }

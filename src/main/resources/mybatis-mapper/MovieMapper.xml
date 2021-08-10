@@ -4,9 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.wachacha.movie.MovieMapper">
 
+<!--  ??사용중아니네  <select id="checkMovieFav" resultType="MovieFavEntity">-->
+<!--        select * from t_movie_fav-->
+<!--        where iuser = ${iuser} and title = ${title}-->
+<!--    </select>-->
+
     <select id="checkMovieFav" resultType="MovieFavEntity">
-        select * from t_movie_fav
-        where iuser = ${iuser} and title = ${title}
+        select A.iuser, A.title from t_movie_fav A
+        inner join t_user B
+        on A.iuser = B.iuser
+        where A.iuser = #{iuser} and A.title=#{title}
     </select>
 
 </mapper>

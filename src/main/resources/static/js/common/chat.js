@@ -1,10 +1,4 @@
-const chatBtn = document.getElementById('chatBtn');
 const chatDiv = document.getElementById('chatDiv');
-
-chatBtn.addEventListener('click', e=>{
-    chatDiv.classList.toggle('hidden');
-    // sendName();
-})
 
 let stompClient = null;
 

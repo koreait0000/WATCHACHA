@@ -22,7 +22,8 @@ public class CommonController {
     @Autowired private UserService service;
 
     @GetMapping("/main")
-    public void main(){ }
+    public void main(){
+    }
 
     @GetMapping({"","/"})
     public String homepage(){
@@ -36,15 +37,17 @@ public class CommonController {
             System.out.println(userDetails.getUser());
             return;
         }
+        model.addAttribute("title","WATCHACHA | 로그인");
         model.addAttribute("loginForm","loginForm");
         model.addAttribute("auth",auth);
     }
     //회원가입페이지
     @GetMapping("/joinForm")
-    public void joinForm(@AuthenticationPrincipal UserDetailsImpl userDetails){
+    public void joinForm(@AuthenticationPrincipal UserDetailsImpl userDetails, Model model){
         if(userDetails != null){
             return;
         }
+        model.addAttribute("title","WATCHACHA | 회원가입");
     }
 
 

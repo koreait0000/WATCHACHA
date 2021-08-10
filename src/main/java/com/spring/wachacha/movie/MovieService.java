@@ -1,6 +1,7 @@
 package com.spring.wachacha.movie;
 
 import com.spring.wachacha.config.security.IAuthenticationFacade;
+import com.spring.wachacha.config.security.UserDetailsImpl;
 import com.spring.wachacha.main.MainService;
 import com.spring.wachacha.main.model.MovieSearchModel;
 import com.spring.wachacha.movie.model.MovieEntity;
@@ -14,6 +15,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -151,6 +153,15 @@ public class MovieService {
 
         int num = 0;
         return num;
+    }
+
+    public int checkMovieFav(MovieFavEntity movieFavEntity){
+        MovieFavEntity m = movieMapper.checkMovieFav(movieFavEntity);
+        System.out.println("m : " + m);
+        if(m == null){
+            return 0;
+        }
+        return 1;
     }
 
 

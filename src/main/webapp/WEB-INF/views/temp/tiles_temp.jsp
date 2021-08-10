@@ -4,7 +4,9 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-  <title>Title</title>
+  <title><c:if test="${empty title }">WATCHACHA</c:if>
+    <c:if test="${!empty title }">${title}</c:if>
+  </title>
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
   <link rel="stylesheet" href="/css/common.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -31,20 +31,21 @@ public class MovieController {
 
 
     @GetMapping("/movie/detail")
-    public String movieYoutube(String keyword, Model model, @AuthenticationPrincipal UserDetailsImpl userDetails){
+    public String movieYoutube(String keyword, Model model, @AuthenticationPrincipal UserDetailsImpl userDetails, MovieFavEntity movieFavEntity){
+        movieFavEntity.setTitle(keyword);
+        movieFavEntity.setIuser(userDetails.getUser().getIuser());
+        System.out.println(movieService.checkMovieFav(movieFavEntity));
+        model.addAttribute("movieFav",movieService.checkMovieFav(movieFavEntity));
         model.addAttribute("movie", movieService.info(keyword));
-
         model.addAttribute("fav", movieService.checkMyfav(keyword));
-
         model.addAttribute("username",userDetails.getUser().getNm());
-        //model.addAttribute("youtube",movieService.Youtube(keyword,page));
+        model.addAttribute("title","WATCHACHA | "+keyword);
         return "movie/detail";
     }
 
     @ResponseBody
     @PostMapping("/movie/movieFav")
     public Map<String, Integer> insMovieFav(@RequestBody MovieFavEntity movieFavEntity){
-        System.out.println("movieFavEntity : " + movieFavEntity);
         Map<String, Integer> result = new HashMap<>();
         result.put("result", movieService.insMovieFav(movieFavEntity));
         return result;
@@ -53,7 +54,6 @@ public class MovieController {
     @ResponseBody
     @DeleteMapping("/movie/movieFav")
     public Map<String, Integer> delMovieFav(@RequestBody MovieFavEntity movieFavEntity){
-        System.out.println("movieFavEntity : " + movieFavEntity);
         Map<String, Integer> result = new HashMap<>();
         result.put("result", movieService.delMovieFav(movieFavEntity));
         return result;
