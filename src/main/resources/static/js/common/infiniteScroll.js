@@ -10,8 +10,8 @@ const infinityScrolling = {
                 scrollTop,
                 scrollHeight,
                 clientHeight
-            } = document.documentElement;
-            if (scrollTop + clientHeight >= scrollHeight - 5 && this.itemLength === this.limit) {
+            } = document.body;
+            if (scrollTop + clientHeight >= scrollHeight - 150 && this.itemLength === this.limit) {
                 this.itemLength = 0;
                 this.getItemList(++this.currentPage);
             }
