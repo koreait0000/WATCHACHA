@@ -118,30 +118,39 @@
 .preview_modal_video{ width: 100%; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;}
 .preview_modal_header{ width: 100%; height: auto; display: flex; justify-content: flex-end; background-color: lightblue;}
 .modal_close>i{color: white;font-size: 30px;margin-bottom: 10px; opacity: 0.5;}
-.preview_modal_container{box-sizing: content-box; background-color: lightslategray; display: flex; flex-direction: column;}
+.preview_modal_container{box-sizing: content-box; background-color: lightslategray; display: flex; flex-direction: column; }
 .preview_modal_section{display: flex;}
 .chatDiv_header{text-align: center;}
 
-.chatDiv_container{
-    width: 100%; height: 100%;
-    border: 1px solid white;
+.chatDiv_container{width: 100%; height: 100%;border: 1px solid white;}
+.chatDiv_header{background-color: lightcoral; box-sizing: content-box;}
+.chatDiv_section{background-color: lightseagreen; box-sizing: content-box; position: relative; bottom: 0; display: flex; flex-direction: column;}
+#msgArea{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-end;
+    background-color: #2B3336;
+    overflow-y: auto;
 }
-.chatDiv_section{
-    position: sticky;
-    bottom: 0;
-}
-.chatDiv_container>.chatDiv_section{
-    width: 100%;
-    height: 100%;
+#msgArea>tr{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 .col-6{
     width: 100%;
 }
 #msgArea>tr{
-    margin: 1px;
 }
 #msgArea>tr>td{
+    box-sizing: content-box;
+    background-color: #f82f62;
     font-size: 17px;
+    border-radius: 6px;
+    margin: 3px;
+    padding: 2px;
+    width: fit-content;
 }
 
 
@@ -151,9 +160,7 @@
 .centerContainer { width: 100%; z-index: 10; display: flex; justify-content: center; align-items: center; }
 
 
-.review_Div{
-    display: flex;
-}
+.review_Div{display: flex;}
 .youtube_modal_btn{
     width: 100%;
     text-align: center;

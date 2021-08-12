@@ -65,8 +65,8 @@
                             <div class="chatDiv_container">
                                 <div class="chatDiv_header"><b>${param.keyword} 채팅방</b></div>
                                 <div class="chatDiv_section">
-                                    <div id="msgArea" data-username="${username}"></div>
-                                    <div class="col-6">
+                                    <div id="msgArea" data-username="${username}"></div> <%--문자열이 찍히는공간--%>
+                                    <div class="col-6"> <%--보내는곳--%>
                                         <div class="input-group mb-3">
                                             <input type="text" id="msg" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
                                             <div class="input-group-append">
