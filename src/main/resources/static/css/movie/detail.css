@@ -83,7 +83,7 @@
     width: 100px;
     height: 41px;
     border-radius: 5px;
-    background-color: D73068;
+    background-color: #D73068;
     color: white;
     display: flex;
     justify-content: center;
@@ -116,22 +116,32 @@
 
 .preview_modal{ position: absolute; z-index: 1; width: 100%; height: 100vh; top: 0; left: 0; background-color: rgba(0,0,0,0.8);}
 .preview_modal_video{ width: 100%; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;}
-.preview_modal_header{ width: 100%; height: auto; display: flex; justify-content: flex-end; background-color: lightblue;}
+.preview_modal_header{ width: 100%; height: auto; display: flex; justify-content: flex-end;}
 .modal_close>i{color: white;font-size: 30px;margin-bottom: 10px; opacity: 0.5;}
-.preview_modal_container{box-sizing: content-box; background-color: lightslategray; display: flex; flex-direction: column; }
+.preview_modal_container{box-sizing: content-box; display: flex; flex-direction: column; }
 .preview_modal_section{display: flex;}
+.preview_modal_section>section{margin-left: 10px;}
 .chatDiv_header{text-align: center;}
 
-.chatDiv_container{width: 100%; height: 100%;border: 1px solid white;}
-.chatDiv_header{background-color: lightcoral; box-sizing: content-box;}
-.chatDiv_section{background-color: lightseagreen; box-sizing: content-box; position: relative; bottom: 0; display: flex; flex-direction: column;}
+.chatDiv_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.chatDiv_header{box-sizing: content-box;}
+.chatDiv_section{height: 100%;}
 #msgArea{
-    height: 500px;
+    height: 590px;
     display: flex;
     flex-direction: column;
     justify-items: flex-end;
-    background-color: #2B3336;
+    background-color: #141517;
     overflow-y: auto;
+    border-radius: 14px;
+    margin-bottom: 11px;
+    padding: 8px;
 }
 #msgArea>tr{
     display: flex;
@@ -139,22 +149,41 @@
     justify-content: flex-end;
 }
 .col-6{
+    margin-bottom: -17px;
     width: 100%;
 }
+
 #msgArea>tr{
-}
+    width: 293px;
+    }
 #msgArea>tr>td{
-    box-sizing: content-box;
-    background-color: #f82f62;
-    font-size: 17px;
-    border-radius: 6px;
-    margin: 3px;
-    padding: 2px;
+    font-family: "Noto Sans KR", sans-serif;
     width: fit-content;
+    background-color: #d63269;
+    font-size: 17px;
+    margin: 3px;
+    padding: 7px 14px;
+    border-radius: 21px;
 }
 
 
-/*챗팅창꾸미기*/
+/*챗팅창스크롤*/
+
+#msgArea::-webkit-scrollbar {
+    width: 10px;
+}
+#msgArea::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+#msgArea::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
 
 /***************************************************유튜브 모달******************************************/
 .centerContainer { width: 100%; z-index: 10; display: flex; justify-content: center; align-items: center; }
