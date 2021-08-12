@@ -122,7 +122,13 @@
         DELETE FROM t_movie_fav
         WHERE iuser = ${iuser} AND title = #{title}
     </delete>
-      
+
+    <update id="resetProfile">
+        update t_user
+        set mainprofile = null
+        where iuser = #{iuser}
+    </update>
+
       
 
 </mapper>

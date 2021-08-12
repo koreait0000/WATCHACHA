@@ -9,5 +9,6 @@ import java.util.List;
 @Mapper
 public interface UserProfileMapper {
     int insUserProfile(UserProfileEntity param);
+    int updUserProfile(UserProfileEntity param);
     List<UserProfileEntity> selUserProfileList(UserEntity param);
 }

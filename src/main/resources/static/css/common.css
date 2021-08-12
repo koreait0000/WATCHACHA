@@ -11,3 +11,7 @@ body{
 .hidden { display: none;}
 a{ text-decoration: none; }
 .cursor {cursor:pointer;}
+footer{
+    position: static;
+    bottom: 0;
+}

@@ -35,4 +35,8 @@ public interface UserMapper {
   
     int updUser(UserEntity param);
     int updUserMainProfile(UserProfileEntity param);
+
+    int resetProfile(UserEntity param);
+
+
 }

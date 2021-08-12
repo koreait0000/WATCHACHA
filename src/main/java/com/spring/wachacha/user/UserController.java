@@ -76,4 +76,11 @@ public class UserController {
         return "redirect:profileMod";
     }
 
+    @ResponseBody
+    @GetMapping("/resetProfileImg")
+    public int resetProfileImg(){
+        int result = service.resetProfileImg();// null 값을 바꾸는거
+        auth.getLoginUser().setMainProfile(null);
+        return result;
+    }
 }
