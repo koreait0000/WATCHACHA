@@ -42,6 +42,7 @@ function sendChat() {
 }
 function showChat(chat) {
     $("#msgArea").append("<tr><td>" + chat.name + " : " + chat.message + "</td></tr>");
+    $('#msgArea').scrollTop($('#msgArea')[0].scrollHeight);
 }
 
 // $(function () {
