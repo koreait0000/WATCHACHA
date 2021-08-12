@@ -11,7 +11,7 @@
                 <div class="search_bar">
                     <i class="fas fa-search"></i>
                     <form action="/main/searchResult" method="get" autofocus>
-                        <label><input type="text" name="searchbar" placeholder="search"></label>
+                        <input type="text" name="searchbar" placeholder="search">
                         <button></button>
                     </form>
                 </div>
