@@ -11,7 +11,6 @@ import com.spring.wachacha.user.model.UserDomain;
 import com.spring.wachacha.user.model.UserEntity;
 import com.spring.wachacha.user.model.UserFollowEntity;
 import com.spring.wachacha.user.model.UserProfileEntity;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -110,33 +109,6 @@ public class UserService {
         userMapper.updateAuth(userEntity);
     }
 
-    public void profileImg(MultipartFile[] imgArr) {
-        UserEntity loginUser = auth.getLoginUser();
-        int iuser = loginUser.getIuser();
-
-        System.out.println("user_no : " + iuser);
-        String target = "profile/" + iuser;
-
-        UserProfileEntity param = new UserProfileEntity();
-        param.setIuser(iuser); //11
-
-        for(MultipartFile img : imgArr) {
-            String saveFileNm = myFileUtils.transferTo(img, target); //"weioj435lknsio.jpg"
-            if(saveFileNm != null) {
-                param.setImg(saveFileNm);
-                if(profileMapper.insUserProfile(param) == 1 && loginUser.getMainProfile() == null) {
-                    UserEntity param2 = new UserEntity();
-                    param2.setIuser(iuser); //11
-                    param2.setMainProfile(saveFileNm);
-
-                    if(userMapper.updUser(param2) == 1) {
-                        loginUser.setMainProfile(saveFileNm);
-                    }
-                }
-            }
-        }
-    }
-
     public List<UserProfileEntity> selUserProfileList(UserEntity param) {
         return profileMapper.selUserProfileList(param);
     }
@@ -205,7 +177,12 @@ public class UserService {
     /*프로필이미지 변경*/
     public void modProfile(MultipartFile[] imgArr) {
         UserEntity loginuser = auth.getLoginUser();
+        System.out.println("loginUser :" +loginuser);
+        System.out.println("loginuser.getIuser(); : " + loginuser.getIuser());
+
         int iuser = loginuser.getIuser();
+        System.out.println("iuser : " + iuser);
+
         String target = "profile/"+iuser;
 
         UserProfileEntity param = new UserProfileEntity();
@@ -216,16 +193,27 @@ public class UserService {
             String saveFileNm = myFileUtils.transferTo(img, target);
             if (saveFileNm != null){
                 param.setImg(saveFileNm);
-                if (profileMapper.insUserProfile(param) == 1 && loginuser.getMainProfile()== null){
+                //메인프로필을 처음으로 넣을때
+                if (profileMapper.insUserProfile(param) == 1 || loginuser.getMainProfile() == null){
+
                     UserEntity param2 = new UserEntity();
                     param2.setIuser(iuser);
                     param2.setMainProfile(saveFileNm);
 
+                    System.out.println("profileMapper.insUserProfile(param) 실행됨");
+
                     if(userMapper.updUser(param2) == 1){
+                        System.out.println("--------------------------------------------------------------------------");
+                        System.out.println("userMapper.updUser(param2) == 1 실행됨");
                         loginuser.setMainProfile(saveFileNm);
                     }
                 }
             }
         }
+    }
+    //이미지값을 null로 바꿈
+    public int resetProfileImg() {
+        UserEntity param = auth.getLoginUser();
+        return userMapper.resetProfile(param);
     }
 }

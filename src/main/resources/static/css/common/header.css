@@ -7,7 +7,7 @@ header{ position: fixed; top: 0;  height: 83px; width: 100%; min-width: 764px}
 .header_right{display: flex; flex-direction: column;}
 .header_userProfile{display: flex; align-items: center; padding-bottom: 16px;}
 .header_userProfile:hover{cursor: pointer;}
-.header_userProfile>.header_userImg{width: 45px;height: 45px;border-radius: 50%;background-color: lightblue;}
+.header_userImg>img{width: 45px;height: 45px;border-radius: 50%;}
 .header_userProfile>.header_userName{padding-left: 5px; padding-right: 5px; color: white;}
 .header_userProfile>.fas{color: white; font-size: 18px;}
 

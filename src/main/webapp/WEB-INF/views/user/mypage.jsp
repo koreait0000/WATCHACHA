@@ -9,7 +9,16 @@
         <div class="mypage_container">
 
             <div class="profile_header">
-                <div class="profile_img"><a href="/user/profileMod">프로필수정</a></div>
+                <a href="/user/profileMod" class="profile_img">
+                    <c:choose>
+                        <c:when test="${principal.user.mainProfile == null}">
+                            <img src="/img/default.png">
+                        </c:when>
+                        <c:otherwise>
+                            <img src="/pic/profile/${principal.user.iuser}/${principal.user.mainProfile}">
+                        </c:otherwise>
+                    </c:choose>
+                </a>
                 <div class="profile_info">
                     <div class="profile_info_name">${principal.user.nm}</div>
                     <%--팔로워할곳--%>
