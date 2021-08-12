@@ -122,11 +122,18 @@
 .preview_modal_section{display: flex;}
 .chatDiv_header{text-align: center;}
 
-.chatDiv_container{width: 100%; height: 100%;border: 1px solid white;}
+.chatDiv_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+}
 .chatDiv_header{background-color: lightcoral; box-sizing: content-box;}
-.chatDiv_section{background-color: lightseagreen; box-sizing: content-box; position: relative; bottom: 0; display: flex; flex-direction: column;}
+.chatDiv_section{background-color: lightseagreen; height: 100%;}
 #msgArea{
-    height: 500px;
+    height: 610px;
     display: flex;
     flex-direction: column;
     justify-items: flex-end;
@@ -139,10 +146,10 @@
     justify-content: flex-end;
 }
 .col-6{
+    margin-bottom: -17px;
     width: 100%;
 }
-#msgArea>tr{
-}
+
 #msgArea>tr>td{
     box-sizing: content-box;
     background-color: #f82f62;
