@@ -1,16 +1,42 @@
 .profileMod_wrapper{width: 100%; height: 100vh; background-color: #1B1C1F; display: flex; justify-content: center;align-items: center;}
-.profileMod_container{
-width: 80%;
-    height: 80%;
-    border: 1px solid white;
+.profileMod_container{width: 80%;height: 80%;border: 1px solid white;display: flex;flex-direction: column;}
+
+.profileMod_container_header{width: 100%; height: 15%; background-color: lightpink;display: flex;justify-content: center;align-items: center;}
+.profileMod_container_header>h1{font-family: 'Noto Sans KR';font-style: normal;font-weight: 600;font-size: 44px;color: #FFFFFF;}
+
+.profileMod_container_center{width: 100%; height: 65%; background-color: lightseagreen;
+    display: flex;
 }
-.profileMod_container>form>img{
-    width: 100px;
-    height: 100px;
+.profileMod_container_left{
+    width: 35%; height: 100%;
+    background-color: lightcoral;
+}
+.profileMod_container_right{
+    width: 65%; height: 100%;
+    background-color: lightslategray;
+}
+
+.profileMod_container_footer{width: 100%; height: 25%; background-color: lightsalmon;}
+
+
+
+
+.profileMod_container_left>form{
+    width: 100%;
+    height: 100%;
+    display: flex; flex-direction: column;justify-content: center; align-items: center;
+}
+
+.profileMod_container_left>form>img{
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
 }
 .resetBtn{color: white; width: 100px; background-color: #f82f62;}
-.resetBtn:hover{
-    cursor: pointer;
-}
+
+
+
+
+
+
 

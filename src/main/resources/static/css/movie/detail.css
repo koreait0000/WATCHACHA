@@ -10,6 +10,31 @@
     align-items: center;
     height: 100vh;
 }
+/*search_bar*/
+.search{
+    display: flex;
+    justify-content: center;
+}
+.search_bar>i{font-size: 18px; padding-left: 14px; padding-right: 10px;}
+.search_bar{
+    display: flex;
+    position: absolute;
+    top: 20px;
+    align-items: center;
+    background-color: #5A5A5A;
+    opacity: 0.60;
+    width: 55.8%;
+    height: 55px;
+    z-index: 10;
+}
+.search_bar>form{width: 100%;}
+.search_bar input{
+    padding: 15px;
+    width: 100%;
+}
+.search_form button{
+    visibility: hidden;
+}
 /***************************** 인포 모달 *****************************************/
 .info_modal{
     width: 58.6%;
@@ -133,7 +158,7 @@
 .chatDiv_header{box-sizing: content-box;}
 .chatDiv_section{height: 100%;}
 #msgArea{
-    height: 590px;
+    height: 616px;
     display: flex;
     flex-direction: column;
     justify-items: flex-end;
@@ -142,6 +167,7 @@
     border-radius: 14px;
     margin-bottom: 11px;
     padding: 8px;
+    border: 0.5px solid rgba(255,255,255,0.4)
 }
 #msgArea>tr{
     display: flex;

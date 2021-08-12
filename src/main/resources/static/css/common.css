@@ -5,11 +5,12 @@ html, body{
     /*overflow-y: auto;*/
     scroll-behavior: smooth;
 }
-body{
-    overflow-x: hidden;
-}
+body{overflow-x: hidden;}
 .hidden { display: none;}
 a{ text-decoration: none; }
+a:hover{
+    color: #E02C59;
+}
 .cursor {cursor:pointer;}
 footer{
     position: static;

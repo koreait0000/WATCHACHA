@@ -7,8 +7,17 @@
 <link rel="stylesheet" href="/css/common/chat.css">
 <script defer src="/js/movie/detail.js"></script>
 <div class="bg_detail" style="background-image:linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(${movie.bg_url});"> <!--배경화면-->
-
-
+    <div class="test">
+        <div class="search">
+            <div class="search_bar">
+                <i class="fas fa-search"></i>
+                <form action="/main/searchResult" method="get" autofocus>
+                    <input type="text" name="searchbar" placeholder="search">
+                    <button></button>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="info_modal"> <!-- 인포 !-->
         <div class="info_modal_section">
             <div class="movie_nm">${movie.name}</div> <!-- 영화 제목 !-->
@@ -63,7 +72,6 @@
                     <section>
                         <div id="chatDiv"class="hidden">
                             <div class="chatDiv_container">
-                                <div class="chatDiv_header"><b>${param.keyword} 채팅방</b></div>
                                 <div class="chatDiv_section">
                                     <div id="msgArea" data-username="${username}"></div> <%--문자열이 찍히는공간--%>
                                     <div class="col-6"> <%--보내는곳--%>

@@ -49,8 +49,10 @@
     display: flex;
     justify-content: center;
 }
-.search_bar fas{
-    font-size: 26px;
+.search_bar>i>.fas{
+    padding-left: 14px;
+    padding-right: 10px;
+    font-size: 18px;
 }
 .search_bar form{
     width: 100%;
@@ -60,7 +62,7 @@
     position: absolute;
     top: 20px;
     align-items: center;
-    background-color: 5A5A5A;
+    background-color: #5A5A5A;
     opacity: 0.60;
     width: 55.8%;
     height: 55px;
@@ -69,6 +71,7 @@
 .search_bar input{
     padding: 15px;
     width: 100%;
+    color: white;
 }
 .search_form button{
     visibility: hidden;

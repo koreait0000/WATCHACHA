@@ -9,6 +9,9 @@ let movie_play_btn = document.querySelector('.movie_play_btn');
 let movie_fav = document.querySelector('.movie_fav');
 let movie_review_Object= document.querySelector('.movie_review_Object');
 const loadingElem = document.querySelector('.loading');
+let searchElem = document.querySelector('.test');
+
+
 
 step_1.style.cursor = 'default';
 step_2.style.cursor = 'pointer';
@@ -34,6 +37,7 @@ liSpanElem.forEach(e => {
          infoDiv.classList.add('hidden');
          youtubeDiv.classList.remove('hidden');
          episodeDiv.classList.add('hidden');
+         searchElem.classList.add('hidden');
       }else if(e.textContent === 'Info'){
          this.hideLoading();
          step_1.style.cursor = 'default';
@@ -42,6 +46,7 @@ liSpanElem.forEach(e => {
          youtubeDiv.classList.add('hidden');
          episodeDiv.classList.add('hidden');
          infoDiv.classList.remove('hidden');
+         searchElem.classList.remove('hidden');
       }else if(e.textContent === 'Episode'){
          this.hideLoading();
          step_1.style.cursor = 'pointer';
@@ -50,6 +55,7 @@ liSpanElem.forEach(e => {
          episodeDiv.classList.remove('hidden');
          youtubeDiv.classList.add('hidden');
          infoDiv.classList.add('hidden');
+         searchElem.classList.add('hidden');
       }
    });
 });
@@ -109,17 +115,19 @@ function previewModalHidden(){
    modalCloseBtn.addEventListener('click', ()=>{
       previewModal.classList.add('hidden');
       chatDiv.classList.add('hidden');
+      searchElem.classList.remove('hidden');
    })
 }
 movie_play_btn.addEventListener('click', ()=>{
-
    previewModal.classList.remove('hidden');
+   searchElem.classList.add('hidden');
    previewModalHidden();
    chatDiv.classList.remove('hidden');
    document.addEventListener('keyup', e =>{
       if(e.key === 'Escape'){
          previewModal.classList.add('hidden');
          chatDiv.classList.add('hidden');
+         searchElem.classList.remove('hidden');
       }
    });
 })
