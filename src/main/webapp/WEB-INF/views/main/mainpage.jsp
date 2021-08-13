@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/css/main/mainpage.css">
 
 <div class="web_wapper">
+    <%--movieInfosection--%>
     <div class="movieInfoSection">
         <br>
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -78,12 +79,8 @@
         </div>
     </div><%--End movieInfoSection--%>
 
-<%--        <div class="test">--%>
-<%--            <div class="innerTest1"></div>--%>
-<%--            <div class="innerTest2"></div>--%>
-<%--            <div class="innerTest3"></div>--%>
-<%--        </div>--%>
-        <%--박스오피스랭킹--%>
+    <%--박스오피스랭킹--%>
+    <div class="boxOffice_cotainer">
         <div class="Box__Office__Ranking">
             <div class="Box__Office__Ranking__header">
                 <i class="fas fa-ticket-alt"></i>
@@ -110,8 +107,10 @@
                 </c:forEach>
             </div>
         </div><%--End of BoxOfficeRanking--%>
+    </div>
 
-        <%-- 팔로워들 영화추천 --%>
+    <%-- 팔로워들 영화추천 --%>
+    <div class="recomand_movie_container">
         <div class="Box__Office__Ranking">
             <div class="Box__Office__Ranking1">
                 <i class="fas fa-ticket-alt"></i>
@@ -120,7 +119,7 @@
             <hr><%--줄밑부분--%>
             <%--회원들 좋아하는 영상리스트를 뿌릴거임--%>
             <div class="follower_fav_movie">
-                <c:forEach  begin="1" end="3" step="1" varStatus="status">
+                <c:forEach  begin="1" end="2" step="1" varStatus="status">
                     <div class="follower_personal_fav">
                         <h4 style="color: #FFFFFF">누구누구 님이 좋아하는 영화</h4>
                             <%--반복문이 돌아가는곳--%>
@@ -136,5 +135,7 @@
                 <%--회원들이 좋아하는리스트 반복문 끝나는 곳 --%>
             </div>
         </div>
+    </div>
+
 </div><%--End web_wapper--%>
 <script src="/js/mainpage.js"></script>
