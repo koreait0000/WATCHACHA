@@ -49,10 +49,10 @@
                     </div>
                     <div class="userProfile_modal hidden">
                         <div class="userProfile_modal_container">
-                            <a href="/user/mypage"><div>마이페이지</div></a>
-                            <a href="/user/setting"><div>설정</div></a>
-                            <a href=""><div>공지사항</div></a>
-                            <a href="/logout"><div>로그아웃</div></a>
+                            <div><a href="/user/mypage">마이페이지</a></div>
+                            <div><a href="/user/setting">설정</a></div>
+                            <div><a href="/user/profileMod">프로필수정</a></div>
+                            <div><a href="/logout">로그아웃</a></div>
                         </div>
                     </div>
                 </div>
