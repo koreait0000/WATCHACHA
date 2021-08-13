@@ -1,3 +1,5 @@
+a{color: white;}
+a:hover{color: white;}
 header{ position: fixed; top: 0;  height: 83px; width: 100%; min-width: 764px}
 .header_container{  display: flex; justify-content: space-between; padding: 0 2%; }
 .header_left>a>img{ width: 140px; margin-top: 10px;}
@@ -16,14 +18,15 @@ header{ position: fixed; top: 0;  height: 83px; width: 100%; min-width: 764px}
     display: flex;
     flex-direction: column;
     background-color: #2B3336;
-    padding: 10px;
-    margin-top: 10px;
     border: 0.5px solid #575757;
     border-radius: 5px;
 }
-.userProfile_modal_container>a{
-    margin: 7.5px;
+.userProfile_modal_container>div{
+    box-sizing: content-box;
+    padding: 10px;
 }
+.userProfile_modal_container>div:hover{background-color: #f82f62;}
+
 
 
 

@@ -7,29 +7,40 @@
     <sec:authentication property="principal" var="principal" />
     <div class="profileMod_wrapper">
         <div class="profileMod_container">
-            <div class="profileMod_container_header"><h1>프로필 수정</h1></div>
+            <div class="profileMod_container_header">
+                <h1>프로필 수정</h1>
+            </div>
             <div class="profileMod_container_center">
-                <div class="profileMod_container_left">
-                    <!--프로필의 iuser 값이랑 세션의 iuser값이 같아야한다. -->
-                    <form action="/user/modProfile" method="post" enctype="multipart/form-data">
-                        <c:choose>
-                            <c:when test="${principal.user.mainProfile == null}">
-                                <img src="/img/default.png">
-                            </c:when>
-                            <c:otherwise>
-                                <img src="/pic/profile/${principal.user.iuser}/${principal.user.mainProfile}">
-                            </c:otherwise>
-                        </c:choose>
-                        <br>
-                        <input type="file" name="file" multiple accept="image/*" >
-                        <input type="submit" value="완료" style="color: white">
-                    </form>
+                <%--이미지선택--%>
+                <div class="container_left">
+                    <c:choose>
+                        <c:when test="${principal.user.mainProfile == null}">
+                            <img src="/img/default.png">
+                        </c:when>
+                        <c:otherwise>
+                            <img src="/pic/profile/${principal.user.iuser}/${principal.user.mainProfile}">
+                        </c:otherwise>
+                    </c:choose>
+                    <div><input type="file" id="selectImgArr" multiple accept="image/*"></div>
                 </div>
-                <div class="profileMod_container_right"></div>
+                <%--이름변경--%>
+                <div class="container_right">
+                    <div class="container_right_section">
+                        <h5>이름</h5>
+                        <div><input type="text" id="username" placeholder="${principal.user.nm}"></div>
+                        <P>• 이름은 최소 2자, 최대 20자 까지 입력이 가능해요.</P>
+                        <P>• 수정한 정보는 왓챠의 다른 서비스에서도 동일하게 표시됩니다.</P>
+                    </div>
+                </div>
             </div>
             <div class="profileMod_container_footer">
-                <div class="resetBtn">수정</div>
+                <hr>
+                <div>
+                    <div class="clear_btn"><input type="button" id="btnUpload" value="완료" disabled></div>
+                    <div class="cancle_btn"><input type="reset"  value="취소"></div>
+                </div>
             </div>
+            <%--<div id="displayImgList"></div>--%>
         </div>
     </div>
 </sec:authorize>
