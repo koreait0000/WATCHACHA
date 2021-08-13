@@ -49,6 +49,24 @@ public class MyFileUtils {
         String fileNm = getRandomFileNm(mf);
         String basePath = getSavePath(target);
         makeFolders(basePath);
+        File originDir = new File(basePath);
+        if( originDir.exists() ){ //파일존재여부확인
+
+            if(originDir.isDirectory()){ //파일이 디렉토리인지 확인
+
+                File[] files = originDir.listFiles();
+
+                for( int i=0; i<files.length; i++){
+                    if( files[i].delete() ){
+                        System.out.println(files[i].getName()+" 삭제성공");
+                    }else{
+                        System.out.println(files[i].getName()+" 삭제실패");
+                    }
+                }
+            }
+        }else{
+            System.out.println("파일이 존재하지 않습니다.");
+        }
         File saveFile = new File(basePath, fileNm);
         try{
             mf.transferTo(saveFile);

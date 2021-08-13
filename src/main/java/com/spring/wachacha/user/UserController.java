@@ -15,7 +15,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
@@ -70,11 +72,11 @@ public class UserController {
 
 
     /*프로필이미지 변경*/
-    @PostMapping("/modProfile")
-    public String modProfile(MultipartFile[] file){
-        service.modProfile(file);
-        return "redirect:profileMod";
-    }
+//    @PostMapping("/modProfile")
+//    public String modProfile(MultipartFile[] file){
+//        service.modProfile(file);
+//        return "redirect:profileMod";
+//    }
 
     @ResponseBody
     @GetMapping("/resetProfileImg")
@@ -83,4 +85,17 @@ public class UserController {
         auth.getLoginUser().setMainProfile(null);
         return result;
     }
+
+    @ResponseBody
+    @PostMapping("/uploadProfile")
+    public Map<String, Integer> uploadProfile(MultipartFile imgArr,UserEntity  param){
+        System.out.println("imgArr : " +imgArr);
+        System.out.println("param :" + param);
+        Map<String, Integer> res = new HashMap();
+        res.put("result", service.uploadProfile(imgArr, param));
+        return res;
+    }
+
+
+
 }

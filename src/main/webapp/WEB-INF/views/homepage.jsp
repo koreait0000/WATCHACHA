@@ -26,7 +26,6 @@
                         <a href="#3">
                             <i class="fas fa-chevron-circle-down"></i>
                         </a>
-
                     </div>
                 </div>
 

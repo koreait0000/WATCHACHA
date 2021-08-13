@@ -114,20 +114,20 @@ public class UserService {
     }
 
     //메인 이미지 변경
-    public Map<String, Object> updUserMainProfile(UserProfileEntity param) {
-        UserEntity loginUser = auth.getLoginUser();
-
-        param.setIuser(loginUser.getIuser());
-        int result = userMapper.updUserMainProfile(param);
-        if(result == 1) { //시큐리티 세션에 있는 loginUser에 있는 mainProfile값도 변경해주어야 한다.
-            System.out.println("img : " + param.getImg());
-            loginUser.setMainProfile(param.getImg());
-        }
-        Map<String, Object> res = new HashMap();
-        res.put("result", result);
-        res.put("img", param.getImg());
-        return res;
-    }
+//    public Map<String, Object> updUserMainProfile(UserProfileEntity param) {
+//        UserEntity loginUser = auth.getLoginUser();
+//
+//        param.setIuser(loginUser.getIuser());
+//        int result = userMapper.updUserMainProfile(param);
+//        if(result == 1) { //시큐리티 세션에 있는 loginUser에 있는 mainProfile값도 변경해주어야 한다.
+//            System.out.println("img : " + param.getImg());
+//            loginUser.setMainProfile(param.getImg());
+//        }
+//        Map<String, Object> res = new HashMap();
+//        res.put("result", result);
+//        res.put("img", param.getImg());
+//        return res;
+//    }
 
 
 
@@ -175,45 +175,76 @@ public class UserService {
     }
 
     /*프로필이미지 변경*/
-    public void modProfile(MultipartFile[] imgArr) {
-        UserEntity loginuser = auth.getLoginUser();
-        System.out.println("loginUser :" +loginuser);
-        System.out.println("loginuser.getIuser(); : " + loginuser.getIuser());
+//    public void modProfile(MultipartFile[] imgArr) {
+//        UserEntity loginuser = auth.getLoginUser();
+//        System.out.println("loginUser :" +loginuser);
+//        System.out.println("loginuser.getIuser(); : " + loginuser.getIuser());
+//
+//        int iuser = loginuser.getIuser();
+//        System.out.println("iuser : " + iuser);
+//
+//        String target = "profile/"+iuser;
+//
+//        UserProfileEntity param = new UserProfileEntity();
+//        param.setIuser(iuser);
+//
+//        for (MultipartFile img : imgArr){
+//            //파일을 서버에 넣는거
+//            String saveFileNm = myFileUtils.transferTo(img, target);
+//            if (saveFileNm != null){
+//                param.setImg(saveFileNm);
+//                //메인프로필을 처음으로 넣을때
+//                if (profileMapper.insUserProfile(param) == 1 || loginuser.getMainProfile() == null){
+//
+//                    UserEntity param2 = new UserEntity();
+//                    param2.setIuser(iuser);
+//                    param2.setMainProfile(saveFileNm);
+//
+//                    System.out.println("profileMapper.insUserProfile(param) 실행됨");
+//
+//                    if(userMapper.updUser(param2) == 1){
+//                        System.out.println("--------------------------------------------------------------------------");
+//                        System.out.println("userMapper.updUser(param2) == 1 실행됨");
+//                        loginuser.setMainProfile(saveFileNm);
+//                    }
+//                }
+//            }
+//        }
+//    }
 
-        int iuser = loginuser.getIuser();
-        System.out.println("iuser : " + iuser);
-
-        String target = "profile/"+iuser;
-
-        UserProfileEntity param = new UserProfileEntity();
-        param.setIuser(iuser);
-
-        for (MultipartFile img : imgArr){
-            //파일을 서버에 넣는거
-            String saveFileNm = myFileUtils.transferTo(img, target);
-            if (saveFileNm != null){
-                param.setImg(saveFileNm);
-                //메인프로필을 처음으로 넣을때
-                if (profileMapper.insUserProfile(param) == 1 || loginuser.getMainProfile() == null){
-
-                    UserEntity param2 = new UserEntity();
-                    param2.setIuser(iuser);
-                    param2.setMainProfile(saveFileNm);
-
-                    System.out.println("profileMapper.insUserProfile(param) 실행됨");
-
-                    if(userMapper.updUser(param2) == 1){
-                        System.out.println("--------------------------------------------------------------------------");
-                        System.out.println("userMapper.updUser(param2) == 1 실행됨");
-                        loginuser.setMainProfile(saveFileNm);
-                    }
-                }
-            }
-        }
-    }
     //이미지값을 null로 바꿈
     public int resetProfileImg() {
         UserEntity param = auth.getLoginUser();
         return userMapper.resetProfile(param);
+    }
+
+
+    public int uploadProfile(MultipartFile imgArr, UserEntity param) {
+        if(imgArr == null && param.getNm() == null){ return 0; }
+        int result = 0;
+        param.setIuser(auth.getLoginUserPk());
+        UserEntity loginUser = auth.getLoginUser();
+
+
+        String target = "profile/"+param.getIuser();
+
+        //파일을 서버에 넣는거
+        if(imgArr != null) {
+            String saveFileNm = myFileUtils.transferTo(imgArr, target);
+            if (saveFileNm != null) {
+                param.setMainProfile(saveFileNm);
+                loginUser.setMainProfile(saveFileNm);
+            }
+        }
+        if(param.getNm() != null) {
+            loginUser.setNm(param.getNm());
+        }
+        if (userMapper.updUser(param) == 1){
+            result = 1;
+            System.out.println("profileMapper.insUserProfile(param) 실행됨");
+        }
+
+
+        return result;
     }
 }

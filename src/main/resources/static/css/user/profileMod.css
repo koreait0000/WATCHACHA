@@ -7,10 +7,17 @@
 
 /*center*/
 .profileMod_container_center{width: 100%;height: 60%; display: flex;}
+
 /*left*/
 .container_left{height: 100%;width: 35%;display: flex;flex-direction: column;align-items: center;}
 .container_left>img{width: 240px;height: 240px;border-radius: 50%;position: relative;top: 12%;}
-.container_left>div{position: relative;top: 13%;}
+.chang_img_btn{ display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; top: 17%;}
+.chang_img_btn>label{text-align: center;border: 0.5px solid #575757;font-family: "Noto Sans KR", sans-serif;font-weight: normal;font-size: 18px;line-height: 123.7%;letter-spacing: 0.01em;color: #575757;padding: 10px;width: 172px;height: 46px;margin-bottom: 10px;}
+.chang_img_btn>label:hover{cursor: pointer;background-color: #f82f62; color: white;}
+.chang_img_btn>button{border: 0.5px solid #575757;font-family: "Noto Sans KR", sans-serif;font-weight: normal;font-size: 18px;line-height: 123.7%;letter-spacing: 0.01em;color: #575757;padding: 10px;width: 172px;height: 46px;}
+.chang_img_btn>button:hover{background-color: #f82f62; color: white;}
+#selectImgArr{display: none;}
+
 
 /*right*/
 .container_right{height: 100%;width: 65%;display: flex;}
@@ -26,4 +33,6 @@
 .profileMod_container_footer>hr{width: 95%;margin: 0 auto;color: #565656; height: 2px;}
 .profileMod_container_footer>div{display: flex; margin-left: 15px;}
 .profileMod_container_footer>div>div{width: 103px;height: 56px;background-color: #4A4A4A;margin: 10px 5px; display: flex;justify-content: center;align-items: center;}
-.profileMod_container_footer>div>div>input{color: rgba(255, 255, 255, 0.5);font-family: "Noto Sans KR", sans-serif;font-size: 27px;font-weight: bold;}
+.profileMod_container_footer>div>div:hover{background-color: #f82f62;}
+.profileMod_container_footer>div>div>input{color: rgba(255, 255, 255, 0.8);font-family: "Noto Sans KR", sans-serif;font-size: 27px;font-weight: bold;}
+.profileMod_container_footer>div>div>a{color: rgba(255, 255, 255, 0.8);font-family: "Noto Sans KR", sans-serif;font-size: 27px;font-weight: bold;}
