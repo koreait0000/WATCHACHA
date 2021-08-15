@@ -6,6 +6,11 @@ header{ position: fixed; top: 0;  height: 83px; width: 100%; min-width: 764px}
 .header_right{padding-top: 25px; display: flex}
 .loginBtn{height: 40px;width: 106px;padding: 10px 0px;border-radius: 213px;background-color: #fff;text-align: center;font-family: Noto Sans;font-style: normal;font-weight: bold;font-size: 14.7px;color: #000000;text-decoration: none;}
 
+.header_right_container{display: flex;}
+.header_right_container>i{
+    color: white;
+    margin-right: 25px;
+}
 .header_right{display: flex; flex-direction: column;}
 .header_userProfile{display: flex; align-items: center; padding-bottom: 16px;}
 .header_userProfile:hover{cursor: pointer;}
