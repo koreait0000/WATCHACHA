@@ -56,7 +56,7 @@
                                 영화 순위를 업데이트를하고 해당 영화에 대한 프리뷰, 리뷰 영상등을 <br>
                                 준비 해놓습니다.
                             </p>
-                            <div><a href="/main/mainpage/#1">영화랭킹 보러가기</a></div>
+                            <div class="Ranking_btn"><a href="#1">영화랭킹 보러가기</a></div>
                         </div>
                     </div>
                     <div class="carousel-caption d-none d-md-block">
@@ -83,7 +83,7 @@
     </div><%--End movieInfoSection--%>
 
     <%---------------------------------------------------박스오피스랭킹-------------------------------------------------------------------------------------------%>
-    <div class="boxOffice_cotainer" id="/main/mainpage/#1">
+    <div class="boxOffice_cotainer" id="1">
 <%--        <div class="Box__Office__Ranking">--%>
 <%--            <div class="Box__Office__Ranking__header">--%>
 <%--                <i class="fas fa-ticket-alt"></i>--%>
@@ -112,16 +112,19 @@
 <%--        </div>&lt;%&ndash;End of BoxOfficeRanking&ndash;%&gt;--%>
     <%---------------------------------------------------박스오피스랭킹-------------------------------------------------------------------------------------------%>
         <div id="hero-slides">
-            <div id="header"></div>
+            <div id="header">
+                <h4>Box Office Rankings</h4>
+            </div>
+            <hr>
             <div id="slides-cont">
                 <div class="button" id="next"></div>
                 <div class="button" id="prev"></div>
                 <div id="slides">
                     <c:forEach var="i" items="${map.rankPoster}" varStatus="status">
                         <div class="slide" style="background-image: url(${i});">
-                            <div class="number">1   </div>
+                            <div class="number"></div>
                             <div class="body">
-                                <div class="headline"></div><a href="/movie/detail?keyword=${map.name[status.index]}&page=0" target="_blank">
+                                <div class="headline"></div><a href="/movie/detail?keyword=${map.name[status.index]}&page=0">
                                 <div class="link"><c:out value="${map.name[status.index]}"></c:out></div></a>
                             </div>
                         </div>
