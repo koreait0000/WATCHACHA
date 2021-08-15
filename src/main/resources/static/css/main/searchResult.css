@@ -1,5 +1,5 @@
 *{ color: white; }
-.web_wapper{ width: 100%;background-color: #1B1C1F;}
+.web_wapper{ width: 100%;background-color: #1B1C1F; min-height: 100vh;}
 .param_searchbar{ font-family: Noto Sans; font-style: normal; font-weight: bold; font-size: 22px; font-size: 22px;}
 .param_searchbar2{ font-family: Noto Sans; font-style: normal; font-weight: bold; font-size: 22px; color: 858D90;}
 .searchResult_Param{ padding-left: 42px; padding-top: 37px;}
