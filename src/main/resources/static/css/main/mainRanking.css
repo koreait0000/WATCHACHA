@@ -1,15 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,400,900,800i");
-/*body {*/
-/*    --slides-per-page: 2;*/
-/*    margin: 0;*/
-/*    overflow: hidden;*/
-/*    height: 100vh;*/
-/*    font-family: 'Roboto Condensed', sans-serif;*/
-/*    color: white;*/
-/*}*/
-*{
-    font-family: "Noto Sans KR", sans-serif;
-}
+*{ font-family: "Noto Sans KR", sans-serif;}
 
 a {
     text-decoration: none;
@@ -21,7 +11,8 @@ a {
     height: 100vh;
 }
 #hero-slides #header {
-    height: 12vh;
+    margin-top: 4rem;
+    margin-bottom: 18px;
     line-height: 12vh;
     padding: 0 3vw;
     position: relative;
@@ -73,8 +64,9 @@ a {
 }
 #hero-slides #slides-cont .button {
     width: 5vw;
+    color: white;
     height: var(--button-height);
-    background: #0d96f2;
+    background: #ef1616;
     position: absolute;
     right: 5.375vw;
     top: 38vh;
@@ -243,7 +235,7 @@ a {
 }
 #hero-slides #slides .slide .link {
     display: inline-block;
-    background: #0d96f2;
+    background: #ef1616;
     padding: 0.5em 1.25em;
     font-size: 1.33em;
     opacity: 0;
@@ -251,6 +243,10 @@ a {
     bottom: -2em;
     pointer-events: none;
     transition-delay: 25ms;
+}
+.link{
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: bold;
 }
 #hero-slides #slides .slide.hover:before, #hero-slides #slides .slide:hover:before {
     opacity: 1;

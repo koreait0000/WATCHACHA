@@ -129,11 +129,6 @@
     padding-top: 52px;
     margin-bottom: 9px;
 }
-.Box__Office__Ranking hr{
-    color: #FFFFFF;
-    width: 95%;
-    margin: 0 auto;
-}
 .Box__Office__poster{
     width: 100%;
     margin-top: 20px;
@@ -149,7 +144,25 @@
 .Box__Office__poster span{
     padding-left: 38px;
 }
-
+#header{
+    display: flex;
+    align-items: center;
+}
+#header>i{
+    color: white;
+    margin-right: 10px;
+}
+#header>h4{
+    font-family: "Anton";
+    font-size: 36px;
+    letter-spacing: 1.5px;
+}
+#hero-slides>hr{
+    color: #FFFFFF;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
 
 /***********************************************       팔로워들좋아하는 영화 리스트    ***************************************************************************/
 .recomand_movie_container{
