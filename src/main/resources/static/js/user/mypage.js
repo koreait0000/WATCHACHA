@@ -40,10 +40,20 @@ function makeMovieList(movieList) {
             <a href="/movie/detail?keyword=${movie.title}&page=0">
                 <div class="myfavMovie_List">
                     <div class="myfav_movie">
-                        <img src="${movie.image}">
-                    </div>
-                    <div class="playBtn">
-                        <i class="fas fa-play-circle"></i>
+                        <section class="app" id="app" data-current-media="movie"> 
+                            <article class="media-container">
+                                <div class="movie-wrapper">
+                                    <div class="movie">
+                                        <div class="movie__front">                    
+                                            <img src="${movie.image}" alt="cover">
+                                        </div>
+                                        <div class="movie__edge"></div>
+                                        <div class="movie__side"></div>
+                                    </div>
+                                    <div class="movie-shadow"></div>
+                                </div>
+                            </article>
+                        </section> 
                     </div>
                 </div>
             </a>

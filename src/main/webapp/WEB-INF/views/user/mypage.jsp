@@ -3,11 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <link href="/css/user/mypage.css" rel="stylesheet">
+<link href="/css/user/mypagePoster.css" rel="stylesheet">
 <sec:authorize access="isAuthenticated()">
     <sec:authentication property="principal" var="principal" />
     <div class="mypage_wrapper">
         <div class="mypage_container">
-
             <div class="profile_header">
                 <a href="/user/profileMod" class="profile_img">
                     <c:choose>
@@ -37,8 +37,11 @@
                 </form>
             </div>
                 <%-----------------------------profile_search끝----------------------%>
-
-            <div class="profile_myFavList"></div>
+            <div class="myFavList_container">
+                <div class="test123">
+                    <div class="profile_myFavList"></div>
+                </div>
+            </div>
 
                 <%-----------------------------profile_myFavList끝----------------------%>
 
