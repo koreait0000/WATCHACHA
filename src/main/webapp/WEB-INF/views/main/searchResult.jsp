@@ -49,4 +49,11 @@
             </div>
         </div>
     </c:if>
+    <!-- 유저 정보 검색!-->
+    <c:if test="${!empty user}">
+        <div>
+            <label>해당되는 유저 목록</label>
+            <div><button><img src="/pic/profile/${user.iuser}/${user.mainProfile}">${user.nm}</button></div>
+        </div>
+    </c:if>
 </div>
