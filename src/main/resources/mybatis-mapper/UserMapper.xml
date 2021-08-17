@@ -10,6 +10,20 @@
             ( #{email}, #{pw}, #{nm}, #{tel}, #{grade}, #{provider}, #{authCd} )
     </insert>
 
+    <select id="followerGetMovieFav" resultType="MovieFavEntity">
+        select * from t_movie_fav tmf
+        where tmf.iuser in (<foreach collection="list" item="item" separator=",">
+                #{item}
+    </foreach>)
+    </select>
+
+    <select id="selFollow" resultType="Integer">
+        select tuf.to_iuser from t_user tu
+        inner join t_user_follow tuf
+        on tu.iuser = tuf.from_iuser
+        where tu.iuser = #{iuser}
+    </select>
+
     <select id="selUser" resultType="UserEntity">
         SELECT * FROM t_user
         WHERE
