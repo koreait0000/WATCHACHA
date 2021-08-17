@@ -1,6 +1,7 @@
 const searchTextElem = document.querySelector('.profile_search #searchText')
 const myFavListDivElem = document.querySelector('.profile_myFavList');
 const myIuserVal = document.querySelector('.mypage_wrapper').dataset.myIuser;
+const localConstElem = document.querySelector('#localConst');
 infinityScrolling.url = `/user/getMyMovie`;
 infinityScrolling.plusQuery = `&iuser=${myIuserVal}`;
 infinityScrolling.makeItemList = makeMovieList;
@@ -151,3 +152,45 @@ if(document.querySelector('.follow_btn_box') != null){
         followProc.unDoFollow();
     })
 }
+/********************************** 팔로우 모달 *******************/
+const followerContElem = document.querySelector('.follower_container');
+const followContElem = document.querySelector('.follow_container');
+
+const modalFollowElem = document.querySelector('.modal-follow');
+const modalFollowTitleElem = modalFollowElem.querySelector('#title');
+
+const modalFollowItemConElem = modalFollowElem.querySelector('.followCont'); //안의내용물
+/*팔로워를 클릭했을경우*/
+followerContElem.addEventListener('click', ()=>{
+    modalFollowTitleElem.innerText = '팔로워';
+    modalFollowElem.classList.remove('hidden');
+    modalFollowItemConElem.innerHTML=''; //비우고
+
+    //프로필 사용자를 팔로우한 사람들 리스트
+    fetch(`getFollowerList?iuserYou=${myIuserVal}`)
+        .then(res=> res.json())
+        .then(myJson =>{
+            if (myJson.length > 0){
+                myJson.forEach(item =>{
+                    const cont = makeFollowItem(item);
+                    modalFollowItemConElem.append(cont);
+                })
+            }
+        })
+
+
+
+})
+
+/*팔로우를 클릭했을경우*/
+followContElem.addEventListener('click', ()=>{
+    modalFollowElem.classList.remove('hidden');
+})
+
+function makeFollowItem(item){
+    const globalContElem = document.querySelector('#globalConst');
+
+}
+
+
+

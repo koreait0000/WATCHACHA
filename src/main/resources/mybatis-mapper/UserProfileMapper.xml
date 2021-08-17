@@ -14,7 +14,7 @@
     <select id="selUserProfile" resultType="UserDomain">
         SELECT
             A.iuser, A.email, A.nm, A.tel, A.mainProfile
-
+             , (SELECT COUNT(iuser) FROM t_movie_fav WHERE iuser = ${youIuser}) AS postercnt
              , (SELECT COUNT(from_iuser) FROM t_user_follow WHERE from_iuser = #{youIuser}) AS cntFollow
              , (SELECT COUNT(to_iuser) FROM t_user_follow WHERE to_iuser = #{youIuser}) AS cntFollower
              , (SELECT COUNT(from_iuser) FROM t_user_follow WHERE from_iuser = #{youIuser} AND to_iuser = #{meIuser}) AS isYouFollowMe
