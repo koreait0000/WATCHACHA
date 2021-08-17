@@ -6,7 +6,7 @@ import lombok.ToString;
 @Data
 @ToString
 public class UserDomain extends UserEntity{
-
+    private int postercnt;
     private int cntFollower; //팔로워 카운트
     private int cntFollow; //팔로우 카운트
     private int isYouFollowMe; //너는 나를 팔로우 했니
