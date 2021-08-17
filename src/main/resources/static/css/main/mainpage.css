@@ -168,7 +168,9 @@
     margin: 0 auto;
     margin-bottom: 25px;
 }
-
+.recomand_movie{
+    padding-bottom: 3rem;
+}
 .recomand_movie>#header{
     margin-bottom: 18px;
     line-height: 12vh;

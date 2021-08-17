@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/css/main/mainpage.css">
 <link rel="stylesheet" href="/css/main/mainRanking.css">
+<link rel="stylesheet" href="/css/main/card.css">
 
 <div class="web_wapper">
     <%--movieInfosection--%>
@@ -131,16 +132,21 @@
             <div class="follower_fav_movie">
                 <c:forEach items="${friends}" var="friend" varStatus="status">
                     <div class="follower_personal_fav">
-                        <h4 style="color: #FFFFFF">${friend[status.index].nm} 님이 좋아하는 영화</h4>
+                        <h4 style="color: #FFFFFF">'${friend[status.index].nm}'님이 좋아하는 영화</h4>
                             <%--반복문이 돌아가는곳--%>
-                        <c:forEach items="${friend}" var="items">
-                            <div>
-                                <img src="/pic/profile/${items.iuser}/${items.image}">
-                            </div>
-<%--                            <div class="personal_movie">--%>
-<%--                                <img>--%>
-<%--                                <span>제목</span>--%>
-<%--                            </div>--%>
+            <%--                            <div>--%>
+            <%--                                <img src="/pic/profile/${items.iuser}/${items.image}">--%>
+            <%--                            </div>--%>
+                    <div class="fav_movie">
+                         <c:forEach items="${friend}" var="items">
+                                <div class="page-content">
+                                    <div class="card">
+                                        <div class="content">
+                                            <h2 class="title">Mountain View</h2>
+                                            <button class="btn">View Trips</button>
+                                        </div>
+                                    </div>
+                                </div>
                         </c:forEach><%--반복문이 끝나는곳--%>
                     </div>
                 </c:forEach>
