@@ -1,6 +1,8 @@
 const searchTextElem = document.querySelector('.profile_search #searchText')
 const myFavListDivElem = document.querySelector('.profile_myFavList');
-infinityScrolling.url = '/user/getMyMovie';
+const myIuserVal = document.querySelector('.mypage_wrapper').dataset.myIuser;
+infinityScrolling.url = `/user/getMyMovie`;
+infinityScrolling.plusQuery = `&iuser=${myIuserVal}`;
 infinityScrolling.makeItemList = makeMovieList;
 infinityScrolling.setScrollInfinity(window);
 infinityScrolling.getItemList(1);
@@ -51,5 +53,91 @@ function makeMovieList(movieList) {
         myFavListDivElem.append(divElem);
 
         // = movieContainerElem.innerHTML += `<img src='https://image.tmdb.org/t/p/w500/${movie.poster_path}'>`;
+    })
+}
+const isEmpty = function(value){
+    if( value === "" || value == null || (typeof value == "object" && !Object.keys(value).length) ){
+        return true;
+    }else{
+        return false;
+    }
+};
+if(document.querySelector('.follow_btn_box') != null){
+    const followBtnElem = document.querySelector('.follow_btn');
+    const unfollowBtnElem = document.querySelector('.unfollow_btn');
+    const refollowBtnElem = document.querySelector('.refollow_btn');
+    const toIuserVal = document.querySelector('.follow_btn_box').dataset.toIuser;
+
+    const followProc = {
+        method: '',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        data: {
+            to_iuser: toIuserVal
+        },
+        doFollow: function () {
+            fetch('/user/follow', {
+                method: this.method,
+                body: JSON.stringify(this.data),
+                headers: this.headers,
+            }).then(res => res.json())
+                .then(myJson => {
+                    if(myJson === 1) {
+                        checkFollow();
+                    }else {
+                        alert('팔로우 실패. 오류 발생.');
+                    }
+                })
+        },
+        unDoFollow: function () {
+            fetch(`/user/follow/${toIuserVal}`, {
+                method: this.method
+            }).then(res => res.json())
+                .then(myJson => {
+                    if(myJson === 1) {
+                        checkFollow();
+                    }else {
+                        alert('언팔로우 실패. 오류 발생.');
+                    }
+                })
+        }
+
+    }
+
+
+    function checkFollow() {
+        fetch(`/user/follow?to_iuser=${toIuserVal}`)
+            .then(response => response.json())
+            .then(myJson => {
+                if(myJson.from_iuser === 1) {
+                    followBtnElem.classList.add('hidden');
+                    unfollowBtnElem.classList.remove('hidden');
+                    refollowBtnElem.classList.add('hidden');
+                }else if(myJson.to_iuser === 1 && myJson.from_iuser === 0 ) {
+                    followBtnElem.classList.add('hidden');
+                    unfollowBtnElem.classList.add('hidden');
+                    refollowBtnElem.classList.remove('hidden');
+                }else {
+                    followBtnElem.classList.remove('hidden');
+                    unfollowBtnElem.classList.add('hidden');
+                    refollowBtnElem.classList.add('hidden');
+                }
+            })
+    }
+    checkFollow();
+
+    followBtnElem.addEventListener('click', (e) => {
+        followProc.method = 'POST';
+        followProc.doFollow();
+    })
+    refollowBtnElem.addEventListener('click', (e) => {
+        followProc.method = 'POST';
+        followProc.doFollow();
+    })
+    unfollowBtnElem.addEventListener('click', (e) => {
+        followProc.method = 'DELETE';
+        followProc.unDoFollow();
     })
 }
