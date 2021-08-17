@@ -10,11 +10,13 @@
             ( #{email}, #{pw}, #{nm}, #{tel}, #{grade}, #{provider}, #{authCd} )
     </insert>
 
-    <select id="followerGetMovieFav" resultType="MovieFavEntity">
-        select * from t_movie_fav tmf
-        where tmf.iuser in (<foreach collection="list" item="item" separator=",">
-                #{item}
-    </foreach>)
+    <select id="followerGetMovieFav" resultType="MovieFavDomain">
+        select tmf.*, tu.nm from t_movie_fav tmf
+        inner join t_user tu
+        on tu.iuser = tmf.iuser
+        where tmf.iuser = #{iuser}
+        ORDER BY i_movie_fav desc
+        LIMIT 0, 5
     </select>
 
     <select id="selFollow" resultType="Integer">
