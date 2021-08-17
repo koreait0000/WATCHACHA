@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class UserFollowEntity {
-    private int from_iuser;
-    private int to_iuser;
+    private int from_iuser; //iuserMe
+    private int to_iuser; //iuserYou
 }

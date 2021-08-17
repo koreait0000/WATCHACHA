@@ -42,5 +42,6 @@ public interface UserMapper {
     // follow & movie fav
     List<MovieFavDomain> followerGetMovieFav(Object list);
     List<UserDomain> selUserFollowerList(UserFollowEntity param);
+    List<UserDomain> selUserFollowList(UserFollowEntity param);
 
 }

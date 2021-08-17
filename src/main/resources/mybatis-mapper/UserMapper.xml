@@ -150,16 +150,26 @@
 
     <select id="selUserFollowList" resultType="UserDomain">
         SELECT B.iuser, B.nm, B.mainProfile
-        ,CASE WHEN C.iuserMe IS NULL THEN 0 ELSE 1 END AS isMeFollowYou
+        ,CASE WHEN C.from_iuser IS NULL THEN 0 ELSE 1 END AS isMeFollowYou
         FROM t_user_follow A
         INNER JOIN t_user B
-        ON A.iuserYou = B.iuser
+        ON A.to_iuser = B.iuser
         LEFT JOIN t_user_follow C
-        ON C.iuserMe = ${iuserMe} -- 로그인한 사람 pk
-        AND C.iuserYou = A.iuserYou
-        WHERE A.iuserMe = ${iuserYou} -- 프로필 주인장  pk
+        ON C.from_iuser = ${from_iuser} -- 로그인한 사람 pk
+        AND C.to_iuser = A.to_iuser
+        WHERE A.from_iuser = ${to_iuser} -- 프로필 주인장  pk
     </select>
 
-      
+    <select id="selUserFollowerList" resultType="UserDomain">
+        SELECT B.iuser, B.nm, B.mainProfile
+        , CASE WHEN C.from_iuser IS NULL THEN 0 ELSE 1 END AS isMeFollowYou
+        FROM t_user_follow A
+        INNER JOIN t_user B
+        ON A.from_iuser = B.iuser
+        LEFT JOIN t_user_follow C
+        ON C.from_iuser = ${from_iuser} -- 로그인한 사람 pk
+        AND C.to_iuser = A.from_iuser
+        WHERE A.to_iuser = ${to_iuser} -- 프로필 주인장  pk
+    </select>
 
 </mapper>
