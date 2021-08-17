@@ -41,8 +41,8 @@ public class UserController {
             param2.setYouIuser(userDetails.getUser().getIuser()); //나의 iuser값
             param.setIuser(userDetails.getUser().getIuser()); //나의 iuser값
         }
-          model.addAttribute(myConst.PROFILE, service.selUserProfile(param2));
-          model.addAttribute(myConst.PROFILE_LIST, service.selUserProfileList(param));
+          model.addAttribute(myConst.PROFILE, service.selUserProfile(param2)); // 프로필 정보
+          model.addAttribute(myConst.PROFILE_LIST, service.selUserProfileList(param)); // ??
 
 
     }
@@ -53,23 +53,30 @@ public class UserController {
 
     @ResponseBody
     @GetMapping("/getMyMovie")
-    public List<MovieFavDomain> getMyMovie(int page) {
+    public List<MovieFavDomain> getMyMovie(UserEntity param, int page) {
         PagingDTO pagingDTO = new PagingDTO(page);
         System.out.println("paing = " + pagingDTO);
-        return service.getMyMovie(pagingDTO);
+        return service.getMyMovie(param, pagingDTO);
     }
 
+    @ResponseBody
+    @GetMapping("/follow")
+    public UserFollowEntity checkFollow(UserFollowEntity param) {
+        return service.checkFollow(param);
+    }
 
     @ResponseBody
     @PostMapping("/follow")
-    public UserFollowEntity insFollow(@RequestBody UserFollowEntity param) {
+    public int insFollow(@RequestBody UserFollowEntity param) {
         param.setFrom_iuser(auth.getLoginUserPk());
         return service.insFollow(param);
     }
 
     @ResponseBody
-    @DeleteMapping("/follow")
-    public UserFollowEntity delFollow(@RequestBody UserFollowEntity param) {
+    @DeleteMapping("/follow/{to_iuser}")
+    public int delFollow(@PathVariable(name="to_iuser") int to_iuser) {
+        UserFollowEntity param = new UserFollowEntity();
+        param.setTo_iuser(to_iuser);
         param.setFrom_iuser(auth.getLoginUserPk());
         return service.delFollow(param);
     }

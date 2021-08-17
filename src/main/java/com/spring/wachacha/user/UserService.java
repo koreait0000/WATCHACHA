@@ -129,15 +129,15 @@ public class UserService {
 
 
     // 팔로우
-    public UserFollowEntity insFollow(UserFollowEntity param) {
-        int test = userMapper.insFollow(param);
-        if(test == 0) return null;
+    public UserFollowEntity checkFollow(UserFollowEntity param) {
+        param.setFrom_iuser(auth.getLoginUserPk());
         return userMapper.isFollow(param);
     }
-    public UserFollowEntity delFollow(UserFollowEntity param) {
-        int test = userMapper.delFollow(param);
-        if(test == 0) return null;
-        return userMapper.isFollow(param);
+    public int insFollow(UserFollowEntity param) {
+        return userMapper.insFollow(param);
+    }
+    public int delFollow(UserFollowEntity param) {
+        return userMapper.delFollow(param);
     }
     public List<UserDomain> selFollower(UserEntity param) {
         if(param.getIuser() == 0) {
@@ -167,8 +167,8 @@ public class UserService {
     } // key 는 사람 이름, value 는 좋아요한 영화 리스트.
 
     // 내가 좋아요 한 영화
-    public List<MovieFavDomain> getMyMovie(PagingDTO pagingDTO) {
-        return userMapper.selMyMovie(auth.getLoginUser(), pagingDTO);
+    public List<MovieFavDomain> getMyMovie(UserEntity param, PagingDTO pagingDTO) {
+        return userMapper.selMyMovie(param, pagingDTO);
     }
 
     /*프로필이미지 변경*/

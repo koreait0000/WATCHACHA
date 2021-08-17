@@ -6,26 +6,29 @@
 <link href="/css/user/mypagePoster.css" rel="stylesheet">
 <sec:authorize access="isAuthenticated()">
     <sec:authentication property="principal" var="principal" />
-    <div class="mypage_wrapper">
+    <div class="mypage_wrapper" data-my-iuser="${profile.iuser}">
         <div class="mypage_container">
             <div class="profile_header">
                 <a href="/user/profileMod" class="profile_img">
                     <c:choose>
-                        <c:when test="${principal.user.mainProfile == null}">
+                        <c:when test="${profile.mainProfile == null}">
                             <img src="/img/default.png">
                         </c:when>
                         <c:otherwise>
-                            <img src="/pic/profile/${principal.user.iuser}/${principal.user.mainProfile}">
+                            <img src="/pic/profile/${profile.iuser}/${profile.mainProfile}">
                         </c:otherwise>
                     </c:choose>
                 </a>
                 <div class="profile_info">
-                    <div class="profile_info_name">${principal.user.nm}</div>
+                    <div class="profile_info_name">${profile.nm}</div>
                     <%--팔로워할곳--%>
-                    <div class="">
-                        <div class="follow_btn">팔로우</div>
-                        <div class="unfollow_btn">언팔로우</div>
-                    </div>
+                    <c:if test="${profile.iuser != principal.user.iuser}">
+                        <div class="follow_btn_box" data-to-iuser="${profile.iuser}">
+                            <div class="follow_btn">팔로우</div>
+                            <div class="unfollow_btn">언팔로우</div>
+                            <div class="refollow_btn">맞팔로우</div>
+                        </div>
+                    </c:if>
                 </div>
             </div>
                 <%-----------------------------profile_header끝----------------------%>
