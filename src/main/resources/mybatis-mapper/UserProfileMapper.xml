@@ -3,11 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.wachacha.user.UserProfileMapper">
-    <select id="selUserProfileList" resultType="UserProfileEntity">
-        SELECT iprofile, img
-        FROM t_user_profile
-        WHERE iuser = ${iuser}
-    </select>
 
     <insert id="insUserProfile">
         INSERT INTO t_user_profile
@@ -15,4 +10,22 @@
         VALUES
             ( #{iuser}, #{img} )
     </insert>
+
+    <select id="selUserProfile" resultType="UserDomain">
+        SELECT
+            A.iuser, A.email, A.nm, A.tel, A.mainProfile
+             , (SELECT COUNT(from_iuser) FROM t_user_follow WHERE from_iuser = #{youIuser}) AS cntFollow
+             , (SELECT COUNT(to_iuser) FROM t_user_follow WHERE to_iuser = #{youIuser}) AS cntFollower
+             , (SELECT COUNT(from_iuser) FROM t_user_follow WHERE from_iuser = #{youIuser} AND to_iuser = #{meIuser}) AS isYouFollowMe
+             , (SELECT COUNT(from_iuser) FROM t_user_follow WHERE from_iuser = #{meIuser} AND to_iuser = #{youIuser}) AS isMeFollowYou
+        FROM t_user A
+        WHERE A.iuser = ${youIuser}
+    </select>
+
+    <select id="selUserProfileList" resultType="UserProfileEntity">
+        SELECT iprofile, img
+        FROM t_user_profile
+        WHERE iuser = ${iuser}
+    </select>
+
 </mapper>

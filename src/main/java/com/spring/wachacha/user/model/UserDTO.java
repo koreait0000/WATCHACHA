@@ -8,6 +8,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class UserDTO {
-    private int meIuser;
-    private int youIuser;
+    private int meIuser; //나의 iuser
+    private int youIuser;//너의 iuser
 }

@@ -122,7 +122,7 @@
                 <div id="slides">
                     <c:forEach var="i" items="${map.rankPoster}" varStatus="status">
                         <div class="slide" style="background-image: url(${i});">
-                            <div class="number"></div>
+                            <div class="number">${status.count}</div>
                             <div class="body">
                                 <div class="headline"></div><a href="/movie/detail?keyword=${map.name[status.index]}&page=0">
                                 <div class="link"><c:out value="${map.name[status.index]}"></c:out></div></a>

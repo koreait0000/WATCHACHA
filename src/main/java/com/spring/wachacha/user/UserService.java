@@ -7,10 +7,7 @@ import com.spring.wachacha.config.security.UserDetailsServiceImpl;
 import com.spring.wachacha.email.CommonUtils;
 import com.spring.wachacha.email.EmailService;
 import com.spring.wachacha.movie.model.MovieFavDomain;
-import com.spring.wachacha.user.model.UserDomain;
-import com.spring.wachacha.user.model.UserEntity;
-import com.spring.wachacha.user.model.UserFollowEntity;
-import com.spring.wachacha.user.model.UserProfileEntity;
+import com.spring.wachacha.user.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -247,4 +244,10 @@ public class UserService {
 
         return result;
     }
+
+    public UserDomain selUserProfile(UserDTO param2) {
+        param2.setMeIuser(auth.getLoginUserPk());
+        return profileMapper.selUserProfile(param2);
+    }
+
 }
