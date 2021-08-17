@@ -112,10 +112,20 @@ public class UserController {
         return res;
     }
 
+    //팔로워
     @ResponseBody
     @GetMapping("/getFollowerList")
     public List<UserDomain> getFollowerList(UserFollowEntity param) {
+        System.out.println("To_iuser : "  + param.getTo_iuser());
         return service.selUserFollowerList(param);
+    }
+
+    //팔로우
+    @ResponseBody
+    @GetMapping("/getFollowList")
+    public List<UserDomain> getFollowList(UserFollowEntity param){
+        System.out.println("To_iuser : " + param.getTo_iuser());
+        return service.selUserFollowList(param);
     }
 
 }

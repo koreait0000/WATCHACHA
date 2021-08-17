@@ -168,7 +168,7 @@ followerContElem.addEventListener('click', ()=>{
     modalFollowElem.classList.remove('hidden');
     modalFollowItemConElem.innerHTML=''; //비우고
     //프로필 사용자를 팔로우한 사람들 리스트
-    fetch(`getFollowerList?iuserYou=${myIuserVal}`)
+    fetch(`getFollowerList?to_iuser=${myIuserVal}`)
         .then(res=> res.json())
         .then(myJson =>{
             if (myJson.length > 0){
@@ -186,7 +186,7 @@ followContElem.addEventListener('click', ()=>{
     modalFollowTitleElem.innerText = '팔로우';
     modalFollowItemConElem.innerHTML = '';
     //프로필 사용자가 팔로우한 사람들 리스트
-    fetch(`getFollowList?iuserYou=${myIuserVal}`)
+    fetch(`getFollowList?to_iuser=${myIuserVal}`)
         .then(res => res.json())
         .then(myJson => {
             if(myJson.length > 0){
@@ -205,8 +205,9 @@ modalFollowCloseElem.addEventListener('click', ()=>{
 
 /*프로필이미지 div만들기 개개인 */
 function makeFollowItem(item){
-    const globalContElem = document.querySelector('#globalConst');
-    const loginIuser = globalContElem.dataset.iuser;
+
+    // const globalContElem = document.querySelector('#globalConst');
+    // const loginIuser = globalContElem.dataset.iuser;
 
     const cont = document.createElement('div');
     cont.className = 'follow-item';
@@ -256,3 +257,40 @@ function moveToProfile(iuser) {
     location.href = `/user/mypage?iuser=${iuser}`;
 }
 
+/*팔로우처리*/
+//type: 0 > 팔로우 처리
+//type: 1 > 팔로우 취소
+function followProc(type, To_iuser, btnElem) {
+    const init = {};
+    const param = { To_iuser };
+    let queryString = '';
+    switch (type) {
+        case 0:
+            init.method = 'POST';
+            init.headers = { 'Content-Type': 'application/json' };
+            init.body = JSON.stringify(param);
+            break;
+        case 1:
+            init.method = 'DELETE';
+            queryString = `?To_iuser=${To_iuser}`;
+            break;
+    }
+
+    fetch('follow' + queryString, init)
+        .then(res => res.json())
+        .then(myJson => {
+
+            if(myJson.result === 1) {
+                let buttnNm = '팔로우 취소';
+                if(btnElem.dataset.follow === '1') {
+                    if(myJson.youFollowMe == null) { buttnNm = '팔로우'; }
+                    else { buttnNm = '맞팔로우'; }
+                }
+                btnElem.classList.toggle('instaBtnEnable');
+                btnElem.value = buttnNm;
+                btnElem.dataset.follow = 1 - btnElem.dataset.follow;
+            } else {
+                alert('에러가 발생하였습니다.');
+            }
+        });
+}
