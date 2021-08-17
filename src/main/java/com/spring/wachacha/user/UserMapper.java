@@ -38,5 +38,8 @@ public interface UserMapper {
 
     int resetProfile(UserEntity param);
 
+    List<Integer> selFollow(UserEntity entity);
+    // follow & movie fav
+    List<MovieFavEntity> followerGetMovieFav(Object list);
 
 }

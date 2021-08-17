@@ -1,8 +1,11 @@
 package com.spring.wachacha.main;
 
+import com.spring.wachacha.config.security.IAuthenticationFacade;
 import com.spring.wachacha.main.model.MovieSearchModel;
+import com.spring.wachacha.movie.model.MovieFavEntity;
 import com.spring.wachacha.user.UserMapper;
 import com.spring.wachacha.user.model.UserEntity;
+import com.spring.wachacha.user.model.UserFollowEntity;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.jsoup.Jsoup;
@@ -26,6 +29,9 @@ import java.util.Map;
 public class MainService {
 
     @Autowired
+    private IAuthenticationFacade auth;
+
+    @Autowired
     private UserMapper userMapper;
 
     public UserEntity userSearch(String nm){
@@ -33,6 +39,26 @@ public class MainService {
         userEntity.setNm(nm);
         UserEntity param = userMapper.selUser(userEntity);
         return param;
+    }
+
+    public Object userFav(){
+        UserEntity userEntity = new UserEntity();
+        userEntity.setIuser(auth.getLoginUserPk());
+        List<Integer> list = userMapper.selFollow(userEntity);
+        System.out.println(list);
+        List<MovieFavEntity> list2 = new ArrayList<>();
+        if(list.size() >3){ //리스트 사이즈가 3이상이면
+            for(int i=0; i<3; i++){
+                int random = (int)(Math.random())*list.size();
+//                list2.add(list.get(random).getTo_iuser());
+                list.remove(random);
+            }
+            list2 = userMapper.followerGetMovieFav(list2);
+        }else{
+//            list2 = userMapper.followerGetMovieFav(list.get());
+        }
+        System.out.println(list2);
+        return list2;
     }
 
     public Map<String, Object> mainpage(){

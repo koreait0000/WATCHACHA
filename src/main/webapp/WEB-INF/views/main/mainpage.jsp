@@ -134,10 +134,13 @@
                         <h4 style="color: #FFFFFF">누구누구 님이 좋아하는 영화</h4>
                             <%--반복문이 돌아가는곳--%>
                         <c:forEach  begin="1" end="5" step="1" varStatus="status">
-                            <div class="personal_movie">
-                                <img>
-                                <span>제목</span>
+                            <div>
+                                <img src="/pic/profile/${friend.iuser}/${friend.image}">
                             </div>
+<%--                            <div class="personal_movie">--%>
+<%--                                <img>--%>
+<%--                                <span>제목</span>--%>
+<%--                            </div>--%>
                         </c:forEach><%--반복문이 끝나는곳--%>
                     </div>
                 </c:forEach>
