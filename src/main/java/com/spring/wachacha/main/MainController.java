@@ -20,7 +20,7 @@ public class MainController {
 
     @GetMapping("/mainpage")
     public void mainpage(Model model){
-        model.addAttribute("friend",mainService.userFav());
+        model.addAttribute("friends",mainService.userFav());
         model.addAttribute("map",mainService.mainpage());
     }
 

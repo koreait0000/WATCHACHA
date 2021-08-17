@@ -2,6 +2,7 @@ package com.spring.wachacha.main;
 
 import com.spring.wachacha.config.security.IAuthenticationFacade;
 import com.spring.wachacha.main.model.MovieSearchModel;
+import com.spring.wachacha.movie.model.MovieFavDomain;
 import com.spring.wachacha.movie.model.MovieFavEntity;
 import com.spring.wachacha.user.UserMapper;
 import com.spring.wachacha.user.model.UserEntity;
@@ -45,17 +46,17 @@ public class MainService {
         UserEntity userEntity = new UserEntity();
         userEntity.setIuser(auth.getLoginUserPk());
         List<Integer> list = userMapper.selFollow(userEntity);
-        System.out.println(list);
-        List<MovieFavEntity> list2 = new ArrayList<>();
+        List<Object> list2 = new ArrayList<>();
         if(list.size() >3){ //리스트 사이즈가 3이상이면
             for(int i=0; i<3; i++){
-                int random = (int)(Math.random())*list.size();
-//                list2.add(list.get(random).getTo_iuser());
+                int random = (int)(Math.random()*list.size());
+                list2.add(userMapper.followerGetMovieFav(list.get(random)));
                 list.remove(random);
             }
-            list2 = userMapper.followerGetMovieFav(list2);
         }else{
-//            list2 = userMapper.followerGetMovieFav(list.get());
+            for(int i=0; i<list.size(); i++){
+                list2.add(userMapper.followerGetMovieFav(list.get(i)));
+            }
         }
         System.out.println(list2);
         return list2;
