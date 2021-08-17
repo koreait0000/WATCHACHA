@@ -1,12 +1,15 @@
 package com.spring.wachacha.main;
 
 import com.spring.wachacha.main.model.MovieSearchModel;
+import com.spring.wachacha.user.UserMapper;
+import com.spring.wachacha.user.model.UserEntity;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -21,6 +24,16 @@ import java.util.Map;
 
 @Service
 public class MainService {
+
+    @Autowired
+    private UserMapper userMapper;
+
+    public UserEntity userSearch(String nm){
+        UserEntity userEntity = new UserEntity();
+        userEntity.setNm(nm);
+        UserEntity param = userMapper.selUser(userEntity);
+        return param;
+    }
 
     public Map<String, Object> mainpage(){
         Map<String, Object> map = new HashMap<>();

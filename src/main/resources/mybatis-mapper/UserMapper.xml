@@ -12,7 +12,13 @@
 
     <select id="selUser" resultType="UserEntity">
         SELECT * FROM t_user
-        WHERE email = #{email}
+        WHERE
+        <if test="email != null">
+            email = #{email}
+        </if>
+        <if test="nm != null">
+            nm like concat('%',#{nm},'%')
+        </if>
         <if test="provider != null">
             AND provider = #{provider}
         </if>
