@@ -1,6 +1,7 @@
 package com.spring.wachacha.user;
 
 import com.spring.wachacha.board.model.PagingDTO;
+import com.spring.wachacha.config.common.MyConst;
 import com.spring.wachacha.config.security.AuthenticationFacadeImpl;
 import com.spring.wachacha.config.security.IAuthenticationFacade;
 import com.spring.wachacha.config.security.UserDetailsImpl;
@@ -25,18 +26,24 @@ public class UserController {
 
     @Autowired private UserService service;
     @Autowired private IAuthenticationFacade auth;
-
+    @Autowired private MyConst myConst;
 
 
 
     @GetMapping("/mypage")
     public void mypage(Model model, UserEntity param, @AuthenticationPrincipal UserDetailsImpl userDetails){
+
         UserDTO param2 = new UserDTO();
-        param2.setYouIuser(param.getIuser());
+
+        param2.setYouIuser(param.getIuser()); //어차피 0아닌가
+
         if (param2.getYouIuser() == 0){
-            param2.setYouIuser(userDetails.getUser().getIuser());
-            param.setIuser(userDetails.getUser().getIuser());
+            param2.setYouIuser(userDetails.getUser().getIuser()); //나의 iuser값
+            param.setIuser(userDetails.getUser().getIuser()); //나의 iuser값
         }
+          model.addAttribute(myConst.PROFILE, service.selUserProfile(param2));
+//        model.addAttribute(myConst.PROFILE_LIST, service.selUserProfileList(param));
+
 
     }
 

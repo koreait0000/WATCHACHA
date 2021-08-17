@@ -22,7 +22,12 @@
                 <div class="profile_info">
                     <div class="profile_info_name">${principal.user.nm}</div>
                     <%--팔로워할곳--%>
-                    <div class="">팔로워뿌릴곳</div>
+                    <div class="">
+                        <table>
+                            <tr>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
                 <%-----------------------------profile_header끝----------------------%>

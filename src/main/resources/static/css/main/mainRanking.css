@@ -9,9 +9,9 @@ a {
 #hero-slides {
     --page: 0;
     height: 100vh;
+    padding-top: 5.5rem;
 }
 #hero-slides #header {
-    margin-top: 4rem;
     margin-bottom: 18px;
     line-height: 12vh;
     padding: 0 3vw;
