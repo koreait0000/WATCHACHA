@@ -129,13 +129,13 @@
             <hr>
             <%--회원들 좋아하는 영상리스트를 뿌릴거임--%>
             <div class="follower_fav_movie">
-                <c:forEach  begin="1" end="2" step="1" varStatus="status">
+                <c:forEach items="${friends}" var="friend" varStatus="status">
                     <div class="follower_personal_fav">
-                        <h4 style="color: #FFFFFF">누구누구 님이 좋아하는 영화</h4>
+                        <h4 style="color: #FFFFFF">${friend[status.index].nm} 님이 좋아하는 영화</h4>
                             <%--반복문이 돌아가는곳--%>
-                        <c:forEach  begin="1" end="5" step="1" varStatus="status">
+                        <c:forEach items="${friend}" var="items">
                             <div>
-                                <img src="/pic/profile/${friend.iuser}/${friend.image}">
+                                <img src="/pic/profile/${items.iuser}/${items.image}">
                             </div>
 <%--                            <div class="personal_movie">--%>
 <%--                                <img>--%>

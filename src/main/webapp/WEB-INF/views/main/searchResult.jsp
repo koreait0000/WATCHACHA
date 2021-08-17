@@ -8,7 +8,7 @@
             <c:if test="${!empty test.poster}">
                 <span class="param_searchbar2">검색결과</span>
             </c:if>
-            <c:if test="${empty test.poster}">
+            <c:if test="${empty test.poster && empty user}">
                 <span class="param_searchbar2">검색결과가 없습니다.</span>
                 <div class="falesWapper">
                     <div class="falesWapper_center">
@@ -53,7 +53,7 @@
     <c:if test="${!empty user}">
         <div>
             <label>해당되는 유저 목록</label>
-            <div><button><img src="/pic/profile/${user.iuser}/${user.mainProfile}">${user.nm}</button></div>
+            <div><a href="/user/mypage?iuser=${user.iuser}"><img src="/pic/profile/${user.iuser}/${user.mainProfile}"></a></div>
         </div>
     </c:if>
 </div>

@@ -44,7 +44,7 @@ public class UserController {
         }
           model.addAttribute(myConst.PROFILE, service.selUserProfile(param2)); // 프로필 정보
           model.addAttribute(myConst.PROFILE_LIST, service.selUserProfileList(param)); // ??
-
+          model.addAttribute("title","WATCHACHA | 내정보");
 
     }
 
