@@ -1,0 +1,112 @@
+/**
+ * App component
+ */
+.app {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*flex-direction: column;*/
+    /*width: calc(100% - 8vmin);*/
+    /*height: calc(100vh - 8vmin);*/
+    /*margin: 4vmin;*/
+    /*padding-bottom: 40px;*/
+    /* background: linear-gradient(to right, #56ab2f, #a8e063); */
+    /*border-radius: 0px;*/
+    padding: 16px 0px;
+    overflow: hidden;
+    perspective: 1500px;
+}
+.app[data-current-media=movie] .movie-wrapper {
+    display: block;
+}
+.app[data-current-media=movie] .media__button[value=movie] {
+    color: black;
+}
+.app[data-current-media=movie] .controls__thickness {
+    display: none;
+}
+
+/**
+ * Wrapper component
+ */
+.media-container:hover .movie {
+    transform: rotateX(5deg) rotateY(-50deg);
+}
+.media-container:hover .movie-shadow {
+    transform: rotateX(90deg) rotateZ(40deg);
+}
+
+/**
+ * Wrapper component
+ */
+.movie-wrapper {
+    display: none;
+}
+
+/**
+ * Movie component
+ */
+.movie {
+    position: relative;
+    z-index: 1;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    transform: rotateX(0deg) rotateY(-30deg);
+}
+.movie__front {
+    border-radius: 5px;
+    overflow: hidden;
+    transform: translateZ(20px);
+}
+.movie__edge {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 5px;
+    background: #0011ff;
+    transform: rotateY(45deg) translateZ(12px) translateX(-13px);
+}
+.movie__side {
+    height: 100%;
+    width: 40px;
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to right, #003bba 0%, #1e4fb8 100%);
+    border-radius: 5px;
+    transform: rotateY(90deg) translateX(0) translateZ(20px);
+}
+.movie__side:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: black;
+    opacity: 0.5;
+}
+.movie__side:after {
+    content: "";
+    display: block;
+    background: linear-gradient(to right, #0a4bde, #123893, #071751);
+    position: absolute;
+    border-radius: 10px;
+    top: 20%;
+    bottom: 20%;
+    left: 20%;
+    width: 60%;
+}
+
+.movie-shadow {
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    background: radial-gradient(70% 85%, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%);
+    transform: rotateX(90deg) rotateZ(30deg);
+    transition: transform 1s ease;
+    filter: blur(16px);
+}
