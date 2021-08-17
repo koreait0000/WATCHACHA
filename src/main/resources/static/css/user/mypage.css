@@ -23,6 +23,29 @@
 .myfav_movie_footer{display: flex;}
 
 
+/*-------------------------------follow_btn-----------------------------------*/
+.follow_btn{
+    width: fit-content;
+    height: fit-content;
+    background-color: red;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+.follow_btn:hover{
+    cursor: pointer;
+}
+.unfollow_btn{
+    width: fit-content;
+    height: fit-content;
+    background-color: lightseagreen;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+.unfollow_btn:hover{
+    cursor: pointer;
+}
 
 
 
