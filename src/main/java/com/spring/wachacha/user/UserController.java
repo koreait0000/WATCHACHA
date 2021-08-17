@@ -7,6 +7,7 @@ import com.spring.wachacha.config.security.IAuthenticationFacade;
 import com.spring.wachacha.config.security.UserDetailsImpl;
 import com.spring.wachacha.movie.model.MovieFavDomain;
 import com.spring.wachacha.user.model.UserDTO;
+import com.spring.wachacha.user.model.UserDomain;
 import com.spring.wachacha.user.model.UserEntity;
 import com.spring.wachacha.user.model.UserFollowEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,6 +110,12 @@ public class UserController {
         Map<String, Integer> res = new HashMap();
         res.put("result", service.uploadProfile(imgArr, param));
         return res;
+    }
+
+    @ResponseBody
+    @GetMapping("/getFollowerList")
+    public List<UserDomain> getFollowerList(UserFollowEntity param) {
+        return service.selUserFollowerList(param);
     }
 
 }

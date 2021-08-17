@@ -22,7 +22,7 @@
                 <div class="profile_info">
                     <div class="profile_info_name">${profile.nm}</div>
                     <%--팔로워할곳--%>
-                    <div class="follow_container">
+                    <div class="follow_modal_container">
                         <div class="poster_container">
                             <span>포스터</span>
                             <span>${profile.postercnt}</span>
