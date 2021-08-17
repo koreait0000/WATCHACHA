@@ -23,10 +23,8 @@
                     <div class="profile_info_name">${principal.user.nm}</div>
                     <%--팔로워할곳--%>
                     <div class="">
-                        <table>
-                            <tr>
-                            </tr>
-                        </table>
+                        <div class="follow_btn">팔로우</div>
+                        <div class="unfollow_btn">언팔로우</div>
                     </div>
                 </div>
             </div>

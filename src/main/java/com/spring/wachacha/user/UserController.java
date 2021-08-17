@@ -42,7 +42,7 @@ public class UserController {
             param.setIuser(userDetails.getUser().getIuser()); //나의 iuser값
         }
           model.addAttribute(myConst.PROFILE, service.selUserProfile(param2));
-//        model.addAttribute(myConst.PROFILE_LIST, service.selUserProfileList(param));
+          model.addAttribute(myConst.PROFILE_LIST, service.selUserProfileList(param));
 
 
     }
@@ -66,6 +66,7 @@ public class UserController {
         param.setFrom_iuser(auth.getLoginUserPk());
         return service.insFollow(param);
     }
+
     @ResponseBody
     @DeleteMapping("/follow")
     public UserFollowEntity delFollow(@RequestBody UserFollowEntity param) {
