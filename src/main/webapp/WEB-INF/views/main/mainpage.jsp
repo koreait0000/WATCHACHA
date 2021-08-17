@@ -65,7 +65,18 @@
 
                 <div class="carousel-item">
                     <div class="movie_info_section_third">
-
+                        <div class="second_info_section">
+                            <p class="info_section_first">
+                                Watchacha에서 영화를 추천받아보세요.<br>
+                                주위 친구들은 어떤 영화를 좋아할까요.
+                            </p>
+                            <p class="info_section_second">
+                                왓챠챠에서 영화추천을 받아보세요.<br>
+                                우리 주위의 영.잘.알들은 어떤 영화를 볼까요.<br>
+                                준비해놓을게요.
+                            </p>
+                            <div class="Ranking_btn"><a href="#2">영화추천 받기</a></div>
+                        </div>
                     </div>
                     <div class="carousel-caption d-none d-md-block">
                     </div>
@@ -84,32 +95,6 @@
 
     <%---------------------------------------------------박스오피스랭킹-------------------------------------------------------------------------------------------%>
     <div class="boxOffice_cotainer" id="1">
-<%--        <div class="Box__Office__Ranking">--%>
-<%--            <div class="Box__Office__Ranking__header">--%>
-<%--                <i class="fas fa-ticket-alt"></i>--%>
-<%--                <h4>Box Office Rankings</h4>--%>
-<%--            </div>--%>
-<%--            <hr>--%>
-<%--            <div class="Box__Office__poster">--%>
-<%--                <c:forEach var="i" items="${map.rankPoster}" varStatus="status">--%>
-<%--                    <div class="item">--%>
-<%--                        <div class="item_container"></div>--%>
-<%--                        <a href="/movie/detail?keyword=${map.name[status.index]}&page=0">--%>
-<%--                            <div class="Box__Office__poster1">--%>
-<%--                                <img src="<c:out value="${i}"></c:out>">--%>
-<%--                                <div class="Box__Office__poster__info">--%>
-<%--                                    <span style="color: #FFFFFF"><c:out value="${map.name[status.index]}"></c:out></span><br>--%>
-<%--                                    <span style="color: #FFFFFF"><c:out value="${map.open[status.index]}"></c:out></span>--%>
-<%--                                    <span style="color: yellow">--%>
-<%--                                       <i class="fas fa-star"><c:out value="${map.chart_num[status.index]}"></c:out></i>--%>
-<%--                                   </span>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </a>--%>
-<%--                    </div>--%>
-<%--                </c:forEach>--%>
-<%--            </div>--%>
-<%--        </div>&lt;%&ndash;End of BoxOfficeRanking&ndash;%&gt;--%>
     <%---------------------------------------------------박스오피스랭킹-------------------------------------------------------------------------------------------%>
         <div id="hero-slides">
             <div id="header">
@@ -136,13 +121,12 @@
         </div>
     </div>
     <%-- 팔로워들 영화추천 --%>
-    <div class="recomand_movie_container">
-        <div class="Box__Office__Ranking">
-            <div class="Box__Office__Ranking1">
-                <i class="fas fa-ticket-alt"></i>
-                <h4>추천 Movie</h4>
+    <div class="recomand_movie_container" id="2">
+        <div class="recomand_movie">
+            <div id="header">
+                <h4>'WATCHACHA'의 추천리스트</h4>
             </div>
-            <hr><%--줄밑부분--%>
+            <hr>
             <%--회원들 좋아하는 영상리스트를 뿌릴거임--%>
             <div class="follower_fav_movie">
                 <c:forEach  begin="1" end="2" step="1" varStatus="status">

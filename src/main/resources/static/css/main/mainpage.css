@@ -25,13 +25,17 @@
 .second_info_section>div:hover{opacity: 1;}
 .second_info_section>div>a{color: white;font-family: "Noto Sans KR", sans-serif;font-size: 17px;font-weight: bold;}
 
+/*세번째 슬라이드*/
 .movie_info_section_third{
     width: 100%;
     height: 100vh;
-    background-image: url("/img/main/mainpage/슬기로운생활.png");
+    background-image: url("/img/main/mainpage/third.png");
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: center;
 }
+
 
 
 #carouselExampleCaptions{
@@ -165,9 +169,23 @@
     margin-bottom: 25px;
 }
 
+.recomand_movie>#header{
+    margin-bottom: 18px;
+    line-height: 12vh;
+    padding: 0 3vw;
+    position: relative;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.recomand_movie>hr{
+    color: #FFFFFF;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
 /***********************************************       팔로워들좋아하는 영화 리스트    ***************************************************************************/
 .recomand_movie_container{
     width: 100%; min-height: 100vh;
+    padding-top: 5.5rem;
 }
 
 .follower_fav_movie{

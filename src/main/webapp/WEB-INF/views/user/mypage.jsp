@@ -38,9 +38,7 @@
             </div>
                 <%-----------------------------profile_search끝----------------------%>
             <div class="myFavList_container">
-                <div class="test123">
-                    <div class="profile_myFavList"></div>
-                </div>
+                <div class="profile_myFavList"></div>
             </div>
 
                 <%-----------------------------profile_myFavList끝----------------------%>

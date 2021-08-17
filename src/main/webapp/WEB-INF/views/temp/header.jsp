@@ -33,7 +33,6 @@
             </div>
             <div class="header_right">
                 <div class="header_right_container">
-                    <i class="fas fa-users"></i>
                     <div class="header_userProfile" >
                         <div class="header_userImg">
                             <c:choose>

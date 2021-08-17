@@ -2,16 +2,6 @@
  * App component
  */
 .app {
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
-    /*flex-direction: column;*/
-    /*width: calc(100% - 8vmin);*/
-    /*height: calc(100vh - 8vmin);*/
-    /*margin: 4vmin;*/
-    /*padding-bottom: 40px;*/
-    /* background: linear-gradient(to right, #56ab2f, #a8e063); */
-    /*border-radius: 0px;*/
     padding: 16px 0px;
     overflow: hidden;
     perspective: 1500px;
