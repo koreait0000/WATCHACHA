@@ -19,10 +19,12 @@
 .myfav_movie_footer{display: flex;}
 
 /*-------------------------------follow_box-----------------------------------*/
-.follow_container{display: flex;}
+.follow_modal_container{display: flex;}
 .poster_container{background-color: lightseagreen}
 .follower_container{background-color: lightgoldenrodyellow}
 .follower_container:hover{cursor: pointer;}
+
+#modal-follow-close:hover{cursor: pointer;}
 
 .follow_container{background-color: lightcoral;}
 .follow_container:hover{cursor: pointer;}

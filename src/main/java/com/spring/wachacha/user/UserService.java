@@ -250,4 +250,8 @@ public class UserService {
         return profileMapper.selUserProfile(param2);
     }
 
+    public List<UserDomain> selUserFollowerList(UserFollowEntity param) {
+        param.setFrom_iuser(auth.getLoginUserPk());
+        return userMapper.selUserFollowerList(param);
+    }
 }
