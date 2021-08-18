@@ -21,27 +21,27 @@
                 </a>
                 <div class="profile_info">
                     <div class="profile_info_name">${profile.nm}</div>
+                    <c:if test="${profile.iuser != principal.user.iuser}">
+                        <div class="follow_btn_box" data-to-iuser="${profile.iuser}">
+                            <div class="follow_btn">구독하기</div>
+                            <div class="unfollow_btn">구독취소하기</div>
+                            <div class="refollow_btn">구독하기</div>
+                        </div>
+                    </c:if>
                     <%--팔로워할곳--%>
                     <div class="follow_modal_container">
                         <div class="poster_container">
-                            <span>포스터</span>
                             <span>${profile.postercnt}</span>
+                            <span style="font-weight: normal">MyList</span>
                         </div>
                         <div class="follower_container">
-                            <span>팔로워</span>
                             <span>${profile.cntFollower}</span>
+                            <span style="font-weight: normal">팔로워</span>
                         </div>
                         <div class="follow_container">
-                            <span>팔로우</span>
                             <span>${profile.cntFollow}</span>
+                            <span style="font-weight: normal">팔로우</span>
                         </div>
-                        <c:if test="${profile.iuser != principal.user.iuser}">
-                            <div class="follow_btn_box" data-to-iuser="${profile.iuser}">
-                                <div class="follow_btn">팔로우</div>
-                                <div class="unfollow_btn">언팔로우</div>
-                                <div class="refollow_btn">맞팔로우</div>
-                            </div>
-                        </c:if>
                     </div>
                 </div>
             </div>
@@ -52,6 +52,38 @@
                     <input id="searchText" type="text" placeholder="Search...">
                     <input type="submit" hidden>
                 </form>
+            </div>
+
+            <div class="movie_option">
+                <select id="movie_nation">
+                    <option value="">국가</option>
+                    <option value="">인도</option>
+                    <option value="">일본</option>
+                    <option value="">영국</option>
+                    <option value="">스페인</option>
+                    <option value="">캐나다</option>
+                    <option value="">대만</option>
+                    <option value="">이탈리아</option>
+                    <option value="">중국</option>
+                    <option value="">미국</option>
+                    <option value="">한국</option>
+                </select>
+                <select id="movie_gerne">
+                    <option value="">장르</option>
+                    <option value="">TV드라마</option>
+                    <option value="">SF</option>
+                    <option value="">모험</option>
+                    <option value="">가족</option>
+                    <option value="">틴에이저</option>
+                    <option value="">판타지</option>
+                    <option value="">재난</option>
+                    <option value="">로맨틱코미디</option>
+                    <option value="">스포츠</option>
+                    <option value="">서부극</option>
+                    <option value="">음악</option>
+                    <option value="">전쟁</option>
+                    <option value="">미스터리</option>
+                </select>
             </div>
                 <%-----------------------------profile_search끝----------------------%>
             <div class="myFavList_container">
@@ -69,6 +101,10 @@
                     </div>
                     <hr>
                     <div class="followCont"></div>
+                    <div class="comming_soon">
+                        <img src="/img/comming.png" width="500rem">
+
+                    </div>
                 </div>
             </div>
         </div>

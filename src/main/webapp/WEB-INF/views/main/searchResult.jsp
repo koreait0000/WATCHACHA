@@ -24,7 +24,7 @@
             <div class="movie_Object">
                 <a href="/movie/detail?keyword=${test.name}&page=0">
                     <div><img src="<c:out value="${test.poster}"></c:out>"></div>
-                    <div><c:out value="${test.name}"></c:out></div>
+                    <div class="result_nm"><c:out value="${test.name}"></c:out></div>
                 </a>
             </div>
         </div>
@@ -51,9 +51,13 @@
     </c:if>
     <!-- 유저 정보 검색!-->
     <c:if test="${!empty user}">
-        <div>
+        <div class="user_search_container">
             <label>해당되는 유저 목록</label>
-            <div><a href="/user/mypage?iuser=${user.iuser}"><img src="/pic/profile/${user.iuser}/${user.mainProfile}"></a></div>
+            <div class="user_search_result">
+                <a href="/user/mypage?iuser=${user.iuser}">
+                    <img src="/pic/profile/${user.iuser}/${user.mainProfile}">
+                </a>
+            </div>
         </div>
     </c:if>
 </div>

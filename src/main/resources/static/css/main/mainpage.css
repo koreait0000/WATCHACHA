@@ -185,9 +185,30 @@
     margin-bottom: 25px;
 }
 /***********************************************       팔로워들좋아하는 영화 리스트    ***************************************************************************/
+.follower_personal_fav{
+    width: 97%;
+    margin-bottom: 1rem;
+}
+.follower_personal_fav>h4{
+    font-family: "Noto Sans KR", sans-serif;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    font-size: 20px;
+    margin-left: 5px;
+}
+.fav_movie{
+    width: 100%;
+}
+.personal_fav_list{
+    width: 100%;
+    display: flex;
+}
 .recomand_movie_container{
     width: 100%; min-height: 100vh;
     padding-top: 5.5rem;
+}
+.page-content{
+
 }
 
 .follower_fav_movie{
@@ -206,12 +227,6 @@
 .personal_movie span{
     color: #FFFFFF;
 }
-
-.follower_personal_fav{
-    overflow-x: auto;
-}
-
-
 .movie__section h4{
     font-style: normal;
     font-weight: bold;
@@ -229,3 +244,4 @@
 .innerTest1{ width: 100vw; height: 322px; background-color: lightcoral;}
 .innerTest2{ width: 100vw; height: 322px; background-color: cornflowerblue;}
 .innerTest3{ width: 100vw; height: 322px; background-color: indianred;}
+

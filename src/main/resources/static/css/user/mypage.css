@@ -2,15 +2,48 @@
 .mypage_container{width: 100%; display: flex; align-items: center; flex-direction: column; min-width: 1116px; min-height: 100vh;}
 
 /*profile_header*/
-.profile_header{margin-top: 100px;}
-.profile_img>img{width: 200px; height: 200px; border-radius: 50%;}
+.profile_header{margin-top: 100px; display: flex; flex-direction: column; align-items: center;}
 
-.profile_header>.profile_info{ width: 200px; height: 100px; background-color: lightpink; display: flex; flex-direction: column; align-items: center; justify-content: center;}
-.profile_info_name{font-weight: bold;font-size: 19px;color: #FFFFFF;}
+.profile_img>img{width: 200px; height: 200px; border-radius: 50%; margin-bottom: 1rem;}
 
-.profile_search{width: 65%; margin-top: 10px;}
 
-.profile_search>form>input{width: 100%; padding: 19px; border: 1px solid white; border-radius: 12px; color: white; background-color: rgba(66, 66, 66, 0.8);}
+.profile_header>.profile_info{ width: 263px; height: 100px;display: flex; flex-direction: column; align-items: center; justify-content: center;}
+.profile_info_name{font-weight: bold;font-size: 22px;color: #FFFFFF;}
+
+.profile_search{width: 65%; margin-top: 20px;}
+
+.profile_search>form>input{width: 100%; padding: 12px; border-radius: 4px; color: white; background-color: rgba(66, 66, 66, 0.8);}
+
+.movie_option{
+    margin-top: 1.5rem;
+    width: 65%;
+    position: relative;
+    left: 0;
+}
+#movie_nation{
+    width: 200px;
+    color: white;
+    margin-right: 15px;
+    border: 0.5px solid #C4C4C4;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #1b1c1f;
+    font-family: "Noto Sans KR", sans-serif;
+}
+#movie_gerne{
+    width: 200px;
+    color: white;
+    margin-right: 15px;
+    border: 0.5px solid #C4C4C4;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #1b1c1f;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+
+
+
 
 .myFavList_container{width: 77.5%; display: flex; justify-content: center; min-width: 1213px; margin-bottom: 8rem;}
 .profile_myFavList{width: fit-content; display: flex; flex-wrap: wrap; justify-content: center;}
@@ -19,14 +52,14 @@
 .myfav_movie_footer{display: flex;}
 
 /*-------------------------------follow_box-----------------------------------*/
-.follow_modal_container{display: flex;}
-.poster_container{background-color: lightseagreen}
-.follower_container{background-color: lightgoldenrodyellow}
+.follow_modal_container{display: flex; width: 100%; justify-content: space-evenly; margin-top: 5px;}
+.poster_container{display: flex; flex-direction: column; align-items: center; color: #FFFFFF;font-family: "Noto Sans KR", sans-serif; font-size: 19px; font-weight: bold;}
+.follower_container{display: flex; flex-direction: column;align-items: center;color: #FFFFFF;font-family: "Noto Sans KR", sans-serif; font-size: 19px; font-weight: bold;}
 .follower_container:hover{cursor: pointer;}
 
 #modal-follow-close:hover{cursor: pointer;}
 
-.follow_container{background-color: lightcoral;}
+.follow_container{display: flex; flex-direction: column;align-items: center;color: #FFFFFF; font-family: "Noto Sans KR", sans-serif; font-size: 19px; font-weight: bold;}
 .follow_container:hover{cursor: pointer;}
 
 .modal-follow{
@@ -74,28 +107,52 @@
 
 /*-------------------------------follow_btn-----------------------------------*/
 .follow_btn{
-    width: fit-content;
-    height: fit-content;
-    background-color: red;
+    width: 106px;
+    height: 35px;
     padding: 5px;
     border-radius: 5px;
+    border: 0.5px solid rgba(255,255,255,0.7);
     color: white;
+    text-align: center;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.refollow_btn{
+    width: 106px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(255,255,255,0.7);
+    color: white;
+    text-align: center;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.refollow_btn:hover{
+    cursor: pointer;
+    background-color: #d63269;
+    border: none;
 }
 .follow_btn:hover{
     cursor: pointer;
 }
 .unfollow_btn{
-    width: fit-content;
-    height: fit-content;
-    background-color: lightseagreen;
+    width: 106px;
+    height: 35px;
     padding: 5px;
     border-radius: 5px;
+    background-color: #d63269;
     color: white;
+    text-align: center;
+    font-family: "Noto Sans KR", sans-serif;
 }
 .unfollow_btn:hover{
     cursor: pointer;
 }
-
+.comming_soon{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
