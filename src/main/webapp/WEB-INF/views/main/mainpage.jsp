@@ -139,7 +139,7 @@
                                         <div class="page-content">
                                             <div class="card" style="background-image: url(${items.image})">
                                                 <div class="content">
-                                                    <button class="btn">지금보러가기</button>
+                                                    <button class="btn" onclick="location.href='/movie/detail?keyword=${items.title}'">지금보러가기</button>
                                                 </div>
                                             </div>
                                         </div>

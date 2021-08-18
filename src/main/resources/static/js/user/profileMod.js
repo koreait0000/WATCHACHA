@@ -1,6 +1,6 @@
 let uploadFile = '';
 
-// const resetBtnElem = document.querySelector('#reset_btn');
+const resetBtnElem = document.querySelector('#reset_btn');
 const usernameElem = document.querySelector('#username'); /*이름*/
 const selectImgArrElem = document.querySelector('#selectImgArr'); /*이미지*/
 const btnUploadElem = document.querySelector('#btnUpload');
@@ -73,14 +73,9 @@ function displaySelectedImgArr(){
     }
 }
 
-
-/*
 resetBtnElem.addEventListener('click', ()=>{
     fetch('/user/resetProfileImg',{
     }).then( res => res.json())
         .then(myJson =>{
-
         })
 })
-
- */
