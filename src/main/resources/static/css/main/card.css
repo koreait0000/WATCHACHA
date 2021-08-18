@@ -5,16 +5,15 @@
     --font-serif: "Noto Sans KR", sans-serif;
 
 }
-.fav_movie{
-    display: flex;
-}
 .page-content{
-    width: 200px;
-    margin: 10px;
+    width: 250px;
+    margin: 20px;
+
 }
 
 .card {
-
+    background-size: cover;
+    background-position: center;
     position: relative;
     display: -webkit-box;
     /*display: flex;*/
@@ -24,13 +23,11 @@
     padding: 1rem;
     width: 100%;
     text-align: center;
-    color: whitesmoke;
-    background-color: whitesmoke;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 600px) {
     .card {
-        height: 350px;
+        height: 395px;
     }
 }
 .card:before {
@@ -65,9 +62,6 @@
     transition: -webkit-transform calc(var(--d) * 2) var(--e);
     transition: transform calc(var(--d) * 2) var(--e);
     transition: transform calc(var(--d) * 2) var(--e), -webkit-transform calc(var(--d) * 2) var(--e);
-}
-.card:nth-child(1):before {
-    /*background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);*/
 }
 .content {
     position: relative;
@@ -105,11 +99,13 @@
     letter-spacing: 0.025rem;
     text-transform: uppercase;
     color: white;
-    background-color: black;
+    background-color: #d63269;
+    opacity: 0.65;
     border: none;
 }
 .btn:hover {
-    background-color: #0d0d0d;
+    color: #FFFFFF;
+    background-color: #E02C59;
 }
 .btn:focus {
     outline: 1px dashed yellow;

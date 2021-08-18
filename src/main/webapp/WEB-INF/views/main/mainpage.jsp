@@ -131,24 +131,22 @@
             <%--회원들 좋아하는 영상리스트를 뿌릴거임--%>
             <div class="follower_fav_movie">
                 <c:forEach items="${friends}" var="friend" varStatus="status">
-                    <div class="follower_personal_fav">
-                        <h4 style="color: #FFFFFF">'${friend[status.index].nm}'님이 좋아하는 영화</h4>
-                            <%--반복문이 돌아가는곳--%>
-            <%--                            <div>--%>
-            <%--                                <img src="/pic/profile/${items.iuser}/${items.image}">--%>
-            <%--                            </div>--%>
-                    <div class="fav_movie">
-                         <c:forEach items="${friend}" var="items">
-                                <div class="page-content">
-                                    <div class="card">
-                                        <div class="content">
-                                            <h2 class="title">Mountain View</h2>
-                                            <button class="btn">View Trips</button>
+                        <div class="follower_personal_fav">
+                            <h4 style="color: #FFFFFF">'${friend[status.index].nm}'님이 좋아하는 영화</h4>
+                            <div class="fav_movie">
+                                <div class="personal_fav_list">
+                                    <c:forEach items="${friend}" var="items">
+                                        <div class="page-content">
+                                            <div class="card" style="background-image: url(${items.image})">
+                                                <div class="content">
+                                                    <button class="btn">지금보러가기</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </c:forEach><%--반복문이 끝나는곳--%>
                                 </div>
-                        </c:forEach><%--반복문이 끝나는곳--%>
-                    </div>
+                            </div>
+                        </div>
                 </c:forEach>
                 <%--회원들이 좋아하는리스트 반복문 끝나는 곳 --%>
             </div>
