@@ -29,7 +29,7 @@
 <%--                </label>--%>
 <%--                <label>--%>
 <%--                    <input class="bottom" type="checkbox"  required> 개인정보수집에 동의합니다.(필수)<br>--%>
-<%--                </label>--%>
+<%--                test </label>--%>
 <%--            </div>--%>
         </div>
     </div>
