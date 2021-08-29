@@ -17,20 +17,6 @@
                 <br>
                 <button class="loginBtn" onclick="return joinCheck();">회원가입</button>
             </form>
-<%--            <div class="joinForm footer">--%>
-<%--                <label>--%>
-<%--                    <input class="upper" type="checkbox" required placeholder="전체약간에 동의합니다."> <br>--%>
-<%--                </label>--%>
-<%--                <label>--%>
-<%--                    <input type="checkbox"  required> 왓챠와 넷플릭스 그리고 유튜브 프로젝트입니다.<br>--%>
-<%--                </label>--%>
-<%--                <label>--%>
-<%--                    <input type="checkbox" required> 왓차차 서비스 이용약간에 동의합니다.(필수)<br>--%>
-<%--                </label>--%>
-<%--                <label>--%>
-<%--                    <input class="bottom" type="checkbox"  required> 개인정보수집에 동의합니다.(필수)<br>--%>
-<%--                test </label>--%>
-<%--            </div>--%>
         </div>
     </div>
 <script src="js/joinForm.js"></script>
